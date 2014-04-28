@@ -2,6 +2,6 @@ tr
   td class="text-center" = certification.id
   td class="text-center" = t("certifications.#{certification.state}")
   - if certification.draft?
-    td class="text-center" = link_to t("forms.continue")
+    td class="text-center" = link_to t("forms.continue"), certification
   - elsif certification
-    td class="text-center" = link_to t("forms.view")
+    td class="text-center" = link_to t("forms.view"), certification

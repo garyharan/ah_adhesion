@@ -7,6 +7,7 @@ class CertificationsController < ApplicationController
   end
 
   def show
+    redirect_to certification_questions_path(@certification)
   end
 
   def create
@@ -20,12 +21,10 @@ class CertificationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_certification
       @certification = Certification.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def certification_params
       params.require(:certification).permit(:user_id, :status, :approval_date)
     end

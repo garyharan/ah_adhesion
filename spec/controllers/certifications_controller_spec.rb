@@ -32,7 +32,8 @@ describe CertificationsController do
     it "assigns the requested certification as @certification" do
       certification = Certification.create! valid_attributes
       get :show, {:id => certification.to_param}, valid_session
-      assigns(:certification).should eq(certification)
+      assigns(:certification).should == certification
+      response.should redirect_to certification_questions_path(certification)
     end
   end
 
