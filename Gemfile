@@ -21,5 +21,7 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'foreman'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
   gem 'pry-rails'
 end
