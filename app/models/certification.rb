@@ -1,13 +1,11 @@
 class Certification < ActiveRecord::Base
   belongs_to :user
 
-  scope :pending, -> { where(state: 'pending') }
-
   state_machine :state, :initial => :draft do
     event :submit do
       transition :draft => :pending_payment
     end
-    
+
     event :paid do
       transition :pending_payment => :under_review
     end

@@ -13,8 +13,8 @@ describe CertificationsController do
   describe "GET index" do
     context "when you have certifications" do
       it "assigns pending certifications as @certifications" do
-        user.certifications.create FactoryGirl.attributes_for(:certification)
-        user.certifications.create FactoryGirl.attributes_for(:certification, state: 'expired')
+        user.certifications.create! FactoryGirl.attributes_for(:certification)
+        user.certifications.create! FactoryGirl.attributes_for(:certification, state: 'expired')
         get :index, {}, valid_session
         assigns(:certifications).count.should == 2
       end

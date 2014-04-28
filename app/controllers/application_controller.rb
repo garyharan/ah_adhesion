@@ -11,12 +11,14 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = extract_locale_from_accept_language_header
+    I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
   end
 
   private
 
   def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    accept = request.env['HTTP_ACCEPT_LANGUAGE']
+    return nil if accept.nil?
+    accept.scan(/^[a-z]{2}/).first
   end
 end
