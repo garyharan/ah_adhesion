@@ -1,6 +1,11 @@
-div class="question"
-  div = question.title
-  div = question.send("question_fr")
-  div = question.send("widget_#{I18n.locale}")
-  div = question.help_fr
-  div = question.renewable
+table class="question"
+  tr
+    td class="title" = question.title
+    td class="body"  = question.send("question_fr")
+  tr
+    td
+    td class="help" = question.help_fr
+  - unless question.send("proof_fr").blank?
+    tr
+      td
+      td class="proof" = "Preuve requise: #{question.send("proof_fr")}"

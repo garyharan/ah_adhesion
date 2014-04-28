@@ -1,5 +1,21 @@
 section#content {
   min-height: 400px;
+
+  h2 {
+    font-size: 18px;
+  }
+}
+
+td.title {
+  vertical-align: text-top;
+}
+
+td.body {
+  font-weight: bold;
+}
+
+th, td {
+  padding: 10px !important;
 }
 
 section {
