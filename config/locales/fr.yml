@@ -22,3 +22,6 @@ fr:
   footer:
     contact_us: "Contactez-nous"
     help: "Aide"
+
+  nav:
+    my_profile: "My Profile"
