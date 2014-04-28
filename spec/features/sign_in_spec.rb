@@ -14,6 +14,7 @@ describe "the signin process", type: :feature do
   end
 
   before do
+    FactoryGirl.create :section, section_id: 1
     sign_in
   end
 

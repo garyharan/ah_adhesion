@@ -6,8 +6,8 @@ describe QuestionsController do
     let(:user) { FactoryGirl.create :user }
 
     before do
+      FactoryGirl.create :section, section_id: 1
       sign_in user
-      FactoryGirl.create :section
     end
 
     it "returns http success" do
