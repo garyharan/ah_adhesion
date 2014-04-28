@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'slim-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'bootstrap-sass'
 
 gem 'spring',        group: :development
 

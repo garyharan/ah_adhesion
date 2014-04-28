@@ -8,7 +8,28 @@
 </head>
 <body>
 
-<%= yield %>
+<section id="header">
+  <div class="centered">
+    <%= image_tag "logo.jpg" %>
+  </div>
+</section>
+
+<section id="content">
+  <div class="centered">
+    <%= yield %>
+  </div>
+</section>
+
+<section id="footer">
+  <div class="centered">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://reservert.com/">Reservert.com</a>
+
+      <a class="navbar-brand" href="mailto:Xgret@hotelierquebec.com">Contactez-nous</a>
+      <span class="navbar-brand">450-508-7576 ext. 232</span>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
