@@ -26,3 +26,7 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
