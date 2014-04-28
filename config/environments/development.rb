@@ -4,7 +4,7 @@ Rails.application.configure do
   # https://github.com/plataformatec/devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  config.routes.default_url_options[:host]= 'ah_adhesion.dev'
+  Rails.application.routes.default_url_options[:host]= 'ah_adhesion.dev'
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
