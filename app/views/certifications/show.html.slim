@@ -4,12 +4,10 @@ p
   strong User:
   = @certification.user_id
 p
-  strong Status:
-  = @certification.status
+  strong State:
+  = @certification.state
 p
   strong Approval date:
   = @certification.approval_date
 
-= link_to 'Edit', edit_certification_path(@certification)
-'|
 = link_to 'Back', certifications_path
