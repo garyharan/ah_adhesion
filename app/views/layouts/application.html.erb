@@ -8,23 +8,23 @@
 </head>
 <body>
 
-<section id="header">
-  <div class="centered">
-    <% unless user_signed_in? %>
-      <%= link_to t("authentication.sign_in"), new_user_session_path %>
-      <%= link_to t("authentication.sign_up"), new_user_registration_path %>
-    <% else %>
-      <%= link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete %>
-    <% end %>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-left">
+      <li> <%= image_tag "logo.jpg" %> </li>
+      <li></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% unless user_signed_in? %>
+        <li><%= link_to t("authentication.sign_in"), new_user_session_path %></li>
+        <li><%= link_to t("authentication.sign_up"), new_user_registration_path %></li>
+      <% else %>
+        <li><%= link_to t("nav.my_profile"), profile_path %></li>
+        <li><%= link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
   </div>
-  <br/>
-  <div class="centered">
-    <%= image_tag "logo.jpg" %>
-  </div>
-  <div class="navigation">
-    <%= link_to t("nav.my_profile"), profile_path %>
-  </div>
-</section>
+</nav>
 
 <section id="content">
   <div class="centered">
