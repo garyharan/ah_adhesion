@@ -1,13 +1,11 @@
 require 'csv'
 
-namespace :script do
+namespace :import do
   desc "Import questions from CSV file"
-  task import_questions_csv: :environment do
-    #puts Question.all.length
-
+  task questions: :environment do
     Question.all.each { |q| q.destroy }
 
-    CSV.foreach("questions.csv", { headers: :first_row }) do |row|
+    CSV.foreach("db/questions.csv", { headers: :first_row }) do |row|
       q = Question.new
 
       q.title = row['title']
@@ -18,7 +16,6 @@ namespace :script do
       q.proof_fr = row['proof_fr']
 
       q.renewable = row['renewable'] != nil
-      q.has_attachments = row['proof_fr'] != nil
 
       q.save
     end
