@@ -1,25 +1,10 @@
-h1 Listing certifications
 
-table
-  thead
-    tr
-      th User
-      th Status
-      th Approval date
-      th
-      th
-      th
+- if current_user.certifications.pending.any?
+  td = link_to 'Show', certification
+  td = link_to 'Edit', edit_certification_path(certification)
+  td = link_to 'Destroy', certification, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-  tbody
-    - @certifications.each do |certification|
-      tr
-        td = certification.user_id
-        td = certification.status
-        td = certification.approval_date
-        td = link_to 'Show', certification
-        td = link_to 'Edit', edit_certification_path(certification)
-        td = link_to 'Destroy', certification, data: {:confirm => 'Are you sure?'}, :method => :delete
+  br
 
-br
-
-= link_to 'New Certification', new_certification_path
+- else
+  = link_to "Commencer ma certification", new_certification_path

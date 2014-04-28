@@ -1,9 +1,10 @@
 class CertificationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_certification, only: [:show, :edit, :update, :destroy]
 
   # GET /certifications
   def index
-    @certifications = Certification.all
+    @certifications = current_user.certifications.pending
   end
 
   # GET /certifications/1

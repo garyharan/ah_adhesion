@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Certification do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:user) { FactoryGirl.create(:user) }
+
+  it "has a pending scope" do
+    FactoryGirl.create(:certification, state: :pending)
+    Certification.pending.count.should == 1
+  end
 end
