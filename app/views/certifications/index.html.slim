@@ -1,13 +1,9 @@
-
-- if current_user.certifications.any?
-
-  - # list certifications
-
-  td = link_to 'Show', certification
-  td = link_to 'Edit', edit_certification_path(certification)
-  td = link_to 'Destroy', certification, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-  br
-
+- if @certifications.any?
+  table class="table"
+    tr
+      th class="text-center" = t("certifications.number")
+      th class="text-center" = t("certifications.status")
+      th class="text-center" = t("certifications.action")
+    = render @certifications
 - else
   = link_to "Commencer ma certification", certifications_path, method: :post

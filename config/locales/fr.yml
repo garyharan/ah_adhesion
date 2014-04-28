@@ -1,0 +1,24 @@
+fr:
+  authentication:
+    sign_in: "Connection"
+    sign_up: "Inscription"
+    sign_out: "Déconnection"
+
+  forms:
+    continue: "Continuer"
+    view: "Visualiser"
+
+  certifications:
+    number: "Numéro de certification"
+    status: "Statut"
+    action: "Action"
+
+    draft: "Brouillon"
+    pending: "En attente"
+    approved: "Approuvé"
+    rejected: "Rejeté"
+    expired: "Expiré"
+
+  footer:
+    contact_us: "Contactez-nous"
+    help: "Aide"

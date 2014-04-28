@@ -11,10 +11,10 @@
 <section id="header">
   <div class="centered">
     <% unless user_signed_in? %>
-      <%= link_to "Connection", new_user_session_path %>
-      <%= link_to "Créer un compte", new_user_registration_path %>
+      <%= link_to t("authentication.sign_in"), new_user_session_path %>
+      <%= link_to t("authentication.sign_up"), new_user_registration_path %>
     <% else %>
-      <%= link_to "Déconnection", destroy_user_session_path, method: :delete %>
+      <%= link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete %>
     <% end %>
   </div>
   <br/>
@@ -34,7 +34,7 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="http://reservert.com/">Reservert.com</a>
 
-      <a class="navbar-brand" href="mailto:Xgret@hotelierquebec.com">Contactez-nous</a>
+      <%= link_to t("footer.contact_us"), "mailto:Xgret@hotelierquebec.com", class: "navbar-brand" %>
       <span class="navbar-brand">450-508-7576 ext. 232</span>
     </div>
   </div>
