@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 ruby "2.1.1" # https://devcenter.heroku.com/changelog-items/428
 
-gem 'rails', '4.1.0'
+gem 'rails',                        '4.1.0'
 gem 'pg'
+gem 'state_machine',                '~> 1.2'
 
 # Authentication
 gem 'devise'
