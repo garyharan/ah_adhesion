@@ -22,6 +22,10 @@ describe "the signin process", type: :feature do
   end
 
   context "no certifications" do
+    before do
+      FactoryGirl.create :question, title: "1.1"
+    end
+
     it "guides me to create a certification" do
       click_link 'Commencer ma certification'
       expect(page).to have_content "1.1"
