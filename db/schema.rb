@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428140612) do
+ActiveRecord::Schema.define(version: 20140428145850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20140428140612) do
     t.integer  "user_id"
     t.string   "status"
     t.datetime "approval_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", force: true do |t|
+    t.string   "title"
+    t.string   "question_fr", limit: 512
+    t.string   "proof_fr",    limit: 1300
+    t.string   "widget_fr",   limit: 512
+    t.string   "widget_en",   limit: 512
+    t.string   "help_fr",     limit: 1300
+    t.boolean  "renewable"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
