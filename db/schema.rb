@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428184129) do
+ActiveRecord::Schema.define(version: 20140428195848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,15 +45,27 @@ ActiveRecord::Schema.define(version: 20140428184129) do
 
   create_table "questions", force: true do |t|
     t.string   "title"
-    t.string   "question_fr", limit: 512
-    t.string   "proof_fr",    limit: 1300
-    t.string   "widget_fr",   limit: 512
-    t.string   "widget_en",   limit: 512
-    t.string   "help_fr",     limit: 1300
+    t.string   "question_fr",   limit: 512
+    t.string   "proof_fr",      limit: 1300
+    t.string   "widget_fr",     limit: 512
+    t.string   "widget_en",     limit: 512
+    t.string   "help_fr",       limit: 1300
     t.boolean  "renewable"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sort_order"
+    t.integer  "section_id"
+    t.integer  "subsection_id"
+    t.integer  "patch_version"
+  end
+
+  create_table "sections", force: true do |t|
+    t.integer  "section_id"
+    t.integer  "parent_id"
+    t.integer  "subsection_id"
+    t.string   "title_fr"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
