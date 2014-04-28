@@ -5,15 +5,19 @@ class Certification < ActiveRecord::Base
 
   state_machine :state, :initial => :draft do
     event :submit do
-      transition :draft => :pending
+      transition :draft => :pending_payment
+    end
+    
+    event :paid do
+      transition :pending_payment => :under_review
     end
 
     event :approve do
-      transition :pending => :approved
+      transition :under_review => :approved
     end
 
     event :reject do
-      transition :pending => :rejected
+      transition :under_review => :rejected
     end
 
     event :expire do
