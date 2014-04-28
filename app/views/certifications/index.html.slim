@@ -1,0 +1,25 @@
+h1 Listing certifications
+
+table
+  thead
+    tr
+      th User
+      th Status
+      th Approval date
+      th
+      th
+      th
+
+  tbody
+    - @certifications.each do |certification|
+      tr
+        td = certification.user_id
+        td = certification.status
+        td = certification.approval_date
+        td = link_to 'Show', certification
+        td = link_to 'Edit', edit_certification_path(certification)
+        td = link_to 'Destroy', certification, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Certification', new_certification_path
