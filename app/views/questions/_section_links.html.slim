@@ -1,0 +1,6 @@
+ul class="sections subnav"
+  -@top_sections.each do |top_section|
+    - if top_section == @section
+      li class="active"= top_section.title
+    - else
+      li= top_section.section_id

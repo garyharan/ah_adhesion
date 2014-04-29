@@ -3,8 +3,9 @@ class QuestionsController < ApplicationController
   before_action :set_default_section
 
   def index
-    @questions   = Question.where(section_id: @section.section_id).order("subsection_id, patch_version")
-    @subsections = @section.subsections
+    @questions    = Question.where(section_id: @section.section_id).order("subsection_id, patch_version")
+    @subsections  = @section.subsections
+    @top_sections = Section.top_level
   end
 
   private
