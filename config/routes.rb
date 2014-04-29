@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :questions, only: :index
   end
 
+  resources :answers
+
   root 'page#home'
   devise_for :users
 end

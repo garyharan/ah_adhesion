@@ -1,0 +1,11 @@
+= form_for answer, :html => { :multipart => true }, :remote => true, 'data-no-turbolink' => true do |f|
+  = f.hidden_field :certification_id, value: answer.certification_id
+  = f.hidden_field :question_id, value: answer.question_id
+
+  = f.label :value_true do
+    = radio_button_tag("answer[value]", true, answer.value)
+    span Oui
+
+  = f.label :value_false do
+    = radio_button_tag("answer[value]", false, answer.value == false)
+    span Non
