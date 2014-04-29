@@ -30,7 +30,9 @@ html
 
     nav.navbar.navbar-default
       .centered
-        .navbar-header
-          a.navbar-brand href="http://reservert.com/"  Reservert.com
-          = link_to t("footer.contact_us"), "mailto:Xgret@hotelierquebec.com", class: "navbar-brand"
-          span.navbar-brand 450-508-7576 ext. 232
+        #footer.navbar-header
+          h3 Pour informations ou questions
+          b Jour de la Terre Québec
+          div = "Courriel:  #{link_to('reservert@jourdelaterre.org', 'mailto:reservert@jourdelaterre.org')}".html_safe
+          div Téléphone (hors Montréal): 1 800 424 8758 poste 228
+          div Téléphone Montréal: 514 728-0116 poste 228
