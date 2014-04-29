@@ -27,3 +27,7 @@ fr:
     how_this_works: "Comment ca fonctionne?"
     my_profile: "Coordonnées"
     active_certification: "Questionnaire"
+
+  sections:
+    previous: "Précédent"
+    next: "Suivant"

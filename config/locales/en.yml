@@ -26,3 +26,7 @@ en:
     how_this_works: "How this works"
     my_profile: "My Profile"
     active_certification: "Questionnaire"
+
+  sections:
+    previous: "Previous"
+    next: "Next"
