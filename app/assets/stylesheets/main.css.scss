@@ -35,4 +35,9 @@ section {
   position: absolute;
   bottom: 12px;
   padding-right: 40px;
+  li a {
+    @extend .btn-success;
+    border-radius: 3px;
+    margin-left: 5px;
+  }
 }
