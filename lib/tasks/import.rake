@@ -17,6 +17,11 @@ namespace :import do
 
       q.renewable = row['renewable'] != nil
 
+      section_id, subsection_id, patch_version = row["title"].split(".")
+      q.section_id = section_id
+      q.subsection_id = subsection_id
+      q.patch_version = patch_version
+
       q.save
     end
   end
