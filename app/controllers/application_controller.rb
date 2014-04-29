@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
     certifications_path
   end
 
+  def set_active_certification
+    return nil unless user_signed_in?
+    @active_certification = current_user.certifications.where(state: :draft).first
+  end
+
   def set_locale
     I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
   end

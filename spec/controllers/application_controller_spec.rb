@@ -10,4 +10,11 @@ describe ApplicationController do
   it "defaults to french when no http accept languages" do
     @controller.set_locale.should == :fr
   end
+
+  it "sets the active certification" do
+    sign_in user
+    user.certifications.create FactoryGirl.attributes_for(:certification, state: 'draft')
+    @controller.set_active_certification.should_not be_nil
+    @controller.instance_variable_get(:@active_certification).should == user.certifications.first
+  end
 end
