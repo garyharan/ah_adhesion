@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
   def after_sign_in_path_for(resource)
+    return certification_path(@active_certification) if @active_certification
     certifications_path
   end
 

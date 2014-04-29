@@ -3,8 +3,19 @@ require 'spec_helper'
 describe ApplicationController do
   let(:user) { FactoryGirl.create(:user) }
 
-  it "redirects to certification#index" do
-    @controller.after_sign_in_path_for(user).should == certifications_path
+  context "with an active certification" do
+    it "redirects to certification#show" do
+      sign_in user
+      certification = user.certifications.create!
+      @controller.set_active_certification # mimic the before_action
+      @controller.after_sign_in_path_for(user).should == certification_path(certification)
+    end
+  end
+
+  context "without an active certification" do
+    it "redirects to certification#index" do
+      @controller.after_sign_in_path_for(user).should == certifications_path
+    end
   end
 
   context "language" do
