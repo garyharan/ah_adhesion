@@ -1,4 +1,4 @@
-$ ->
+$(document).on "page:change", ->
   $("td.help a.toggle_help").click (e) ->
     parent = $(this).closest("td.help")
     parent.find("a.help_on").toggle()
