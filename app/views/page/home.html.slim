@@ -1,2 +1,7 @@
-h1 Bientôt
-p Le lancement est à venir.
+#welcome
+  h1 Bienvenue!
+  p Vous êtes connecté en tant que gary.haran@gmail.com.
+  - if @active_certification.blank?
+    = link_to "Commencer ma certification &#9658;".html_safe, certifications_path, method: :post
+  - else
+    = link_to "Continuer le questionnaire &#9658;".html_safe, certification_questions_path(@active_certification)
