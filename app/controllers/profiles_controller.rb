@@ -9,7 +9,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    puts profile_params.inspect
     @profile.update_attributes(profile_params)
     
     redirect_to edit_profile_path
