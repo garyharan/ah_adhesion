@@ -5,7 +5,11 @@ table class="question"
     td class="body"  = question.send("question_fr")
   tr
     td
-    td class="help" = question.help_fr
+    td class="help"
+      = link_to raw("&#9654;")  + " Voir l'astuce",   "#", class: "help_on toggle_help"
+      = link_to raw("&#x25BC;") + " Cacher l'astuce", "#", class: "help_off toggle_help"
+      div class="toggle_help" = question.help_fr
+
   - unless question.send("proof_fr").blank?
     tr
       td

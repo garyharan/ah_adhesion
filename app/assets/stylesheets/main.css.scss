@@ -21,6 +21,7 @@ th, td {
 section {
   .centered {
     width: 890px;
+    min-height: 65px;
     margin: auto;
   }
 }
@@ -28,4 +29,10 @@ section {
 .navbar-default {
   background-color: #fefef2 !important;
   background-image: none !important;
+}
+
+#second_nav {
+  position: absolute;
+  bottom: 12px;
+  padding-right: 40px;
 }
