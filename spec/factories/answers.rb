@@ -5,6 +5,5 @@ FactoryGirl.define do
     certification_id 1
     question_id 1
     value false
-    justification "MyText"
   end
 end
