@@ -10,7 +10,6 @@ table class="question"
         = s3_uploader_form callback_url: attachments_url, callback_param: "attachment[attachment_url]", class: "s3-uploader" do
           = hidden_field_tag  "Content-Type", ""
           = file_field_tag :file, multiple: false
-          = submit_tag
   tr
     td
     td class="help"
