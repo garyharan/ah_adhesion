@@ -1,7 +1,14 @@
 #welcome
   h1 Bienvenue!
-  p Vous êtes connecté en tant que gary.haran@gmail.com.
-  - if @active_certification.blank?
-    = link_to "Commencer ma certification &#9658;".html_safe, certifications_path, method: :post
+  - if user_signed_in?
+    p Vous êtes connecté en tant que #{current_user.email}.
+    - if @active_certification.blank?
+      = link_to "Commencer ma certification &#9658;".html_safe, certifications_path, method: :post
+    - else
+      = link_to "Continuer le questionnaire &#9658;".html_safe, certification_questions_path(@active_certification)
   - else
-    = link_to "Continuer le questionnaire &#9658;".html_safe, certification_questions_path(@active_certification)
+    p Pour accéder au site veuillez choisir l'une des options suivantes:
+    ul
+      = link_to t("authentication.sign_in"), new_user_session_path
+      ' &nbsp;
+      = link_to t("authentication.sign_up"), new_user_registration_path
