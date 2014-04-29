@@ -24,7 +24,9 @@ describe "the signin process", type: :feature do
 
   context "no certifications" do
     before do
-      FactoryGirl.create :question, title: "1.1"
+      FactoryGirl.create :question, title: "1.1", section_id: 1
+      FactoryGirl.create :section
+      FactoryGirl.create :section, subsection_id: 1
     end
 
     it "guides me to create a certification" do

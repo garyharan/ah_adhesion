@@ -1,1 +1,5 @@
-= render @questions
+h1 = @section.title
+
+- @subsections.each do |subsection|
+  h2 = subsection.title
+  = render @questions.select {|q| q.subsection_id == subsection.subsection_id }
