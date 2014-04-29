@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_default_section
 
   def index
-    @questions = @section.section_questions.all
+    @questions = Question.where(section: @section.id).order("subsection, patch")
   end
 
   private
