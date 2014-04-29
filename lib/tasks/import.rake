@@ -30,8 +30,8 @@ namespace :import do
       Section.create section_id: row["section_id"].to_i, title_fr: row["title_fr"]
     end
     CSV.foreach("db/subsections.csv", { headers: :first_row}) do |row|
-      parent_id, subsection_id = row["id"].split(".")
-      Section.create parent_id: parent_id, subsection_id: subsection_id, title_fr: row["title_fr"]
+      section_id, subsection_id = row["id"].split(".")
+      Section.create section_id: section_id, subsection_id: subsection_id, title_fr: row["title_fr"]
     end
   end
 end
