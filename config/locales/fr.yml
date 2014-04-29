@@ -3,6 +3,9 @@ fr:
     sign_in: "Connection"
     sign_up: "Inscription"
     sign_out: "Déconnection"
+    email: "Courriel"
+    password: "Mot de passe"
+    password_confirmation: "Confirmation de mot de passe"
 
   forms:
     continue: "Continuer"

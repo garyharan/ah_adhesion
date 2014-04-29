@@ -1,0 +1,13 @@
+h2 = t("authentication.sign_in").titleize
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  div
+    = f.label :email, t("authentication.email")
+    = f.email_field :email, autofocus: true
+  div
+    = f.label :password, t("authentication.password")
+    = f.password_field :password, autocomplete: "off"
+
+    = f.hidden_field :remember_me, value: true if devise_mapping.rememberable?
+
+  div= f.submit t("authentication.sign_in")
