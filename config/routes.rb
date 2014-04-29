@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'questions/index'
 
   resource :profile, only: [:edit, :update]
+  resources :attachments, only: :create
   resources :certifications, only: [:index, :show, :create] do
     resources :questions, only: :index
   end

@@ -1,6 +1,8 @@
 = render partial: 'section_links'
 h1 = @section.title
 
-- @subsections.each do |subsection|
+- [@subsections[0]].each do |subsection|
+  / each do
   h2 = subsection.title
-  = render @questions.select {|q| q.subsection_id == subsection.subsection_id }
+  = render @questions[0]
+  / select {|q| q.subsection_id == subsection.subsection_id }
