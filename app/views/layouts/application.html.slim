@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Adhesion
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-default role="navigation"
+      .container-fluid
+        ul.nav.navbar-nav.navbar-left
+          li
+            = image_tag "logo.jpg"
+          li
+        ul.nav.navbar-nav.navbar-right
+          - unless user_signed_in?
+            li= link_to t("authentication.sign_in"), new_user_session_path
+            li= link_to t("authentication.sign_up"), new_user_registration_path
+          - else
+            li= link_to t("nav.my_profile"), profile_path
+            li= link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
+    section#content
+      .centered
+        = yield
+    section#footer
+      .centered
+        .navbar-header
+          a.navbar-brand href="http://reservert.com/"  Reservert.com
+          = link_to t("footer.contact_us"), "mailto:Xgret@hotelierquebec.com", class: "navbar-brand"
+          span.navbar-brand 450-508-7576 ext. 232
