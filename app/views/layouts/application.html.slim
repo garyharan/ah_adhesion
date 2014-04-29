@@ -18,6 +18,7 @@ html
             li= link_to t("authentication.sign_up"), new_user_registration_path
           - else
             li= link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
+
     section#content
       .centered
         ul.nav.navbar-nav.navbar-right
@@ -27,7 +28,8 @@ html
       br
       .centered
         = yield
-    section#footer
+
+    nav.navbar.navbar-default
       .centered
         .navbar-header
           a.navbar-brand href="http://reservert.com/"  Reservert.com
