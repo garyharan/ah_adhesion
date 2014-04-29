@@ -30,7 +30,7 @@ namespace :import do
   task sections: :environment do
     Section.delete_all
     raise "not all deleted" unless Section.count == 0
-    
+
     CSV.foreach("db/sections.csv", { headers: :first_row }) do |row|
       Section.create section_id: row["section_id"].to_i, title_fr: row["title_fr"]
     end
