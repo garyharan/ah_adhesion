@@ -1,9 +1,19 @@
 ul.sections.subnav {
   text-align: center;
+  li {
+    list-style: none;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 3px;
+  }
+
   li.active {
     @extend .btn-success;
   }
-  li {
+
+
+  li a {
     @extend .btn;
+    display: block;
   }
 }

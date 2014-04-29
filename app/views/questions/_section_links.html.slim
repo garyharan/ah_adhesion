@@ -3,4 +3,4 @@ ul class="sections subnav"
     - if top_section == @section
       li class="active"= top_section.section_id
     - else
-      li= top_section.section_id
+      li= link_to top_section.section_id, certification_questions_path(section: top_section.section_id), role: "button"
