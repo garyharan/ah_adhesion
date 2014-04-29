@@ -24,5 +24,6 @@ fr:
     help: "Aide"
 
   nav:
+    how_this_works: "Comment ca fonctionne?"
     my_profile: "Mon Profil"
     active_certification: "Questionnaire"
