@@ -1,0 +1,9 @@
+ul.sections.subnav {
+  text-align: center;
+  li.active {
+    @extend .btn-success;
+  }
+  li {
+    @extend .btn;
+  }
+}
