@@ -7,8 +7,15 @@ describe ApplicationController do
     @controller.after_sign_in_path_for(user).should == certifications_path
   end
 
-  it "defaults to french when no http accept languages" do
-    @controller.set_locale.should == :fr
+  context "language" do
+    it "defaults to french when no http accept languages" do
+      @controller.set_locale.should == :fr
+    end
+
+    it "allows for override using a cookie" do
+      @controller.stub(:cookies) { {chosen_language: :en} }
+      @controller.set_locale.should == :en
+    end
   end
 
   it "sets the active certification" do
