@@ -1,2 +1,49 @@
-h1 Profiles#edit
-p Find me in app/views/profiles/edit.html.slim
+h1 Mes Coordonnées
+
+br
+
+= form_for @profile, url: profile_path(@profile) do |f|
+  span Nom de l'établissement
+  = f.text_field(:name)
+  br
+  span N° de membre de l'AHQ
+  = f.text_field :member_number
+  br
+  span Date
+  = f.date_field :created_at
+  br
+  span Adresse de l'établissement
+  = f.text_field :address
+  br
+  span Ville
+  = f.text_field :city
+  br
+  span Code postal
+  = f.text_field :postal_code
+  br
+  span Nom du dirigeant
+  = f.text_field :director
+  br
+  span Titre (du dirigeant)
+  = f.text_field :director_title
+  br
+  span Responsable de la mise en candidature
+  = f.text_field :certification_manager
+  br
+  span Titre
+  = f.text_field :certification_manager_title
+  br
+  span Téléphone
+  =f.text_field :telephone
+  br
+  span Télécopieur
+  =f.text_field :fax
+  br
+  span Courriel
+  =f.text_field :email
+  br
+  span Site internet de l'établissement
+  =f.text_field :website
+  br
+  =f.submit
+  

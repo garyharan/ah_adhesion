@@ -2,19 +2,17 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_profile
 
-  def show
+  def edit
     # Not idempotent, but only done on the first pass
     # should probably be done in a signup model
     @profile ||= current_user.create_profile
   end
 
-  def edit
-  end
-
   def update
+    puts profile_params.inspect
     @profile.update_attributes(profile_params)
     
-    redirect_to profile_path
+    redirect_to edit_profile_path
   end
 
   private

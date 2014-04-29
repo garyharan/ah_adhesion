@@ -8,10 +8,10 @@ describe ProfilesController do
   end
   
   context "with no existing profile" do
-    describe "GET 'show'" do
+    describe "GET 'edit'" do
       it "returns http success" do
         expect {
-          get :show
+          get :edit
           response.should be_success
           assigns(:profile).user_id.should == user.id
         }.to change(Profile, :count).by(1)
@@ -24,11 +24,11 @@ describe ProfilesController do
       user.create_profile
     end
 
-    describe "GET 'show'" do
+    describe "GET 'edit'" do
       it "returns http success" do
 
         expect {
-          get :show
+          get :edit
           response.should be_success
           assigns(:profile).user_id.should == user.id
         }.to change(Profile, :count).by(0)
