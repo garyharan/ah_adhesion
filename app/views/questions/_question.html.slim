@@ -2,6 +2,10 @@ table class="question"
   tr
     td class="title" = question.title
     td class="body"  = question.send("question_fr")
+  - unless question.send("proof_fr").blank?
+    tr
+      td
+      td class="proof" = "Preuve requise: #{question.send("proof_fr")}"
   tr
     td
     td class="help"
@@ -9,7 +13,3 @@ table class="question"
       = link_to raw("&#x25BC;") + " Cacher l'astuce", "#", class: "help_off toggle_help"
       div class="toggle_help" = question.help_fr
 
-  - unless question.send("proof_fr").blank?
-    tr
-      td
-      td class="proof" = "Preuve requise: #{question.send("proof_fr")}"
