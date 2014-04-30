@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'how_this_works', to: 'page#how_this_works'
+  get 'comment_ca_fonctionne', to: 'page#how_this_works'
   get 'questions/index'
 
-  resource :profile, only: [:edit, :update]
+  resource :profil, only: [:edit, :update], controller: 'profiles'
   resources :attachments, only: [:new, :create]
   resources :certifications, only: [:index, :show, :create] do
     resources :questions, only: :index
