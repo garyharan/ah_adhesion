@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # http://adhesion.reservert.com/paypal_success
+
   get 'comment_ca_fonctionne', to: 'page#how_this_works'
   get 'questions/index'
 

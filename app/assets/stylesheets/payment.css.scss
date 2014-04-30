@@ -1,0 +1,22 @@
+table.payment {
+  width: 100%;
+  border-spacing: 20px;
+
+  tr.paypal {
+    border-bottom: 1px solid #fdfdfd;
+  }
+
+  td:first-child {
+    font-weight: bold;
+  }
+
+  td.price {
+    div {
+      text-align: right;
+    }
+
+    div:last-child {
+      font-weight: bold;
+    }
+  }
+}
