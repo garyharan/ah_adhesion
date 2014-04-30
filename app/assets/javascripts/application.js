@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require questions
+//= require s3_direct_upload
+//= require ajax_s3_uploader
 //= require_tree .

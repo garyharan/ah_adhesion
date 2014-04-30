@@ -17,6 +17,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
 
+gem 's3_direct_upload'
+
 gem 'spring',        group: :development
 
 group :development, :test do
