@@ -22,6 +22,6 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:name, :member_number, :address, :city, :postal_code, :director,
                                       :director_title, :certification_manager, :certification_manager_title,
-                                      :telephone, :fax, :email, :website)
+                                      :telephone, :fax, :email, :website, :member_since, :establishment_type)
     end
 end

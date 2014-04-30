@@ -9,6 +9,9 @@ br
   span N° de membre de l'AHQ
   = f.text_field :member_number
   br
+  span Membre Réservert depuis... (année)
+  =f.text_field :member_since
+  br
   span Date
   = f.date_field :created_at
   br
@@ -44,6 +47,10 @@ br
   br
   span Site internet de l'établissement
   =f.text_field :website
+  br
+  span Type d'établissement: 
+  - types = ["Hôtel", "Gîte", "Résidences de tourisme"]
+  =f.select :establishment_type, types.zip(types)
   br
   =f.submit
   
