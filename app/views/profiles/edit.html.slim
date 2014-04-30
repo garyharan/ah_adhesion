@@ -1,49 +1,66 @@
-h1 Mes Coordonnées
+.page-header
+  h1 Mes Coordonnées
 
-br
+.row
+  .col-md-8
 
-= form_for @profile, url: profile_path(@profile) do |f|
-  span Nom de l'établissement
-  = f.text_field(:name)
-  br
-  span N° de membre de l'AHQ
-  = f.text_field :member_number
-  br
-  span Date
-  = f.date_field :created_at
-  br
-  span Adresse de l'établissement
-  = f.text_field :address
-  br
-  span Ville
-  = f.text_field :city
-  br
-  span Code postal
-  = f.text_field :postal_code
-  br
-  span Nom du dirigeant
-  = f.text_field :director
-  br
-  span Titre (du dirigeant)
-  = f.text_field :director_title
-  br
-  span Responsable de la mise en candidature
-  = f.text_field :certification_manager
-  br
-  span Titre
-  = f.text_field :certification_manager_title
-  br
-  span Téléphone
-  =f.text_field :telephone
-  br
-  span Télécopieur
-  =f.text_field :fax
-  br
-  span Courriel
-  =f.text_field :email
-  br
-  span Site internet de l'établissement
-  =f.text_field :website
-  br
-  =f.submit
-  
+    = form_for @profile, url: profile_path(@profile), :html => { :class => "form-horizontal" } do |f|
+      .form-group
+        = f.label :name, "Nom de l'établissement", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :name, :class => "form-control"
+      .form-group
+        = f.label :member_number, "N° de membre de l'AHQ", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :member_number, :class => "form-control"
+      .form-group
+        = f.label :created_at, "Date", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.date_field :created_at, :class => "form-control"
+      .form-group
+        = f.label :address, "Adresse de l'établissement", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :address, :class => "form-control"
+      .form-group
+        = f.label :city, "Ville", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :city, :class => "form-control"
+      .form-group
+        = f.label :postal_code, "Code postal", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :postal_code, :class => "form-control"
+      .form-group
+        = f.label :director, "Nom du dirigeant", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :director, :class => "form-control"
+      .form-group
+        = f.label :director_title, "Titre (du dirigeant)", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :director_title, :class => "form-control"
+      .form-group
+        = f.label :certification_manager, "Responsable de la mise en candidature", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :certification_manager, :class => "form-control"
+      .form-group
+        = f.label :certification_manager_title, "Titre", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :certification_manager_title, :class => "form-control"
+      .form-group
+        = f.label :telephone, "Téléphone", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :telephone, :class => "form-control"
+      .form-group
+        = f.label :fax, "Télécopieur", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :fax, :class => "form-control"
+      .form-group
+        = f.label :email, "Courriel", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :email, :class => "form-control"
+      .form-group
+        = f.label :website, "Site internet de l'établissement", :class => "col-md-5 control-label"
+        .col-md-7
+          = f.text_field :website, :class => "form-control"
+      .form-group
+        .col-md-offset-5.col-md-7
+          = f.submit "Sauvegarder", :class => "btn btn-primary"
