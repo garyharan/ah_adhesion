@@ -10,7 +10,7 @@ class AttachmentsController < ApplicationController
     @answer = Answer.find(params[:answer_id])
     @attachment = @answer.attachments.create!(attachment_params)
 
-    render @attachment, layout: false
+    render @attachment, layout: false, locals: { answer: @answer }
   end
 
   private

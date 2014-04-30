@@ -1,3 +1,4 @@
+- answer = @answers.answer_for(question)
 table class="question"
   tr
     td class="title" = question.title
@@ -16,10 +17,11 @@ table class="question"
   tr
     td
     td class="form"
-      = render @answers.answer_for(question)
+      = render answer
 
   tr class="proof_files"
     td
     td
       ul class="addition"
-        = render @answers.answer_for(question).attachments
+        = render answer.attachments
+      = render template: "attachments/new.html.slim", locals: { answer: answer } if answer.yes?
