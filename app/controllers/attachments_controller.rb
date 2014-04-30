@@ -1,5 +1,11 @@
 class AttachmentsController < ApplicationController
-  def update
+
+  def new
+    @answer = Answer.find(params[:answer_id])
+    render layout: false
+  end
+
+  def create
     @attachment = Attachment.find(params[:id])
     # FIXME: secure this
     if @attachment.update_attributes(attachment_params)

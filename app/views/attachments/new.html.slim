@@ -1,0 +1,6 @@
+= s3_uploader_form callback_url: attachments_url(answer_id: @answer.id),
+                   callback_param: "attachment[attachment_url]",
+                   class: "s3-uploader",
+                   key: "uploads/{timestamp}-{unique_id}-#{SecureRandom.hex}/${filename}" do
+  = hidden_field_tag  "Content-Type", ""
+  = file_field_tag :file, multiple: false

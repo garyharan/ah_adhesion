@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
     @answer = find_or_create_answer
 
     if save_answer
-      head :ok
+      render "attachments/new", layout: false
     end
   end
 
