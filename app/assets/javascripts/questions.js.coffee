@@ -1,9 +1,8 @@
 $(document).on "page:change", ->
-  $("td.help a.toggle_help").click (e) ->
-    parent = $(this).closest("td.help")
-    parent.find("a.help_on").toggle()
-    parent.find("a.help_off").toggle()
-    parent.find("div.toggle_help").toggle()
+  $(".help .help-toggle").click (e) ->
+    parent = $(this).parents(".help")
+    parent.find(".help-toggle").toggle()
+    parent.find(".help-content").toggle()
     return false
 
   $("label").on "click", (e) ->

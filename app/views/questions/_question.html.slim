@@ -1,18 +1,17 @@
-table class="question"
-  tr
-    td class="title" = question.title
-    td class="body"  = question.send("question_fr")
-  - unless question.send("proof_fr").blank?
-    tr
-      td
-      td class="proof" = "Preuve requise: #{question.send("proof_fr")}"
-  tr
-    td
-    td class="help"
-      = link_to raw("&#9654;")  + " Voir l'astuce",   "#", class: "help_on toggle_help"
-      = link_to raw("&#x25BC;") + " Cacher l'astuce", "#", class: "help_off toggle_help"
-      div class="toggle_help" = question.help_fr
-  tr
-    td
-    td class="form"
-      = render @answers.answer_for(question)
+tr.question
+  td = question.title
+  td
+    p.body
+      strong = question.send("question_fr")
+    - unless question.send("proof_fr").blank?
+      p.proof = "Preuve requise: #{question.send("proof_fr")}"
+    .help
+      .help-togglers
+        = link_to "#", class: "help-toggle-on help-toggle" do
+          ' Voir l'astuce
+          i.glyphicon.glyphicon-chevron-down
+        = link_to "#", class: "help-toggle-off help-toggle" do
+          ' Cacher l'astuce
+          i.glyphicon.glyphicon-chevron-up
+      .well.well-small.help-content = question.help_fr
+    = render @answers.answer_for(question)

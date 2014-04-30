@@ -1,8 +1,15 @@
+$navbar-height: 120px;
+$colorBeige: rgb(254, 254, 242);
+
 @import "bootstrap";
-@import "authentication";
-@import "header";
-@import "main";
-@import "welcome";
+@import "navbar";
 @import "footer";
+@import "main";
+@import "panels";
 @import "questions";
+
+/*@import "authentication";
+@import "header";
+@import "welcome";
 @import "section_links";
+*/

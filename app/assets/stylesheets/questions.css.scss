@@ -1,4 +1,12 @@
-a.toggle_help:hover {
+.question {
+  .help {
+    .help-togglers { margin-bottom: 10px; }
+    .help-toggle-off, .help-content { display: none; }
+  }
+  form { margin: 0; }
+}
+
+/*a.toggle_help:hover {
   text-decoration: none;
 }
 
@@ -11,7 +19,7 @@ div.toggle_help {
 }
 
 form label {
-/*  margin: 10px 20px;
+  margin: 10px 20px;
   cursor: pointer;
   border: 1px solid white;
   border-radius: 3px;
@@ -29,4 +37,5 @@ form label {
     font-size: 20px;
     margin-left: 10px;
   }
-*/}
+}
+*/

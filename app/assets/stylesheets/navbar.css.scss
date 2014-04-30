@@ -1,0 +1,10 @@
+.navbar {
+  margin-bottom: 40px;
+  background-color: $colorBeige;
+  > .container .navbar-brand {
+    padding: 20px 15px;
+    img { height: 80px; }
+  }
+}
+
+.navbar-default .navbar-nav > li > a { color: $link-color; font-size: $font-size-large; }

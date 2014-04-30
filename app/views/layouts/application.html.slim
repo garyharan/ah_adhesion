@@ -6,34 +6,30 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body id="#{controller_name}" class="#{action_name}"
-    nav.navbar.navbar-default role="navigation"
+    nav.navbar.navbar-default.navbar-static-top role="navigation"
       .container
-        ul.nav.navbar-nav.navbar-left
-          li
-            = link_to root_path do
-              = image_tag "logo.jpg"
-          li
+        .navbar-header
+          = link_to root_path, :class => "navbar-brand" do
+            = image_tag "logo.jpg"
         ul.nav.navbar-nav.navbar-right
+          li= link_to t("nav.how_this_works"), how_this_works_path
+          li= link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
+          li= link_to t("nav.my_profile"), edit_profile_path
           - unless user_signed_in?
             li= link_to t("authentication.sign_in"), new_user_session_path
             li= link_to t("authentication.sign_up"), new_user_registration_path
           - else
             li= link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
-        #second_nav.container-fluid
-          ul.nav.navbar-nav.navbar-right
-            li= link_to t("nav.how_this_works"), how_this_works_path
-            li= link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
-            li= link_to t("nav.my_profile"), edit_profile_path
 
     section#content
       .container
         = yield
 
-    nav.navbar.navbar-default
-      .container
-        #footer.navbar-header
-          h3 Pour informations ou questions
-          b Jour de la Terre Québec
-          div = "Courriel:  #{link_to('reservert@jourdelaterre.org', 'mailto:reservert@jourdelaterre.org')}".html_safe
-          div Téléphone (hors Montréal): 1 800 424 8758 poste 228
-          div Téléphone Montréal: 514 728-0116 poste 228
+    .container-fluid
+      #footer
+        h3 Pour informations ou questions
+        p
+          strong Jour de la Terre Québec
+        p = "Courriel:  #{link_to('reservert@jourdelaterre.org', 'mailto:reservert@jourdelaterre.org')}".html_safe
+        p Téléphone (hors Montréal): 1 800 424 8758 poste 228
+        p Téléphone Montréal: 514 728-0116 poste 228
