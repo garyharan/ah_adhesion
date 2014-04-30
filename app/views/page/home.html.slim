@@ -1,4 +1,4 @@
-#welcome
+.jumbotron
   h1 Bienvenue!
   - if user_signed_in?
     p Vous êtes connecté en tant que #{current_user.email}.
@@ -8,7 +8,7 @@
       = link_to "Continuer le questionnaire &#9658;".html_safe, certification_questions_path(@active_certification)
   - else
     p Pour accéder au site veuillez choisir l'une des options suivantes:
-    ul
-      = link_to t("authentication.sign_in"), new_user_session_path
-      ' &nbsp;
-      = link_to t("authentication.sign_up"), new_user_registration_path
+    p
+      = link_to t("authentication.sign_in"), new_user_session_path, :class => "btn btn-success btn-lg"
+      '
+      = link_to t("authentication.sign_up"), new_user_registration_path, :class => "btn btn-success btn-lg"

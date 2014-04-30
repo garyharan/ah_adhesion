@@ -7,4 +7,18 @@
   }
 }
 
-.navbar-default .navbar-nav > li > a { color: $link-color; font-size: $font-size-large; }
+.navbar-default .navbar-nav > li {
+  > a {
+    color: $link-color; font-size: $font-size-large;
+  }
+  &.nav-item-power {
+    a { color: $colorOrange; }
+  }
+}
+
+.navbar-default .navbar-nav > .active {
+  padding-top: 40px; padding-bottom: 40px;
+  > a, a:hover, a:focus {
+    color: white; background-color: $link-color; padding-top: 10px; padding-bottom: 10px; border-radius: $border-radius-base;
+  }
+}

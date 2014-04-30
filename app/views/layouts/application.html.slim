@@ -14,12 +14,12 @@ html
         ul.nav.navbar-nav.navbar-right
           li = link_to t("nav.how_this_works"), how_this_works_path
           li = link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
-          li= link_to t("nav.my_profile"), edit_profile_path
+          li = link_to t("nav.my_profile"), edit_profile_path
           - unless user_signed_in?
-            li= link_to t("authentication.sign_in"), new_user_session_path
-            li= link_to t("authentication.sign_up"), new_user_registration_path
+            li.nav-item-power = link_to t("authentication.sign_up"), new_user_registration_path
+            li.nav-item-power = link_to t("authentication.sign_in"), new_user_session_path
           - else
-            li= link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
+            li.nav-item-power = link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
 
     section#content
       .container
