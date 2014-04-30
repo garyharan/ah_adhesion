@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:edit, :update]
   resources :attachments, only: [:new, :create]
-  resources :certifications, only: [:index, :show, :create] do
+  resources :certifications, only: [:index, :show, :edit, :create] do
+    post :submit
+    get :payment
     resources :questions, only: :index
   end
 

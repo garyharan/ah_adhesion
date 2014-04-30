@@ -77,4 +77,18 @@ describe CertificationsController do
     end
   end
 
+  describe "POST submit" do
+    let(:certification) { FactoryGirl.create :certification }
+
+    it "should change the state to pending_payment" do
+      post :submit, { :certification_id => certification.id }
+      assigns(:certification).state.should == "pending_payment"
+    end
+
+    it "should set the certification accepted_contract date" do
+      post :submit, { :certification_id => certification.id }
+      assigns(:certification).accepted_contract_at.should_not be_nil
+    end
+  end
+
 end
