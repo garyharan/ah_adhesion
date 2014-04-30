@@ -12,4 +12,7 @@ table class="question"
       = link_to raw("&#9654;")  + " Voir l'astuce",   "#", class: "help_on toggle_help"
       = link_to raw("&#x25BC;") + " Cacher l'astuce", "#", class: "help_off toggle_help"
       div class="toggle_help" = question.help_fr
-
+  tr
+    td
+    td class="form"
+      = render @answers.answer_for(question)
