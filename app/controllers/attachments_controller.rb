@@ -6,13 +6,11 @@ class AttachmentsController < ApplicationController
   end
 
   def create
-    @attachment = Attachment.find(params[:id])
-    # FIXME: secure this
-    if @attachment.update_attributes(attachment_params)
-      head :ok
-    else
-      head 400
-    end
+    # FIXME: secure this?
+    @answer = Answer.find(params[:answer_id])
+    @attachment = @answer.attachments.create!(attachment_params)
+    
+    head :ok
   end
   
   private
