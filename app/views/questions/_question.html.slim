@@ -7,7 +7,6 @@ table class="question"
       td
       td class="proof" = "Preuve requise: #{question.send("proof_fr")}"
       td class="file_uploader" id="file_uploader_question_#{question.id}"
-
   tr
     td
     td class="help"
@@ -18,3 +17,6 @@ table class="question"
     td
     td class="form"
       = render @answers.answer_for(question)
+  tr class="proof_files"
+    td
+    td

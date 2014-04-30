@@ -15,3 +15,8 @@ $(document).on "page:change", ->
 
     if $(e.target).prop('tagName') != 'INPUT'
       return false
+
+
+  $(".answer_form").bind "ajax:success", (xhr, data, status) ->
+    $(this).closest("table").find("tr.proof_files td:last").append(data)
+    $(this).closest("table").find("tr.proof_files td:last form:last").S3Uploader()
