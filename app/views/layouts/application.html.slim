@@ -5,9 +5,9 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  body
+  body id="#{controller_name}" class="#{action_name}"
     nav.navbar.navbar-default role="navigation"
-      .container-fluid
+      .container
         ul.nav.navbar-nav.navbar-left
           li
             = link_to root_path do
@@ -26,11 +26,11 @@ html
             li= link_to t("nav.my_profile"), edit_profile_path
 
     section#content
-      .centered
+      .container
         = yield
 
     nav.navbar.navbar-default
-      .centered
+      .container
         #footer.navbar-header
           h3 Pour informations ou questions
           b Jour de la Terre Québec
