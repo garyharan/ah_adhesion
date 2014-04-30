@@ -9,10 +9,10 @@ class AttachmentsController < ApplicationController
     # FIXME: secure this?
     @answer = Answer.find(params[:answer_id])
     @attachment = @answer.attachments.create!(attachment_params)
-    
-    head :ok
+
+    render @attachment, layout: false
   end
-  
+
   private
     def attachment_params
       params.permit(:url, :filename, :filepath, :filesize, :filetype)

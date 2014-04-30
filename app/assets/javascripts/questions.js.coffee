@@ -18,4 +18,8 @@ $(document).on "page:change", ->
 
   $(".answer_form").bind "ajax:success", (xhr, data, status) ->
     $(this).closest("table").find("tr.proof_files td:last").append(data)
-    $(this).closest("table").find("tr.proof_files td:last form:last").S3Uploader()
+    upload_form = $(this).closest("table").find("tr.proof_files td:last form:last")
+    upload_form.S3Uploader()
+
+    upload_form.bind "ajax:success", (e, data) ->
+      $(this).closest("table.question").find("ul.addition").append(data)

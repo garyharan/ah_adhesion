@@ -20,3 +20,5 @@ table class="question"
   tr class="proof_files"
     td
     td
+      ul class="addition"
+        = render @answers.answer_for(question).attachments
