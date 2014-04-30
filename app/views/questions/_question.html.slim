@@ -19,7 +19,7 @@ table class="question"
     td class="form"
       = render answer
 
-  tr class="proof_files"
+  tr class="proof_files" style="display: #{answer.yes? ? '' : 'none'}"
     td
     td
       ul class="addition"
