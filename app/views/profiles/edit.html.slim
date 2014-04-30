@@ -13,6 +13,9 @@
             = f.label :member_number, "N° de membre de l'AHQ"
             = f.text_field :member_number, :class => "form-control"
           .form-group
+            = f.label :member_since, "Membre Réservert depuis... (année)"
+            = f.text_field :member_since, :class => "form-control"
+          .form-group
             = f.label :created_at, "Date"
             = f.date_field :created_at, :class => "form-control"
           .form-group
@@ -48,4 +51,8 @@
           .form-group
             = f.label :website, "Site internet de l'établissement"
             = f.text_field :website, :class => "form-control"
+          .form-group
+            = f.label :establishment_type, "Type d'établissement"
+            - types = ["Hôtel", "Gîte", "Résidences de tourisme"]
+            = f.select :establishment_type, types.zip(types), :class => "form-control"
           = f.submit "Sauvegarder", :class => "btn btn-primary"

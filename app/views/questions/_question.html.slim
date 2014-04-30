@@ -1,3 +1,4 @@
+- answer = @answers.answer_for(question)
 tr.question
   td = question.title
   td
@@ -5,6 +6,7 @@ tr.question
       strong = question.send("question_fr")
     - unless question.send("proof_fr").blank?
       p.proof = "Preuve requise: #{question.send("proof_fr")}"
+      p.file_uploader id="file_uploader_question_#{question.id}"
     .help
       .help-togglers
         = link_to "#", class: "help-toggle-on help-toggle" do
@@ -14,4 +16,8 @@ tr.question
           ' Cacher l'astuce
           i.glyphicon.glyphicon-chevron-up
       .well.well-small.help-content = question.help_fr
-    = render @answers.answer_for(question)
+    = render answer
+    .proof_files
+      ul class="addition"
+        = render answer.attachments
+      = render template: "attachments/new.html.slim", locals: { answer: answer } if answer.yes?

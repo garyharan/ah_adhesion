@@ -45,9 +45,11 @@ describe ProfilesController do
     describe "GET 'update'" do
       it "returns http success" do
         user.profile.update_attribute(:name, "oldname")
-        post :update, { profile: { name: "newname" } }
+        post :update, { profile: { name: "newname", establishment_type: "Résidences de tourisme", member_since: "2014" } }
         response.should be_redirect
         assigns(:profile).name.should == 'newname'
+        assigns(:profile).establishment_type.should == 'Résidences de tourisme'
+        assigns(:profile).member_since.should == 2014
       end
     end
   end

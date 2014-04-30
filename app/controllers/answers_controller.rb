@@ -5,7 +5,7 @@ class AnswersController < ApplicationController
     @answer = find_or_create_answer
 
     if save_answer
-      head :ok
+      render template: "attachments/new.html.slim", layout: false, locals: { answer: @answer }
     end
   end
 

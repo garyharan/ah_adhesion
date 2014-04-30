@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429030115) do
+ActiveRecord::Schema.define(version: 20140430023852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20140429030115) do
     t.boolean  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "attachments", force: true do |t|
+    t.string   "comment"
+    t.string   "url"
+    t.string   "filename"
+    t.string   "filepath"
+    t.string   "filesize"
+    t.string   "filetype"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "answer_id"
   end
 
   create_table "certifications", force: true do |t|
@@ -49,6 +61,8 @@ ActiveRecord::Schema.define(version: 20140429030115) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "member_since"
+    t.string   "establishment_type"
   end
 
   create_table "questions", force: true do |t|
