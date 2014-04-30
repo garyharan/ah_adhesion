@@ -12,7 +12,7 @@ describe "the signin process", type: :feature do
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
 
-    click_button 'Sign in'
+    click_button 'Connection'
   end
 
   before do
