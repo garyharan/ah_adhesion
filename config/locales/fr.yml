@@ -6,6 +6,7 @@ fr:
     email: "Courriel"
     password: "Mot de passe"
     password_confirmation: "Confirmation de mot de passe"
+    send_me_password_reset_instructions: "Envoyez moi les instructions"
 
   forms:
     continue: "Continuer"
@@ -34,3 +35,11 @@ fr:
   sections:
     previous: "Précédent"
     next: "Suivant"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Veuillez entrer votre email"

@@ -11,3 +11,6 @@ h2 = t("authentication.sign_in").titleize
     = f.hidden_field :remember_me, value: true if devise_mapping.rememberable?
 
   div= f.submit t("authentication.sign_in")
+
+
+.forgot_password = link_to "Oublié votre mot de passe?", new_user_password_path
