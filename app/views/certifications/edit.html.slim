@@ -6,7 +6,7 @@ p En tant que responsable du Programme Réservert, je confirme que…
 
 
 = form_for @certification, url: certification_submit_path(@certification), method: :post, html: { 'data-must-check-all' => true } do |f|
-  table class="contract"
+  table.table.contract
     tr
       td = check_box_tag :accept
       td la personne responsable possède l’autorité pour remplir le questionnaire et ce contrat d’adhésion au nom de l’établissement.
