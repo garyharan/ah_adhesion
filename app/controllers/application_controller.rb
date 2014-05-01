@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def set_active_certification
     return nil unless user_signed_in?
-    @active_certification = current_user.certifications.where(state: :draft).first
+    @active_certification = current_user.certifications.first # this won't be true as for next year
   end
 
   def set_locale
