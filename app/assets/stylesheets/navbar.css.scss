@@ -14,7 +14,11 @@ $navbar-accent-color: #e6e3c9;
     position: relative;
     .navbar-nav {
       > li {
-        a { text-decoration: none; }
+        a {
+          text-decoration: none;
+          padding-top: 80px;
+          padding-bottom: 10px;
+        }
       }
       &.navbar-utilities {
         > li {
@@ -23,7 +27,7 @@ $navbar-accent-color: #e6e3c9;
             color: $color-blue; line-height: 1.4; padding: 10px 0;
             &:hover { text-decoration: underline; }
           }
-        } 
+        }
       }
       &.navbar-main {
         position: absolute; right: 15px; bottom: 10px;
