@@ -7,13 +7,13 @@
     p Les réponses et les preuves que vous déposez sur la plate forme sont validées par un mandataire externe : Le Jour de la Terre Québec. Pour toutes questions sur le contenu ou la technologie, vous pouvez les rejoindre aux coordonnées suivantes:
 
     div
-      b Courriel : 
+      b Courriel :
       span reservert@jourdelaterre.org
       br
-      b Téléphone (hors Montréal) : 
+      b Téléphone (hors Montréal) :
       span 1 800 424 8758 poste 228
       br
-      b Téléphone Montréal : 
+      b Téléphone Montréal :
       span 514 728-0116 poste 228
 
     h2 Général
@@ -28,7 +28,7 @@
 
     h2 Procédure pour le questionnaire
 
-    p Vous devez répondre à toutes les questions en cochant la case OUI ou la case NON.  Par défaut, toutes les cases sont cochées NON lorsque vous ouvrez les pages. Lorsqu’une question ne s’applique pas à votre établissement, laissez la case à NON. 
+    p Vous devez répondre à toutes les questions en cochant la case OUI ou la case NON.  Par défaut, toutes les cases sont cochées NON lorsque vous ouvrez les pages. Lorsqu’une question ne s’applique pas à votre établissement, laissez la case à NON.
 
     p Lorsque vous répondez positivement, vous devez télécharger une preuve dans le questionnaire. Vous pouvez télécharger plus d’un document si c’est nécessaire. Soyez le plus clair possible dans les preuves notamment lorsqu’une photo est demandée. Les photos floues seront systématiquement refusées.
 
@@ -52,3 +52,11 @@
     p Une fois que vous avez rempli votre questionnaire et que l’AHQ a reçu votre paiement, les informations sont envoyées au mandataire pour les valider. Lorsque la validation est complétée, vous recevrez un courriel d’acceptation, la procédure pour installer le widget sur votre site Internet et une attestation officielle à afficher.
 
     p Le Jour de la Terre Québec s’engage à traiter un dossier sans demandes de clarification dans les 21 jours suivants la réception du paiement par l’AHQ.
+
+.row
+  .col-md-8.col-md-offset-2
+    .pull-right
+      - if @active_certification.present?
+        = link_to "Continuez vers ma certification", certification_questions_path(@active_certification), class: "btn btn-default"
+      - else
+        = link_to "Commencer le processus de certification", url: certification_path, method: :post, class: "btn btn-default"
