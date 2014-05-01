@@ -1,5 +1,9 @@
 #footer {
   padding: 40px 0; border-top: 1px solid #cdcdcd;
   h3 { margin-top: 0; font-size: $font-size-large; font-weight: bold; }
+  .credit {
+    float: right; text-align: center;
+    small { display: block; margin: 0 0 5px; }
+  }
   p:last-child { margin: 0; }
 }
