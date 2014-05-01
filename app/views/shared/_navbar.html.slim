@@ -3,13 +3,12 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
     .navbar-header
       = link_to root_path, :class => "navbar-brand" do
         = image_tag "logo.jpg"
-    ul.nav.navbar-nav.navbar-utilities.navbar-right
+    ul.nav.navbar-nav.navbar-right
+      li= link_to t("nav.how_this_works"), comment_ca_fonctionne_path
+      li= link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
+      li= link_to t("nav.my_profile"), edit_profil_path if user_signed_in?
       - unless user_signed_in?
         li = link_to t("authentication.sign_up"), new_user_registration_path
         li = link_to t("authentication.sign_in"), new_user_session_path
       - else
         li = link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
-    ul.nav.navbar-nav.navbar-right
-      li= link_to t("nav.how_this_works"), comment_ca_fonctionne_path
-      li= link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
-      li= link_to t("nav.my_profile"), edit_profil_path if user_signed_in?
