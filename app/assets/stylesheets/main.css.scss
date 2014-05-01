@@ -1,7 +1,7 @@
 #content { padding: 40px 0 80px; background: url(asset-path('body_bg.png')) repeat top center; }
 
 .jumbotron {
-  background-color: rgba(0, 0, 0, 0.025);
+  background-color: transparent;
   .introduction {
     margin-top: 40px;
     p { font-size: $font-size-large; }
@@ -13,48 +13,3 @@ a {
   &:hover { text-decoration: none; }
 }
 .btn { text-decoration: none; }
-
-/*section#content {
-  min-height: 400px;
-
-  h2 {
-    font-size: 18px;
-  }
-}
-
-td.title {
-  vertical-align: text-top;
-}
-
-td.body {
-  font-weight: bold;
-}
-
-th, td {
-  padding: 10px !important;
-}
-
-section {
-  .centered {
-    width: 890px;
-    min-height: 65px;
-    margin: auto;
-  }
-}
-
-.navbar-default {
-  background-color: #fefef2 !important;
-  background-image: none !important;
-}
-
-#second_nav {
-  position: absolute;
-  bottom: 12px;
-  padding-right: 40px;
-  li a {
-    @extend .btn-success;
-    border-radius: 3px;
-    margin-left: 5px;
-  }
-}
-*/
