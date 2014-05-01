@@ -1,7 +1,18 @@
-#content {
-  padding: 40px 0 80px; background: url("/assets/body_bg.jpg") repeat center center;
+#content { padding: 40px 0 80px; background: url("/assets/body_bg.png") repeat center center; }
+
+.jumbotron {
+  background-color: rgba(0, 0, 0, 0.025);
+  .introduction {
+    margin-top: 40px;
+    p { font-size: $font-size-large; }
+  }
 }
-.jumbotron { background-color: rgba(0, 0, 0, 0.025); }
+
+a {
+  text-decoration: underline;
+  &:hover { text-decoration: none; }
+}
+.btn { text-decoration: none; }
 
 /*section#content {
   min-height: 400px;

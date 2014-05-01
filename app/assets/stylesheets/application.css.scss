@@ -1,12 +1,21 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic);
+/* Variables */
+
+$color-beige: rgb(254, 254, 242);
+$color-blue: #2573a9;
+$color-green: #5a9046;
+
+$font-family-sans-serif: "Open sans", sans-serif;
 
 $navbar-height: 120px;
-$colorBeige: rgb(254, 254, 242);
-$colorOrange: rgb(249, 153, 33);
-$font-family-sans-serif: "Open sans", sans-serif;
-$link-color: #5a9046;
-$btn-success-bg: $link-color;
 
+$link-color: $color-green;
+$btn-success-bg: $color-green;
+$btn-primary-bg: $color-blue;
+$pagination-active-bg: $color-blue;
+
+/* Styles */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic);
 @import "bootstrap";
 @import "navbar";
 @import "footer";

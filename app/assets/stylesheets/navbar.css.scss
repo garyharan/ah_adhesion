@@ -2,7 +2,7 @@ $navbar-accent-color: #e6e3c9;
 
 .navbar {
   margin-bottom: 0; border-bottom: 4px solid $navbar-accent-color;
-  background-color: $colorBeige;
+  background-color: $color-beige;
   > .container .navbar-brand {
     padding: 20px 15px;
     img { height: 80px; }
@@ -13,10 +13,16 @@ $navbar-accent-color: #e6e3c9;
   .container {
     position: relative;
     .navbar-nav {
+      > li {
+        a { text-decoration: none; }
+      }
       &.navbar-utilities {
         > li {
         margin: 0 0 0 25px;
-          a { color: #2573a9; line-height: 1.4; padding: 10px 0; }
+          a {
+            color: $color-blue; line-height: 1.4; padding: 10px 0;
+            &:hover { text-decoration: underline; }
+          }
         } 
       }
       &.navbar-main {
@@ -32,12 +38,5 @@ $navbar-accent-color: #e6e3c9;
         }
       }
     }
-  }
-}
-
-.navbar-default .navbar-nav > .active {
-  padding-top: 40px; padding-bottom: 40px;
-  > a, a:hover, a:focus {
-    color: white; background-color: $link-color; padding-top: 10px; padding-bottom: 10px; border-radius: $border-radius-base;
   }
 }
