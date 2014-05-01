@@ -25,7 +25,7 @@ $(document).on "page:change", ->
 
   # This is the part that injects upload form if it is not there yet.
   $(".answer_form").bind "ajax:success", (xhr, data, status) ->
-    if $(this).closest("table.question").find("tr.proof_files form").length < 0
+    if $(this).closest("table.question").find("tr.proof_files form").length == 0
       $(this).closest("table").find("tr.proof_files td:last").append(data)
       upload_form = $(this).closest("table").find("tr.proof_files td:last form:last")
       upload_form.S3Uploader()
