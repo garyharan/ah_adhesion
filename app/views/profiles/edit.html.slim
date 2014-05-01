@@ -54,5 +54,5 @@
           .form-group
             = f.label :establishment_type, "Type d'établissement"
             - types = ["Hôtel", "Gîte", "Résidences de tourisme"]
-            = f.select :establishment_type, types.zip(types), :class => "form-control"
+            = f.select :establishment_type, types.zip(types), {}, { :class => "form-control" }
           = f.submit "Sauvegarder", :class => "btn btn-primary"
