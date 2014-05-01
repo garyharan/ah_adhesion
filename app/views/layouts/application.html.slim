@@ -11,15 +11,16 @@ html
         .navbar-header
           = link_to root_path, :class => "navbar-brand" do
             = image_tag "logo.jpg"
-        ul.nav.navbar-nav.navbar-right
+        ul.nav.navbar-nav.navbar-utilities.navbar-right
+          - unless user_signed_in?
+            li = link_to t("authentication.sign_up"), new_user_registration_path
+            li = link_to t("authentication.sign_in"), new_user_session_path
+          - else
+            li = link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
+        ul.nav.navbar-nav.navbar-main
           li = link_to t("nav.how_this_works"), how_this_works_path
           li = link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
           li = link_to t("nav.my_profile"), edit_profile_path
-          - unless user_signed_in?
-            li.nav-item-power = link_to t("authentication.sign_up"), new_user_registration_path
-            li.nav-item-power = link_to t("authentication.sign_in"), new_user_session_path
-          - else
-            li.nav-item-power = link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
 
     section#content
       .container

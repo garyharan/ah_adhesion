@@ -1,5 +1,7 @@
+$navbar-accent-color: #e6e3c9;
+
 .navbar {
-  margin-bottom: 40px;
+  margin-bottom: 40px; border-bottom: 4px solid $navbar-accent-color;
   background-color: $colorBeige;
   > .container .navbar-brand {
     padding: 20px 15px;
@@ -7,12 +9,28 @@
   }
 }
 
-.navbar-default .navbar-nav > li {
-  > a {
-    color: $link-color; font-size: $font-size-large;
-  }
-  &.nav-item-power {
-    a { color: $colorOrange; }
+.navbar-default {
+  .container {
+    position: relative;
+    .navbar-nav {
+      &.navbar-utilities {
+        > li {
+          a { color: #2573a9; line-height: 1.4; padding: 10px 0; }
+        } 
+      }
+      &.navbar-main {
+        position: absolute; right: 15px; bottom: 10px;
+        > li {
+          margin: 0 0 0 10px;
+          a {
+            font-weight: bold; padding: 10px 15px; color: black; background: $navbar-accent-color;
+            border-radius: $border-radius-base;
+            &:hover, &:active, &:focus { background: white; color: $link-color; }
+          }
+          &.active { background: white; color: $link-color; }
+        }
+      }
+    }
   }
 }
 

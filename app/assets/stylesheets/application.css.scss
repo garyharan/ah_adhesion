@@ -4,6 +4,8 @@ $navbar-height: 120px;
 $colorBeige: rgb(254, 254, 242);
 $colorOrange: rgb(249, 153, 33);
 $font-family-sans-serif: "Open sans", sans-serif;
+$link-color: #5a9046;
+$btn-success-bg: $link-color;
 
 @import "bootstrap";
 @import "navbar";
