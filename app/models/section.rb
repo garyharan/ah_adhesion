@@ -4,6 +4,6 @@ class Section < ActiveRecord::Base
   scope :top_level, -> { where(subsection_id: nil) }
 
   def title
-    title_fr
+    "#{[section_id, subsection_id].join(".")}#{title_fr}"
   end
 end

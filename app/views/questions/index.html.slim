@@ -1,7 +1,6 @@
-.page-header
-  h1 = @section.title
-
 = render partial: 'section_links'
+
+h1 = @section.title
 
 - @subsections.each do |subsection|
   h2 = subsection.title
