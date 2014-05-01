@@ -6,49 +6,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body id="#{controller_name}" class="#{action_name}"
-    nav.navbar.navbar-default.navbar-static-top role="navigation"
-      .container
-        .navbar-header
-          = link_to root_path, :class => "navbar-brand" do
-            = image_tag "logo.jpg"
-        ul.nav.navbar-nav.navbar-utilities.navbar-right
-          - unless user_signed_in?
-            li = link_to t("authentication.sign_up"), new_user_registration_path
-            li = link_to t("authentication.sign_in"), new_user_session_path
-          - else
-            li = link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
-        ul.nav.navbar-nav.navbar-right
-          li= link_to t("nav.how_this_works"), comment_ca_fonctionne_path
-          li= link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
-          li= link_to t("nav.my_profile"), edit_profil_path
+    = render "shared/navbar"
 
     section#content
       .container
         = yield
 
-    #footer
-      .container
-        .credit
-          small Une initiative de
-          = image_tag "logo_ahq.jpg"
-        h3 Pour informations ou questions
-        p
-          strong À propos de ce questionnaire ou pour de l’aide dans la mise en place des actions
-        p
-          strong Jour de la Terre Québec
-          br
-          ' Courriel :
-          = mail_to "reservert@jourdelaterre.org"
-          br
-          | Téléphone (hors Montréal) : 1 800 424 8758  poste 228
-          br
-          | Téléphone Montréal : 514 728-0116  poste 228
-        p
-          strong Sur le programme Réservert et sa certification
-        p
-          strong Xavier Gret
-          br
-          ' Courriel :
-          = mail_to "xgret@hotelleriequebec.com"
-          br
-          | 579 721-6215 / 1-877-769-9776 poste 2
+    = render "shared/footer"
