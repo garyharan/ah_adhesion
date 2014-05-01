@@ -1,0 +1,82 @@
+h1 Page de paiement
+
+p Coût de l’adhésion pour une durée de 2 ans par établissement payable en un seul versement au moment de l’inscription.
+
+p Veuillez noter que le traitement du dossier débute lors de la réception du paiement par l’AHQ.
+
+table class="payment"
+  tr
+    th
+    th Option Membre
+    th Option Non-Membre
+  tr
+    td
+      p title="Établissements d’hébergement touristiques de catégorie Hôtel (H)" Hôtel (H)
+      p title="Établissements d’hébergement touristiques de catégorie Résidences de tourisme (RT) de 6 unités et plus" Résidences de tourisme (RT) 6+ Unités
+    td.price
+      div 599$
+      div + TPS 29,95	à 5%
+      div + TVQ 59,75 à 9,975%
+      div
+        ' = 688,70$
+        form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+          input name="cmd" type="hidden" value="_s-xclick"
+          input name="hosted_button_id" type="hidden" value="CD53PNQDTWKZA"
+          input alt=("PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !") border="0" name="submit" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_paynow_SM.gif" type="image"
+            img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+    td.price
+      div 899$
+      div + TPS 44.95$ à 5%
+      div + TVQ 89.68$ à 9,975%
+      div
+        ' = 1033.63$
+        form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+          input name="cmd" type="hidden" value="_s-xclick"
+          input name="hosted_button_id" type="hidden" value="W77TRK684H842"
+          input alt=("PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !") border="0" name="submit" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_paynow_SM.gif" type="image"
+            img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+
+
+  tr class="paypal"
+    td
+    td
+
+    td
+  tr
+    td
+      p title="Établissements d’hébergement touristiques de catégorie Gîte (G)" Gîte (G)
+      p title="Établissements d’hébergement touristiques de catégorie Résidences de tourisme (RT) de 5 unités et moins" Résidences de tourisme (RT) 5- Unités
+    td.price
+      div 425 $
+      div + TPS 21,25$ à 5%
+      div + TVQ 42,39$ à 9,975%
+      div
+        ' = 488,64 $
+        form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+          input name="cmd" type="hidden" value="_s-xclick"
+          input name="hosted_button_id" type="hidden" value="93B8VBSZQWMB2"
+          input alt=("PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !") border="0" name="submit" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_paynow_SM.gif" type="image"
+            img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+
+    td.price
+      div 725 $
+      div + TPS 36.25$ à 5%
+      div + TVQ 72.32$ à 9,975%
+      div
+        ' =  833.57 $
+        form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top"
+          input name="cmd" type="hidden" value="_s-xclick"
+          input name="hosted_button_id" type="hidden" value="YYBGAG6CKWVS4"
+          input alt=("PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !") border="0" name="submit" src="https://www.paypalobjects.com/fr_CA/i/btn/btn_paynow_SM.gif" type="image"
+            img alt="" border="0" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1"
+
+hr
+
+p = "Si vous préférez payer par chèque payer à l'ordre de: <b>Association Hôtellerie Québec</b> et faites parvenir le paiment à l'adresse suivante".html_safe
+
+address
+  b Association Hôtellerie Québec
+  br
+  em 450, Chemin de Chambly, bureau 100
+  br
+  em Longueuil (Québec) J4H 3L7

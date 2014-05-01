@@ -17,7 +17,7 @@ tr.question
           i.glyphicon.glyphicon-chevron-up
       .well.well-small.help-content = question.help_fr
     = render answer
-    .proof_files
+    .proof_files style="display: #{answer.yes? ? '' : 'none'}"
       ul class="addition"
         = render answer.attachments
       = render template: "attachments/new.html.slim", locals: { answer: answer } if answer.yes?

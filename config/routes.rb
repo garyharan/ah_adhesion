@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'how_this_works', to: 'page#how_this_works'
+  # http://adhesion.reservert.com/paypal_success
+
+  get 'comment_ca_fonctionne', to: 'page#how_this_works'
   get 'questions/index'
 
-  resource :profile, only: [:edit, :update]
+  resource :profil, only: [:edit, :update], controller: 'profiles'
   resources :attachments, only: [:new, :create]
-  resources :certifications, only: [:index, :show, :create] do
+  resources :certifications, only: [:index, :show, :edit, :create] do
+    post :submit
+    get :payment
     resources :questions, only: :index
   end
 

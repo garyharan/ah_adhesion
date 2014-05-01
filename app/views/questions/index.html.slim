@@ -9,3 +9,5 @@
     = render @questions.select {|q| q.subsection_id == subsection.subsection_id }
 
 = render partial: 'section_links'
+
+= render 'submission_form'

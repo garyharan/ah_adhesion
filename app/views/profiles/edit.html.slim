@@ -1,11 +1,9 @@
 .row
   .col-md-6.col-md-offset-3
-
     .panel.panel-default.panel-large
       .panel-body
         h2 Mes Coordonnées
-
-        = form_for @profile, url: profile_path(@profile) do |f|
+        = form_for @profile, url: profil_path(@profile) do |f|
           .form-group
             = f.label :name, "Nom de l'établissement"
             = f.text_field :name, :class => "form-control"

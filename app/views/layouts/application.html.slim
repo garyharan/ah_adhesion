@@ -17,10 +17,10 @@ html
             li = link_to t("authentication.sign_in"), new_user_session_path
           - else
             li = link_to t("authentication.sign_out"), destroy_user_session_path, method: :delete
-        ul.nav.navbar-nav.navbar-main
-          li = link_to t("nav.how_this_works"), how_this_works_path
-          li = link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
-          li = link_to t("nav.my_profile"), edit_profile_path
+        ul.nav.navbar-nav.navbar-right
+          li= link_to t("nav.how_this_works"), comment_ca_fonctionne_path
+          li= link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
+          li= link_to t("nav.my_profile"), edit_profil_path
 
     section#content
       .container
