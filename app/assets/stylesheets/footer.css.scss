@@ -1,6 +1,5 @@
 #footer {
-  background: $colorBeige; margin-bottom: 15px; padding: 15px; border-radius: $border-radius-small;
-  text-align: center;
-  h3 { margin-top: 0; font-size: $font-size-large; }
-  p { margin: 0; }
+  padding: 40px 0; border-top: 1px solid #cdcdcd;
+  h3 { margin-top: 0; font-size: $font-size-large; font-weight: bold; }
+  p:last-child { margin: 0; }
 }
