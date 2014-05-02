@@ -1,8 +1,8 @@
 fr:
   authentication:
-    sign_in: "Connection"
+    sign_in: "Connexion"
     sign_up: "Inscription"
-    sign_out: "Déconnection"
+    sign_out: "Déconnexion"
     email: "Courriel"
     password: "Mot de passe"
     password_confirmation: "Confirmation de mot de passe"

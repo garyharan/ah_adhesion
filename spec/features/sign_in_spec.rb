@@ -6,13 +6,13 @@ describe "the signin process", type: :feature do
   def sign_in
     visit '/'
     within "nav:first" do
-      click_link 'Connection'
+      click_link 'Connexion'
     end
 
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
 
-    click_button 'Connection'
+    click_button 'Connexion'
   end
 
   before do
