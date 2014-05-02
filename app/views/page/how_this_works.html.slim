@@ -57,6 +57,6 @@
   .col-md-8.col-md-offset-2
     .pull-right
       - if @active_certification.present?
-        = link_to "Continuez vers ma certification", certification_questions_path(@active_certification), class: "btn btn-default"
+        = button_to "Continuez vers ma certification", certification_questions_path(@active_certification)
       - else
-        = link_to "Commencer le processus de certification", url: certification_path, method: :post, class: "btn btn-default"
+        = button_to "Commencer le processus de certification", certifications_path, method: :post

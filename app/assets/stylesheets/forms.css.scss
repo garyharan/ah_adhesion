@@ -1,0 +1,15 @@
+button, a.btn, input[type=submit] {
+  @extend .btn;
+  background-color: $normal-button;
+  color: white;
+  &:hover {
+    background-color: $hover-button;
+    color: white;
+    border: 1px solid darken($hover-button, 10%);
+  }
+  &:active {
+    background-color: $active-button;
+    color: white;
+    border: 1px solid darken($active-button, 10%);
+  }
+}
