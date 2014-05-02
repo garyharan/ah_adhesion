@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   # http://adhesion.reservert.com/paypal_success
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   get 'comment_ca_fonctionne', to: 'page#how_this_works'
   get 'questions/index'
 
