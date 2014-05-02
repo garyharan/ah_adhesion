@@ -22,4 +22,6 @@ class Certification < ActiveRecord::Base
       transition :approved => :expired
     end
   end
+  
+  scope :pending_payment, -> { where(state: 'pending_payment') }
 end
