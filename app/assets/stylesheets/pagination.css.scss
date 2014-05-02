@@ -1,0 +1,22 @@
+.pagination {
+  .active {
+    a {
+      background-color: $normal-button;
+      border: 1px solid lighten($normal-button, 10%);
+      &:hover {
+        background-color: $hover-button;
+        border: 1px solid lighten($normal-button, 10%);
+      }
+      &:active {
+        background-color: $active-button;
+      }
+    }
+  }
+
+  li > a:hover {
+    background-color: $active-button;
+    border: 1px solid lighten($normal-button, 10%);
+    color: white;
+  }
+}
+

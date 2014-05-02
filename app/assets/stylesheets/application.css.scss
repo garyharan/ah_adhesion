@@ -17,11 +17,13 @@ $pagination-active-bg: $color-blue;
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic);
 @import "bootstrap";
+@import "colors";
 @import "navbar";
 @import "footer";
 @import "main";
 @import "panels";
 @import "questions";
+@import "pagination";
 
 /*@import "authentication";
 @import "header";

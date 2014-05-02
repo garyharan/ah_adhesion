@@ -1,6 +1,6 @@
 ul.pagination
   - if @section.section_id - 1 > 0
-    li = link_to t("sections.previous"), certification_questions_path(section: @section.section_id - 1)
+    li = link_to t("sections.previous"), certification_questions_path(section: @section.section_id - 1), class: 'btn'
 
   -@top_sections.each do |top_section|
     - if top_section == @section
