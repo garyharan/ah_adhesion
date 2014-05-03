@@ -3,4 +3,5 @@
                    class: "s3-uploader",
                    key: "uploads/{timestamp}-{unique_id}-#{SecureRandom.hex}/${filename}" do
   = hidden_field_tag  "Content-Type", ""
+  p Ajouter une pièce justificative
   = file_field_tag :file, multiple: false
