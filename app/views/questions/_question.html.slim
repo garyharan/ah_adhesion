@@ -1,6 +1,9 @@
 - answer = @answers.answer_for(question)
 tr.question
-  td = question.title
+  td
+    = question.title
+    .spinner
+      = image_tag "spinner.gif"
   td
     p.body
       strong = question.send("question_fr")
@@ -20,4 +23,4 @@ tr.question
     .proof_files style="display: #{answer.yes? ? '' : 'none'}"
       ul class="addition"
         = render answer.attachments
-      = render template: "attachments/new.html.slim", locals: { answer: answer } if answer.yes?
+      = render template: "attachments/new.html.slim", locals: { answer: answer }

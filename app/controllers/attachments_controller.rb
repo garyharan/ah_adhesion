@@ -13,6 +13,13 @@ class AttachmentsController < ApplicationController
     render @attachment, layout: false, locals: { answer: @answer }
   end
 
+  def destroy
+    @attachment = Attachment.find(params[:id])
+    @attachment.destroy!
+
+    head :ok
+  end
+
   private
     def attachment_params
       params.permit(:url, :filename, :filepath, :filesize, :filetype)

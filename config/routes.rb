@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'questions/index'
 
   resource :profil, only: [:edit, :update], controller: 'profiles'
-  resources :attachments, only: [:new, :create]
+
+  resources :attachments, only: [:new, :create, :destroy]
+
   resources :certifications, only: [:index, :show, :edit, :create] do
     post :submit
     get :payment

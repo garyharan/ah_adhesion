@@ -2,19 +2,20 @@ $(document).on "page:change", ->
 
   class Question
     constructor: (@question) ->
-      @help  = $(@question).find(".help .help-toggle")
-      @label = $(@question).find("label")
-      @form  = $(@question).find(".answer_form")
+      @help    = $(@question).find(".help .help-toggle")
+      @label   = $(@question).find("label")
+      @form    = $(@question).find(".answer_form")
+      @spinner = $(@question).find(".spinner")
 
       @setupAnswerHandler()
       @setupHelpToggleHandler()
-      @setupAjaxUploaderFormInjection()
+      @awsUploaderHandler()
 
-      # some forms are preloaded
-      existing_s3_form = $(@question).find(".s3-uploader")
-      existing_s3_form.S3Uploader()
-      existing_s3_form.bind "ajax:success", (e, data) =>
-        $(@question).find("ul.addition").append(data)
+      @form.bind "ajax:send", (e) =>
+        @spinner.show()
+      @form.bind "ajax:success", (e) =>
+        @spinner.hide()
+
 
     setupHelpToggleHandler: =>
       @help.click (e) =>
@@ -41,21 +42,22 @@ $(document).on "page:change", ->
 
         # submit form as you would but don't do it twice because of bubbling
         $(form).trigger('submit.rails')
-        e.stopPropagation()
-        return false
 
-    setupAjaxUploaderFormInjection: =>
-      $(@form).bind "ajax:success", (xhr, data, status) ->
-        if $(@question).find(".s3-uploader").length == 0
-          $(this).closest("tr").find(".proof_files").append(data)
-          upload_form = $(this).closest("tr").find(".proof_files form:last")
-          upload_form.S3Uploader()
+    awsUploaderHandler: =>
+      s3_uploader_form = $(@question).find(".proof_files form.s3-uploader")
+      s3_uploader_form.S3Uploader()
 
-          upload_form.bind "ajax:success", (e, data) ->
-            $(this).closest(".question").find("ul.addition").append(data)
+      s3_uploader_form.bind "ajax:beforeSend", (e) =>
+        @spinner.show()
 
+      s3_uploader_form.bind "ajax:success", (e, data) =>
+        $(@question).find("ul.addition").append(data)
+        @spinner.hide()
 
-
-
-  $("tr.question").each (index) ->
+  $("tr.question:first-child").each (index) ->
     new Question(this)
+
+
+  class Attachment
+    constructor: (@attachment) ->
+

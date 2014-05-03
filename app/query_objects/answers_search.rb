@@ -11,6 +11,6 @@ class AnswersSearch
   end
 
   def answer_for(question)
-    @answers_hash[question.id] || Answer.new(certification_id: @certification.id, question_id: question.id)
+    @answers_hash[question.id] || Answer.create(certification_id: @certification.id, question_id: question.id)
   end
 end

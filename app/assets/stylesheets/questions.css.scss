@@ -4,6 +4,26 @@
     .help-toggle-off, .help-content { display: none; }
   }
   form { margin: 0; }
+
+  td {
+    .spinner {
+      margin: 10px;
+      text-align: center;
+      display: none;
+    }
+  }
+
+  .proof_files {
+    ul {
+      list-style: none;
+      padding-left: 0px;
+      li {
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+    margin-left: 55px;
+  }
 }
 
 /*a.toggle_help:hover {

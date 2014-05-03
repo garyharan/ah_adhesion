@@ -26,8 +26,19 @@ describe AttachmentsController do
       assigns(:attachment).filepath.should == "/uploads%2F1398829411720-21ug0qj8dw2vs4i-00ba17bf5d70784e51ae0cecb9ff9898%2FScreen+Shot+2014-03-24+at+1.59.25+PM.png"
       assigns(:attachment).filesize.should == "6268"
       assigns(:attachment).filetype.should == "image/png"
-      
+
     end
   end
 
+  describe "DELETE 'destroy'" do
+    it "deletes the attachment" do
+      attachment = FactoryGirl.create :attachment
+
+      expect {
+        delete :destroy, id: attachment.id
+      }.to change(Attachment, :count).by -1
+
+      response.should be_success
+    end
+  end
 end
