@@ -1,6 +1,8 @@
-button, a.btn, input[type=submit] {
+button, a.btn-download, input[type=submit] {
   @extend .btn;
+
   background-color: $normal-button;
+
   color: white;
   &:hover {
     background-color: $hover-button;
