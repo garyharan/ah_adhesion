@@ -17,5 +17,6 @@
           .form-group
             .col-md-offset-3.col-md-9
               = f.submit t("authentication.sign_in"), :class => "btn btn-primary"
-              '
-              = link_to "Oublié votre mot de passe?", new_user_password_path
+          .form-group
+            .col-md-offset-3.col-md-9
+              = link_to "Vous avez oublié votre mot de passe?", new_user_password_path
