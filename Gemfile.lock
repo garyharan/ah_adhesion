@@ -16,15 +16,6 @@ GIT
       ransack (~> 1.0)
       sass-rails
 
-PATH
-  remote: ../s3_direct_upload
-  specs:
-    s3_direct_upload (0.1.7)
-      coffee-rails (>= 3.1)
-      jquery-fileupload-rails (~> 0.4.1)
-      rails (>= 3.1)
-      sass-rails (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -188,6 +179,11 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    s3_direct_upload (0.1.7)
+      coffee-rails (>= 3.1)
+      jquery-fileupload-rails (~> 0.4.1)
+      rails (>= 3.1)
+      sass-rails (>= 3.1)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -252,7 +248,7 @@ DEPENDENCIES
   rails (= 4.1.0)
   rails_12factor
   rspec-rails
-  s3_direct_upload!
+  s3_direct_upload
   sass-rails (~> 4.0.3)
   slim-rails
   spring
