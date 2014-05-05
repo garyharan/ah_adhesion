@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-
-  # http://adhesion.reservert.com/paypal_success
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get 'comment_ca_fonctionne', to: 'page#how_this_works'
+  root 'page#home'
+  get 'comment_ca_fonctionne',  to: 'page#how_this_works'
+  get 'merci',                  to: 'page#merci'
+  get 'paypal_success',         to: 'page#paypal_success'
+
   get 'questions/index'
 
   resource :profil, only: [:edit, :update], controller: 'profiles'
@@ -20,6 +21,5 @@ Rails.application.routes.draw do
 
   resources :answers
 
-  root 'page#home'
   devise_for :users
 end
