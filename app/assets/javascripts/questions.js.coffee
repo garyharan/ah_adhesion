@@ -19,7 +19,7 @@ $(document).on "page:change", ->
 
     setupHelpToggleHandler: =>
       @help.click (e) =>
-        parent = $(@help).parents(".help")
+        parent = $(@help).closest(".help")
         parent.find(".help-toggle").toggle()
         parent.find(".help-content").toggle()
         return false
@@ -54,10 +54,5 @@ $(document).on "page:change", ->
         $(@question).find("ul.addition").append(data)
         @spinner.hide()
 
-  $("tr.question:first-child").each (index) ->
+  $("tr.question").each (index) ->
     new Question(this)
-
-
-  class Attachment
-    constructor: (@attachment) ->
-
