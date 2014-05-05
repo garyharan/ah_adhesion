@@ -31,7 +31,7 @@ describe "the signin process", type: :feature do
       FactoryGirl.create :section, subsection_id: 1
     end
 
-    it "guides me to create a certification" do
+    xit "guides me to create a certification" do
       click_link 'Commencer ma certification'
       expect(page).to have_content "1.1"
     end
