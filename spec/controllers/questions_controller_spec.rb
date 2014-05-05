@@ -25,6 +25,23 @@ describe QuestionsController do
       get :index, certification_id: @cert.id
       assigns(:section).should_not be_nil
     end
+
+    context "last section visited" do
+      before do
+        FactoryGirl.create :section, section_id: 12
+      end
+
+      it "sets the last visited section" do
+        get :index, certification_id: @cert.id, section: 12
+        user.reload.last_visited_section_id.should == 12
+      end
+
+      it "shows the last visited section when accessing it again" do
+        get :index, certification_id: @cert.id, section: 12
+        get :index, certification_id: @cert.id
+        assigns(:section).section_id.should == 12
+      end
+    end
   end
 
 end
