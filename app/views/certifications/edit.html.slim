@@ -4,6 +4,7 @@ p Vous devez cocher toutes les affirmations pour passer à l’étape suivante.
 
 p En tant que responsable du Programme Réservert, je confirme que…
 
+br
 
 = form_for @certification, url: certification_submit_path(@certification), method: :post, html: { 'data-must-check-all' => true } do |f|
   table.table.contract
@@ -41,4 +42,5 @@ p En tant que responsable du Programme Réservert, je confirme que…
       td = check_box_tag :accept
       td l’établissement accepte que le mandataire (Jour de la Terre Québec) et l’AHQ communiquent avec les clients qui ont déposé des commentaires négatifs dans le widget et ce, dans un objectif de service à la clientèle exemplaire.
 
-  = f.submit "Soumettre ma demande de certification"
+  br
+  = f.submit "Soumettre ma demande et procéder au paiement"
