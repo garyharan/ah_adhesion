@@ -1,9 +1,9 @@
 = form_for answer, :html => { :multipart => true, :class => "form-inline answer_form" }, :remote => true, 'data-no-turbolink' => true do |f|
   = f.hidden_field :certification_id, value: answer.certification_id
   = f.hidden_field :question_id, value: answer.question_id
-  = f.label :value_false, :class => "radio-inline" do
-    = radio_button_tag("answer[value]", false, answer.value == false)
+  = f.label "value_false_#{answer.id}", :class => "radio-inline" do
+    = radio_button_tag("answer[value]", false, answer.value == false, id: "value_false_#{answer.id}")
     | Non
-  = f.label :value_true, :class => "radio-inline" do
-    = radio_button_tag("answer[value]", true, answer.value)
+  = f.label "value_true_#{answer.id}", :class => "radio-inline" do
+    = radio_button_tag("answer[value]", true, answer.value, id: "value_true_#{answer.id}")
     | Oui
