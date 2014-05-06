@@ -43,3 +43,9 @@ $navbar-accent-color: #e6e3c9;
     }
   }
 }
+
+@media (max-width: 768px) {
+  .navbar-default .container .navbar-nav > li a {
+    padding-top: 30px;
+  }
+}
