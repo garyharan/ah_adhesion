@@ -29,8 +29,8 @@ fr:
     help: "Aide"
 
   nav:
-    how_this_works: "Comment ca fonctionne?"
-    my_profile: "Mes Coordonnées"
+    how_this_works: "Procédures d’adhésion"
+    my_profile: "Coordonnées"
     active_certification: "Questionnaire"
 
   sections:

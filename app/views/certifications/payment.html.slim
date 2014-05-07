@@ -1,8 +1,22 @@
 h1 Page de paiement
 
-p Coût de l’adhésion pour une durée de 2 ans par établissement payable en un seul versement au moment de l’inscription.
+h2 Frais d’adhésion
 
-p Veuillez noter que le traitement du dossier débute lors de la réception du paiement par l’AHQ.
+p Par établissement pour une durée de 2 ans payable en un seul versement au moment de l’inscription. Une facture sera émise sur réception du paiement.
+
+h2 Important
+
+p Le traitement du dossier d‘adhésion débute lors de la réception du paiement par l’AHQ.
+
+h2 Modes de paiement
+
+ul
+  li PayPal  (Visa/Mastercard). Veuillez cliquer sur le bouton « Payer » correspondant.
+  li Chèque.  Voir plus bas.
+
+hr
+
+p Pour payer par PayPal, sélectionnez la situation qui s’applique à vous:
 
 table class="payment"
   tr
@@ -12,7 +26,7 @@ table class="payment"
   tr
     td
       p title="Établissements d’hébergement touristiques de catégorie Hôtel (H)" Hôtel (H)
-      p title="Établissements d’hébergement touristiques de catégorie Résidences de tourisme (RT) de 6 unités et plus" Résidences de tourisme (RT) 6+ Unités
+      p title="Établissements d’hébergement touristiques de catégorie Résidence de tourisme (RT) de 6 unités et plus" Résidence de tourisme (RT) 6+ Unités
     td.price
       div 599$
       div + TPS 29,95	à 5%
@@ -45,7 +59,7 @@ table class="payment"
   tr
     td
       p title="Établissements d’hébergement touristiques de catégorie Gîte (G)" Gîte (G)
-      p title="Établissements d’hébergement touristiques de catégorie Résidences de tourisme (RT) de 5 unités et moins" Résidences de tourisme (RT) 5- Unités
+      p title="Établissements d’hébergement touristiques de catégorie Résidence de tourisme (RT) de 5 unités et moins" Résidence de tourisme (RT) 5- Unités
     td.price
       div 425 $
       div + TPS 21,25$ à 5%
@@ -80,3 +94,8 @@ address
   em 450, Chemin de Chambly, bureau 100
   br
   em Longueuil (Québec) J4H 3L7
+
+p TPS: 106730971 &nbsp;&nbsp;&nbsp; TVQ: 1000672501
+
+.submission
+  = button_to "Je vais payer par chèque", '/', method: :get

@@ -2,6 +2,10 @@ table.payment {
   width: 100%;
   border-spacing: 20px;
 
+  th {
+    text-align: right;
+  }
+
   tr.paypal {
     border-bottom: 1px solid #fdfdfd;
   }
