@@ -37,6 +37,14 @@ describe CertificationsController do
     end
   end
 
+  describe "GET edit" do
+    it "shows the page" do
+      certification = Certification.create! valid_attributes
+      get :edit, {id: certification.to_param}, valid_session
+      response.should be_success
+    end
+  end
+
   # /certifications/27/answers?page=1
   # response.should_redirect_to certification_answers_path(assigns(:certification), page: 1)
   describe "POST create" do
