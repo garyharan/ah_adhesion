@@ -3,54 +3,79 @@
     .panel.panel-default.panel-large
       .panel-body
         h2 Coordonnées
-        = form_for @profile, url: profil_path(@profile) do |f|
+
+        - flash.each do |name, msg|
+          = content_tag :div, msg, class: name
+
+        = form_for @profile, url: profil_path(@profile), method: :patch do |f|
           .form-group
             = f.label :name, "Nom de l'établissement"
             = f.text_field :name, :class => "form-control"
-          .form-group
-            = f.label :member_number, "N° de membre de l'AHQ"
-            = f.text_field :member_number, :class => "form-control"
-          .form-group
-            = f.label :member_since, "Membre Réservert depuis... (année)"
-            = f.text_field :member_since, :class => "form-control"
-          .form-group
-            = f.label :created_at, "Date"
-            = f.date_field :created_at, :class => "form-control"
-          .form-group
+
             = f.label :address, "Adresse de l'établissement"
             = f.text_field :address, :class => "form-control"
-          .form-group
+
             = f.label :city, "Ville"
             = f.text_field :city, :class => "form-control"
-          .form-group
+
             = f.label :postal_code, "Code postal"
             = f.text_field :postal_code, :class => "form-control"
-          .form-group
-            = f.label :director, "Nom du dirigeant"
-            = f.text_field :director, :class => "form-control"
-          .form-group
-            = f.label :director_title, "Titre (du dirigeant)"
-            = f.text_field :director_title, :class => "form-control"
-          .form-group
-            = f.label :certification_manager, "Responsable de la mise en candidature"
-            = f.text_field :certification_manager, :class => "form-control"
-          .form-group
-            = f.label :certification_manager_title, "Titre"
-            = f.text_field :certification_manager_title, :class => "form-control"
-          .form-group
+
             = f.label :telephone, "Téléphone"
             = f.text_field :telephone, :class => "form-control"
-          .form-group
+
             = f.label :fax, "Télécopieur"
             = f.text_field :fax, :class => "form-control"
-          .form-group
-            = f.label :email, "Courriel"
-            = f.text_field :email, :class => "form-control"
-          .form-group
+
             = f.label :website, "Site internet de l'établissement"
             = f.text_field :website, :class => "form-control"
+
           .form-group
+            = f.label :member_number, "N° de membre de l'AHQ (si applicable)"
+            = f.text_field :member_number, :class => "form-control"
+
             = f.label :establishment_type, "Type d'établissement"
             - types = ["Hôtel", "Gîte", "Résidences de tourisme"]
             = f.select :establishment_type, types.zip(types), {}, { :class => "form-control" }
+
+            = f.label :classification, "Classification"
+            - classifications = %w(★ ★★ ★★★ ★★★★ ★★★★★ ☼ ☼☼ ☼☼☼ ☼☼☼☼ ☼☼☼☼☼).zip(types)
+            = f.select :classification, classifications, {}, { :class => "form-control" }
+
+            = f.label :number_of_rooms, "Nombre de chambres"
+            = f.text_field :number_of_rooms, :class => "form-control"
+
+            = f.label :member_since, "Membre Réservert depuis... (année)"
+            = f.text_field :member_since, :class => "form-control"
+
+          .form-group
+            h3 Dirigeant de l'établissement
+
+            = f.label :director_name, "Nom"
+            = f.text_field :director_name, :class => "form-control"
+
+            = f.label :director_title, "Titre"
+            = f.text_field :director_title, :class => "form-control"
+
+            = f.label :director_phone, "Téléphone"
+            = f.text_field :director_phone, :class => "form-control"
+
+            = f.label :director_email, "Courriel"
+            = f.text_field :director_email, :class => "form-control"
+
+          .form-group
+            h3 Responsable de la mise en candidature
+            = f.label :manager_name, "Nom"
+            = f.text_field :manager_name, :class => "form-control"
+
+            = f.label :manager_title, "Titre"
+            = f.text_field :manager_title, :class => "form-control"
+
+            = f.label :manager_phone, "Téléphone"
+            = f.text_field :manager_phone, :class => "form-control"
+
+            = f.label :manager_email, "Courriel"
+            = f.text_field :manager_email, :class => "form-control"
+
+          .form-group
           = f.submit "Sauvegarder", :class => "btn btn-primary"

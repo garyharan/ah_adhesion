@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505151143) do
+ActiveRecord::Schema.define(version: 20140508024658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,24 +79,27 @@ ActiveRecord::Schema.define(version: 20140505151143) do
   end
 
   create_table "profiles", force: true do |t|
-    t.integer  "user_id"
-    t.string   "name"
-    t.string   "member_number"
-    t.string   "address"
-    t.string   "city"
-    t.string   "postal_code"
-    t.string   "director"
-    t.string   "director_title"
-    t.string   "certification_manager"
-    t.string   "certification_manager_title"
-    t.string   "telephone"
-    t.string   "fax"
-    t.string   "email"
-    t.string   "website"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "member_since"
-    t.string   "establishment_type"
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "address"
+    t.string  "city"
+    t.string  "postal_code"
+    t.string  "telephone"
+    t.string  "fax"
+    t.string  "website"
+    t.string  "member_number"
+    t.string  "establishment_type"
+    t.string  "classification"
+    t.string  "number_of_rooms"
+    t.string  "member_since"
+    t.string  "director_name"
+    t.string  "director_title"
+    t.string  "director_phone"
+    t.string  "director_email"
+    t.string  "manager_name"
+    t.string  "manager_title"
+    t.string  "manager_phone"
+    t.string  "manager_email"
   end
 
   create_table "questions", force: true do |t|
@@ -136,7 +139,7 @@ ActiveRecord::Schema.define(version: 20140505151143) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "last_visited_section_id", default: 1
+    t.integer  "last_visited_section_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

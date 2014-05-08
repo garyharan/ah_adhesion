@@ -40,6 +40,16 @@ fr:
   activerecord:
     errors:
       models:
+        profile:
+          attributes:
+            name:
+              blank: "Veuillez entre le nom de l'établissement"
+            member_since:
+              blank: "Veuillez indiquez la date"
+            manager_name:
+              blank: "Veuillez entre le nom du responsable"
+            manager_email:
+              blank: "Veuillez entre le courriel du responsable"
         user:
           attributes:
             email:

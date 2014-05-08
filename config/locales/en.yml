@@ -39,6 +39,16 @@ en:
   activerecord:
     errors:
       models:
+        profile:
+          attributes:
+            name:
+              blank: "Please enter the name"
+            member_since:
+              blank: "Please enter a date"
+            manager_name:
+              blank: "Please enter a manager name"
+            manager_email:
+              blank: "Please provide a manager email"
         user:
           attributes:
             email:
