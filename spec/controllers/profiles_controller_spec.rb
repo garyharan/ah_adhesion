@@ -6,7 +6,7 @@ describe ProfilesController do
   before do
     sign_in user
   end
-  
+
   context "with no existing profile" do
     describe "GET 'edit'" do
       it "returns http success" do
@@ -14,7 +14,7 @@ describe ProfilesController do
           get :edit
           response.should be_success
           assigns(:profile).user_id.should == user.id
-        }.to change(Profile, :count).by(1)
+        }.to change(Profile, :count).by(0)
       end
     end
   end
@@ -25,7 +25,7 @@ describe ProfilesController do
     end
 
     describe "GET 'edit'" do
-      it "returns http success" do
+      it "creates profile if it does not exist" do
 
         expect {
           get :edit
@@ -49,7 +49,7 @@ describe ProfilesController do
         response.should be_redirect
         assigns(:profile).name.should == 'newname'
         assigns(:profile).establishment_type.should == 'Résidences de tourisme'
-        assigns(:profile).member_since.should == 2014
+        assigns(:profile).member_since.should == "2014"
       end
     end
   end

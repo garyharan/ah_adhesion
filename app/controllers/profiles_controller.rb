@@ -7,7 +7,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    binding.remote_pry
     @profile.update_attributes(profile_params)
 
     redirect_to edit_profil_path
@@ -16,7 +15,7 @@ class ProfilesController < ApplicationController
   private
 
   def load_profile
-    @profile ||= current_user.profile || current_user.create_profile
+    @profile ||= current_user.profile || current_user.build_profile
   end
 
   def profile_params
