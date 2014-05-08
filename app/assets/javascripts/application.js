@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require questions
+//= require profile
 //= require s3_direct_upload
 //= require contract

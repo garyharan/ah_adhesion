@@ -4,76 +4,96 @@
       .panel-body
         h2 Coordonnées
 
-        - flash.each do |name, msg|
-          = content_tag :div, msg, class: name
-
-        = form_for @profile, url: profil_path(@profile), method: :patch do |f|
+        = form_for @profile, url: profil_path(@profile), method: :patch, html: { id: "profile_form" } do |f|
           .form-group
             = f.label :name, "Nom de l'établissement"
             = f.text_field :name, :class => "form-control"
 
+          .form-group
             = f.label :address, "Adresse de l'établissement"
             = f.text_field :address, :class => "form-control"
 
+          .form-group
             = f.label :city, "Ville"
             = f.text_field :city, :class => "form-control"
 
+          .form-group
             = f.label :postal_code, "Code postal"
             = f.text_field :postal_code, :class => "form-control"
 
+          .form-group
             = f.label :telephone, "Téléphone"
             = f.text_field :telephone, :class => "form-control"
 
+          .form-group
             = f.label :fax, "Télécopieur"
             = f.text_field :fax, :class => "form-control"
 
+          .form-group
             = f.label :website, "Site internet de l'établissement"
             = f.text_field :website, :class => "form-control"
+
+          hr
 
           .form-group
             = f.label :member_number, "N° de membre de l'AHQ (si applicable)"
             = f.text_field :member_number, :class => "form-control"
 
+          .form-group
             = f.label :establishment_type, "Type d'établissement"
             - types = ["Hôtel", "Gîte", "Résidences de tourisme"]
             = f.select :establishment_type, types.zip(types), {}, { :class => "form-control" }
 
+          .form-group
             = f.label :classification, "Classification"
             - classifications = %w(★ ★★ ★★★ ★★★★ ★★★★★ ☼ ☼☼ ☼☼☼ ☼☼☼☼ ☼☼☼☼☼).zip(types)
             = f.select :classification, classifications, {}, { :class => "form-control" }
 
+          .form-group
             = f.label :number_of_rooms, "Nombre de chambres"
             = f.text_field :number_of_rooms, :class => "form-control"
 
+          .form-group
             = f.label :member_since, "Membre Réservert depuis... (année)"
             = f.text_field :member_since, :class => "form-control"
+
+          hr
 
           .form-group
             h3 Dirigeant de l'établissement
 
+          .form-group
             = f.label :director_name, "Nom"
             = f.text_field :director_name, :class => "form-control"
 
+          .form-group
             = f.label :director_title, "Titre"
             = f.text_field :director_title, :class => "form-control"
 
+          .form-group
             = f.label :director_phone, "Téléphone"
             = f.text_field :director_phone, :class => "form-control"
 
+          .form-group
             = f.label :director_email, "Courriel"
             = f.text_field :director_email, :class => "form-control"
+
+          hr
 
           .form-group
             h3 Responsable de la mise en candidature
             = f.label :manager_name, "Nom"
             = f.text_field :manager_name, :class => "form-control"
 
+          .form-group
             = f.label :manager_title, "Titre"
             = f.text_field :manager_title, :class => "form-control"
 
+          .form-group
             = f.label :manager_phone, "Téléphone"
             = f.text_field :manager_phone, :class => "form-control"
 
+          .form-group
             = f.label :manager_email, "Courriel"
             = f.text_field :manager_email, :class => "form-control"
 
