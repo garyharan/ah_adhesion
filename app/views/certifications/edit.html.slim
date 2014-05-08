@@ -9,37 +9,37 @@ br
 = form_for @certification, url: certification_submit_path(@certification), method: :post, html: { 'data-must-check-all' => true } do |f|
   table.table.contract
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td la personne responsable possède l’autorité pour remplir le questionnaire et ce contrat d’adhésion au nom de l’établissement.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td toutes les réponses positives aux questions sont vraies.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td toutes les preuves soumises sont réelles et véridiques.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’établissement s’engage à répondre dans un délai raisonnable, aux demandes de clarification du mandataire.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td tout délai de la part de l’établissement dans la réponse aux demandes de clarification entraine des retards dans le traitement du dossier.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’établissement comprend que le mandataire commence l’étude du dossier à partir du moment où l’AHQ reçoit confirmation du paiement des frais d’analyse de candidature et qu’il peut y avoir des délais raisonnables avant de recevoir des confirmations.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’adhésion au programme Réservert est valide pour 2 ans à partir de la date de réception du courriel de confirmation.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’établissement s’engage à installer le widget sur son site Internet dans les meilleurs délais (maximun 30 jours  )
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’établissement accepte que toutes ses actions de développement durable soient diffusées par le widget.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’établissement accepte que les clients viennent commenter ses actions en développement durable dans le widget sur le site Internet.
     tr
-      td = check_box_tag :accept
+      td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’établissement accepte que le mandataire (Jour de la Terre Québec) et l’AHQ communiquent avec les clients qui ont déposé des commentaires négatifs dans le widget et ce, dans un objectif de service à la clientèle exemplaire.
 
   br
