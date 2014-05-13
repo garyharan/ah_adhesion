@@ -10,12 +10,16 @@ $(document).on "page:change", ->
       @setupAnswerHandler()
       @setupHelpToggleHandler()
       @awsUploaderHandler()
+      @setupDeleteAttachmentHandler()
 
       @form.bind "ajax:send", (e) =>
         @spinner.show()
       @form.bind "ajax:success", (e) =>
         @spinner.hide()
 
+    setupDeleteAttachmentHandler: =>
+      $(@question).find(".delete_attachment").on "ajax:success", (e) =>
+        $(e.target).closest("li").remove()
 
     setupHelpToggleHandler: =>
       @help.click (e) =>
@@ -53,6 +57,11 @@ $(document).on "page:change", ->
 
       s3_uploader_form.bind "ajax:success", (e, data) =>
         $(@question).find("ul.addition").append(data)
+
+        $(@question).find("ul.addition a.delete_attachment").unbind("ajax:success")
+        $(@question).find("ul.addition a.delete_attachment").on "ajax:success", (e) =>
+          $(e.target).closest("li").remove()
+
         $(@question).find(".file_spinner").hide()
         $(@question).find("form.s3-uploader").show()
 

@@ -1,5 +1,5 @@
-li
+li id="attachment_#{attachment.id}"
   = image_tag file_icon_image_path(attachment.filename), width: 25
   span.filename = attachment.filename
   = link_to "Télécharger", attachment.url, class: 'btn-download'
-  = link_to "Effacer", attachment_path(attachment), method: :delete, data: { confirm: "Êtes-vous certain de vouloir effacer cette pièce jointe?", remote: true}, class: 'btn btn-danger'
+  = link_to "Effacer", attachment_path(attachment), method: :delete, data: { confirm: "Êtes-vous certain de vouloir effacer cette pièce jointe?", remote: true }, class: 'btn btn-danger delete_attachment'
