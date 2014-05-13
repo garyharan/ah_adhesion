@@ -47,12 +47,14 @@ $(document).on "page:change", ->
       s3_uploader_form = $(@question).find(".proof_files form.s3-uploader")
       s3_uploader_form.S3Uploader()
 
-      s3_uploader_form.bind "ajax:beforeSend", (e) =>
-        @spinner.show()
+      s3_uploader_form.bind 's3_uploads_start', (e) =>
+        $(@question).find("form.s3-uploader").hide()
+        $(@question).find(".file_spinner").show()
 
       s3_uploader_form.bind "ajax:success", (e, data) =>
         $(@question).find("ul.addition").append(data)
-        @spinner.hide()
+        $(@question).find(".file_spinner").hide()
+        $(@question).find("form.s3-uploader").show()
 
   $("tr.question").each (index) ->
     new Question(this)
