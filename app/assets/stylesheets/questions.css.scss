@@ -1,4 +1,7 @@
 .question {
+  &.need_answer {
+    background-color: rgba(80,10,10,0.1);
+  }
   .help {
     .help-togglers { margin-bottom: 10px; }
     .help-toggle-off, .help-content { display: none; }

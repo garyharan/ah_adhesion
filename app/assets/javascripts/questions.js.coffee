@@ -11,6 +11,7 @@ $(document).on "page:change", ->
       @setupHelpToggleHandler()
       @awsUploaderHandler()
       @setupDeleteAttachmentHandler()
+      @setupAttachmentWasUploadedHandler()
 
       @form.bind "ajax:send", (e) =>
         @spinner.show()
@@ -20,6 +21,13 @@ $(document).on "page:change", ->
     setupDeleteAttachmentHandler: =>
       $(@question).find(".delete_attachment").on "ajax:success", (e) =>
         $(e.target).closest("li").remove()
+
+    setupAttachmentWasUploadedHandler: =>
+      $(document).on "page:before-change", (e) =>
+        if $(@question).find(".answer_form input:radio:checked").val() == "true" && $(@question).find("ul.addition li").length == 0
+          $(@question).addClass("need_answer")
+          alert("Une de vos réponses requiert une pièce justificatives.  Veuillez la rajouter avant de continuer.")
+          event.preventDefault()
 
     setupHelpToggleHandler: =>
       @help.click (e) =>
@@ -57,6 +65,7 @@ $(document).on "page:change", ->
 
       s3_uploader_form.bind "ajax:success", (e, data) =>
         $(@question).find("ul.addition").append(data)
+        $(@question).removeClass("need_answer")
 
         $(@question).find("ul.addition a.delete_attachment").unbind("ajax:success")
         $(@question).find("ul.addition a.delete_attachment").on "ajax:success", (e) =>
@@ -67,3 +76,5 @@ $(document).on "page:change", ->
 
   $("tr.question").each (index) ->
     new Question(this)
+
+

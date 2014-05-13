@@ -1,5 +1,5 @@
 - answer = @answers.answer_for(question)
-tr.question
+tr.question data-require-proof="#{question.send('proof_fr').present?}"
   td
     = question.title
     .spinner
