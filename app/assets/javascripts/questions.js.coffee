@@ -1,11 +1,11 @@
 $(document).on "page:change", ->
-
   class Question
     constructor: (@question) ->
-      @help    = $(@question).find(".help .help-toggle")
-      @label   = $(@question).find("label")
-      @form    = $(@question).find(".answer_form")
-      @spinner = $(@question).find(".spinner")
+      @help             = $(@question).find(".help .help-toggle")
+      @label            = $(@question).find("label")
+      @form             = $(@question).find(".answer_form")
+      @spinner          = $(@question).find(".spinner")
+      @delete_file_link = $(@question).find(".delete_attachment")
 
       @setupAnswerHandler()
       @setupHelpToggleHandler()
@@ -19,7 +19,7 @@ $(document).on "page:change", ->
         @spinner.hide()
 
     setupDeleteAttachmentHandler: =>
-      $(@question).find(".delete_attachment").on "ajax:success", (e) =>
+      @delete_file_link.on "ajax:success", (e) =>
         $(e.target).closest("li").remove()
 
     setupAttachmentWasUploadedHandler: =>
@@ -67,8 +67,8 @@ $(document).on "page:change", ->
         $(@question).find("ul.addition").append(data)
         $(@question).removeClass("need_answer")
 
-        $(@question).find("ul.addition a.delete_attachment").unbind("ajax:success")
-        $(@question).find("ul.addition a.delete_attachment").on "ajax:success", (e) =>
+        @delete_attachment.unbind("ajax:success")
+        @delete_attachment.on "ajax:success", (e) =>
           $(e.target).closest("li").remove()
 
         $(@question).find(".file_spinner").hide()
