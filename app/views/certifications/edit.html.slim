@@ -1,6 +1,6 @@
 h1 Contrat d’adhésion
 
-p Vous devez cocher toutes les affirmations pour passer à l’étape suivante.
+br
 
 p En tant que responsable du Programme Réservert, je confirme que…
 
@@ -42,5 +42,5 @@ br
       td = check_box_tag :accept, nil, @certification.accepted_contract_at.present?
       td l’établissement accepte que le mandataire (Jour de la Terre Québec) et l’AHQ communiquent avec les clients qui ont déposé des commentaires négatifs dans le widget et ce, dans un objectif de service à la clientèle exemplaire.
 
-  br
+  p Vous devez cocher toutes les affirmations pour passer à l’étape suivante.
   = f.submit "Soumettre ma demande et procéder au paiement"
