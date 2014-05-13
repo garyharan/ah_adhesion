@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe AdminUser do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "can be valid" do
+    AdminUser.new(email: "admin@reservert.com", password: "password").valid?.should be_true
+  end
 end
