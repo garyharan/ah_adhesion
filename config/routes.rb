@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :attachments, only: [:new, :create, :destroy]
 
-  resources :certifications, only: [:index, :show, :edit, :create] do
+  resources :certifications, only: [:index, :show, :edit, :update, :create] do
     post :submit
     get :payment
     resources :questions, only: :index

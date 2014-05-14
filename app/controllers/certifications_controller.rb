@@ -1,6 +1,6 @@
 class CertificationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_certification, only: [:show, :edit, :submit]
+  before_action :set_certification, only: [:show, :edit, :update, :submit]
 
   def index
     @certifications = current_user.certifications
@@ -24,6 +24,12 @@ class CertificationsController < ApplicationController
     end
   end
 
+  def update
+    if @certification.update_attributes! certification_params
+      redirect_to merci_path
+    end
+  end
+
   def submit
     @certification.submit
     @certification.accepted_contract_at = DateTime.now
@@ -43,6 +49,6 @@ class CertificationsController < ApplicationController
     end
 
     def certification_params
-      params.require(:certification).permit(:user_id, :status, :approval_date)
+      params.require(:certification).permit(:user_id, :status, :approval_date, :expected_payment_method)
     end
 end

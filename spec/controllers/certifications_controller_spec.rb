@@ -85,6 +85,22 @@ describe CertificationsController do
     end
   end
 
+  describe "PUT update" do
+    let(:certification) { FactoryGirl.create :certification, user_id: user.id }
+
+    before do
+      put :update, { id: certification.id, certification: { expected_payment_method: "cheque" } }
+    end
+
+    it "redirects to thank you page" do
+      response.should redirect_to merci_path
+    end
+
+    it "allows updating of expected_payment_method" do
+      user.latest_certification.expected_payment_method.should == "cheque"
+    end
+  end
+
   describe "POST submit" do
     let(:certification) { FactoryGirl.create :certification }
 
