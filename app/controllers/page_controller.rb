@@ -1,4 +1,7 @@
 class PageController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_payment_method, only: [:paypal_success]
+
   def home
   end
 
@@ -10,5 +13,11 @@ class PageController < ApplicationController
   end
 
   def merci
+  end
+
+  private
+
+  def set_payment_method
+    current_user.latest_certification.update_attribute :expected_payment_method, 'paypal'
   end
 end
