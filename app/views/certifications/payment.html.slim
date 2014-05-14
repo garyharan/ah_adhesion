@@ -100,4 +100,6 @@ address
   em Longueuil (Québec) J4H 3L7
 
 .submission
-  = button_to "Je vais payer par chèque", merci_path, method: :get
+  = form_for current_user.latest_certification, method: :put do |f|
+    = f.hidden_field :expected_payment_method, value: "cheque"
+    = f.submit "Je vais payer par chèque"
