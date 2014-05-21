@@ -15,9 +15,23 @@ describe Admin::CertificationsController do
     response.status.should eq 401
   end
 
-  it "lets an admin visit the page" do
-    sign_in admin
-    get :index
-    response.status.should eq 200
+  context "as an admin" do
+    before do
+      sign_in admin
+    end
+
+    context "#index" do
+      before do
+        get :index
+      end
+
+      it "lets an admin visit the page" do
+        response.status.should eq 200
+      end
+
+      it "assigns certifications" do
+        assigns(:certifications).should_not be_nil
+      end
+    end
   end
 end

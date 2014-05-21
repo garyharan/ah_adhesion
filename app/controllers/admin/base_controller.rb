@@ -2,6 +2,8 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_administrator_rights!
 
+  layout 'admin'
+
   private
 
   def ensure_administrator_rights!

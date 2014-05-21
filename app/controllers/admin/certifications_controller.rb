@@ -1,5 +1,5 @@
 class Admin::CertificationsController < Admin::BaseController
   def index
-    head :ok
+    @certifications = Certification.all
   end
 end
