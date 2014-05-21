@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   resources :answers
 
   devise_for :users
+
+  namespace :admin do
+    root to: "base#index"
+  end
 end
