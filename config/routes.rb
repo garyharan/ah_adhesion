@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   root 'page#home'
   get 'comment_ca_fonctionne',  to: 'page#how_this_works'
   get 'merci',                  to: 'page#merci'

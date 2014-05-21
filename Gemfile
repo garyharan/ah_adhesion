@@ -18,8 +18,6 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 
 gem 's3_direct_upload'
-gem 'activeadmin', github: 'gregbell/active_admin'
-# gem "meta_search"
 
 gem 'spring',        group: :development
 
