@@ -1,7 +1,11 @@
 class Admin::CertificationsController < Admin::BaseController
-  before_action :find_certifications
+  before_action :find_certifications, only: :index
 
   def index
+  end
+
+  def edit
+    @certification = Certification.find params[:id]
   end
 
   private

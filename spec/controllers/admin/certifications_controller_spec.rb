@@ -18,13 +18,14 @@ describe Admin::CertificationsController do
   context "as an admin" do
     before do
       sign_in admin
+
+      Certification::POSSIBLE_STATES.each do |state|
+        FactoryGirl.create :certification, state.to_sym
+      end
     end
 
     context "#index" do
       before do
-        Certification::POSSIBLE_STATES.each do |state|
-          FactoryGirl.create :certification, state.to_sym
-        end
       end
 
       it "lets an admin visit the page" do
@@ -42,6 +43,13 @@ describe Admin::CertificationsController do
           get :index, state: state
           assigns(:certifications).should eq Certification.send(state)
         end
+      end
+    end
+
+    context "#edit" do
+      it "displays editing page" do
+        get :edit, id: Certification.first.id
+        response.should be_success
       end
     end
   end

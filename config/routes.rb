@@ -22,6 +22,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "certifications#index"
-    resource :certifications
+    resources :certifications
   end
 end
