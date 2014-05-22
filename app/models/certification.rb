@@ -1,6 +1,14 @@
 class Certification < ActiveRecord::Base
   belongs_to :user
 
+  POSSIBLE_STATES = %w(draft pending_payment under_review approved rejected)
+
+  scope :draft,           -> { where(state: :draft) }
+  scope :pending_payment, -> { where(state: :pending_payment) }
+  scope :under_review,    -> { where(state: :under_review) }
+  scope :approved,        -> { where(state: :approved) }
+  scope :rejected,        -> { where(state: :rejected) }
+
   state_machine :state, :initial => :draft do
     event :submit do
       transition :draft => :pending_payment
@@ -22,6 +30,4 @@ class Certification < ActiveRecord::Base
       transition :approved => :expired
     end
   end
-  
-  scope :pending_payment, -> { where(state: 'pending_payment') }
 end

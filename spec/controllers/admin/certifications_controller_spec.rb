@@ -22,15 +22,26 @@ describe Admin::CertificationsController do
 
     context "#index" do
       before do
-        get :index
+        Certification::POSSIBLE_STATES.each do |state|
+          FactoryGirl.create :certification, state.to_sym
+        end
       end
 
       it "lets an admin visit the page" do
+        get :index
         response.status.should eq 200
       end
 
       it "assigns certifications" do
-        assigns(:certifications).should_not be_nil
+        get :index
+        assigns(:certifications).should eq Certification.all
+      end
+
+      it "only assigns certifications of a given state" do
+        Certification::POSSIBLE_STATES.each do |state|
+          get :index, state: state
+          assigns(:certifications).should eq Certification.send(state)
+        end
       end
     end
   end
