@@ -3,6 +3,7 @@ class Certification < ActiveRecord::Base
 
   POSSIBLE_STATES = %w(draft pending_payment under_review approved rejected)
 
+  default_scope           -> { order("id ASC") }
   scope :draft,           -> { where(state: :draft) }
   scope :pending_payment, -> { where(state: :pending_payment) }
   scope :under_review,    -> { where(state: :under_review) }
