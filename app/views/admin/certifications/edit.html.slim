@@ -9,12 +9,12 @@ table
     td = timeago_tag @certification.user.last_sign_in_at, lang: :fr, title: @certification.user.last_sign_in_at
 
 - if @certification.user.profile.present?
-  h2 Info contact sur le profile
+  h3 Info Générale
   table
     tr
       th Name
       th Adresse
-      th Telephone
+      th Téléphone
       th Fax
     tr
       td = @certification.user.profile.name
@@ -22,12 +22,12 @@ table
       td = @certification.user.profile.telephone
       td = @certification.user.profile.fax
 
-  h2 Directeur
+  h3 Directeur
   table
     tr
       th Nom
       th Titre
-      th Telephone
+      th Téléphone
       th Email
     tr
       td = @certification.user.profile.director_name
@@ -35,12 +35,12 @@ table
       td = @certification.user.profile.director_phone
       td = mail_to @certification.user.profile.director_email
 
-  h2 Gérant
+  h3 Gérant
   table
     tr
       th Nom
       th Titre
-      th Telephone
+      th Téléphone
       th Email
     tr
       td = @certification.user.profile.manager_name
