@@ -2,6 +2,6 @@ tr
   td = certification.id
   td = certification.user.email
   td = certification.state
-  td class="timeago" title="#{certification.approval_date}" = certification.approval_date
-  td class="timeago" title="#{certification.accepted_contract_at}" = certification.accepted_contract_at
+  td = timeago_tag certification.approval_date, lang: :fr, title: certification.approval_date
+  td = timeago_tag certification.accepted_contract_at, lang: :fr, title: certification.accepted_contract_at
   td = certification.expected_payment_method

@@ -16,6 +16,7 @@ gem 'slim-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass'
+gem 'rails-timeago'
 
 gem 's3_direct_upload'
 
