@@ -1,4 +1,8 @@
-h1 Certifications
+h1
+  ' Certifications
+  = link_to "All", admin_root_path, class: (params[:state].nil? ? 'active' : 'inactive')
+  - Certification::POSSIBLE_STATES.each do |state|
+    = link_to state.titleize, admin_root_path(state: state), class: (params[:state].to_s == state ? 'active' : 'inactive')
 
 table#certifications
   tr

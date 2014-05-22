@@ -5,3 +5,17 @@ body {
 table {
   @extend .table;
 }
+
+h1 {
+  a {
+    font-size: 0.4em;
+    font-weight: normal;
+    margin-left: 1em;
+  }
+  a.active {
+    font-weight: bold;
+    &:before {
+      content: " ▶ ";
+    }
+  }
+}
