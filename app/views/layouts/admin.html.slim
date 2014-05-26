@@ -7,5 +7,11 @@ html
     = timeago_script_tag
     = csrf_meta_tags
   body id="#{controller_name}" class="#{action_name} admin"
+    - if flash[:success]
+      #flash_success
+        = flash[:success]
+    - if flash[:error]
+      #flash_error
+        = flash[:error]
     = yield
 

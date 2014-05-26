@@ -1,0 +1,15 @@
+#flash_success, #flash_error {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#flash_success {
+  color: #BB0C0C;
+  background-color: lightgreen;
+}
+
+#flash_error {
+  color: yellow;
+  background-color: #FF8080;
+}

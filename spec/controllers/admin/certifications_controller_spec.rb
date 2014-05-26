@@ -60,10 +60,14 @@ describe Admin::CertificationsController do
 
       it "sends back to show" do
         response.should be_redirect
-        assigns(:certification).reload.state.should eq 'approved'
+      end
+
+      it "sets flash" do
+        flash[:error] = "unable to save certification details"
       end
 
       it "changes the certification state" do
+        assigns(:certification).reload.state.should eq 'approved'
       end
     end
   end
