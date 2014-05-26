@@ -53,5 +53,5 @@ table
       th Aucun profile
 
 = form_for @certification, url: certification_submit_path(@certification), method: :post do |f|
-  = f.select :state, Certification::POSSIBLE_STATES
+  = f.select :state, @certification.state_events
   = f.submit "Sauvegarder"
