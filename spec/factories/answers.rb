@@ -5,5 +5,9 @@ FactoryGirl.define do
     certification_id 1
     question_id 1
     value false
+
+    trait :adding_to_score do
+      value true
+    end
   end
 end

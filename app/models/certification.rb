@@ -1,5 +1,6 @@
 class Certification < ActiveRecord::Base
   belongs_to :user
+  has_many :answers
 
   POSSIBLE_STATES = %w(draft pending_payment under_review approved rejected)
 
@@ -30,5 +31,9 @@ class Certification < ActiveRecord::Base
     event :expire do
       transition :approved => :expired
     end
+  end
+
+  def score
+    answers.where(value: true).count
   end
 end
