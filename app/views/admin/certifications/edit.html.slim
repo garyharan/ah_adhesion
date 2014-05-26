@@ -52,6 +52,6 @@ table
     tr
       th Aucun profile
 
-= form_for @certification, url: admin_certification_path(@certification), method: :post do |f|
-  = f.select :state, @certification.state_events
+= form_for @certification, url: admin_certification_path(@certification), method: :put do |f|
+  = f.select :state, Certification::POSSIBLE_STATES
   = f.submit "Sauvegarder"

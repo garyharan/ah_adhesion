@@ -12,7 +12,7 @@ class Admin::CertificationsController < Admin::BaseController
     @certification = Certification.find params[:id]
 
     if @certification.update_attributes certification_params
-      redirect_to admin_certification_path @certification
+      redirect_to edit_admin_certification_path @certification
     else
       flash[:error] = "unable to save certification details"
       redirect_to :back
