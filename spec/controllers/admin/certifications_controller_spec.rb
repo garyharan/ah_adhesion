@@ -25,9 +25,6 @@ describe Admin::CertificationsController do
     end
 
     context "#index" do
-      before do
-      end
-
       it "lets an admin visit the page" do
         get :index
         response.status.should eq 200
@@ -50,6 +47,23 @@ describe Admin::CertificationsController do
       it "displays editing page" do
         get :edit, id: Certification.first.id
         response.should be_success
+      end
+    end
+
+    context "#update" do
+      let (:certification) { create :certification, :under_review }
+
+      before do
+        request.env["HTTP_REFERER"] = admin_certification_path(certification)
+        post :update, id: certification.id, certification: { state: 'approved' }
+      end
+
+      it "sends back to show" do
+        response.should be_redirect
+        assigns(:certification).reload.state.should eq 'approved'
+      end
+
+      it "changes the certification state" do
       end
     end
   end

@@ -8,6 +8,17 @@ class Admin::CertificationsController < Admin::BaseController
     @certification = Certification.find params[:id]
   end
 
+  def update
+    @certification = Certification.find params[:id]
+
+    if @certification.update_attributes certification_params
+      redirect_to admin_certification_path @certification
+    else
+      flash[:error] = "unable to save certification details"
+      redirect_to :back
+    end
+  end
+
   private
 
   def find_certifications
@@ -19,5 +30,9 @@ class Admin::CertificationsController < Admin::BaseController
                       else
                         raise "No such param"
                       end
+  end
+
+  def certification_params
+    params.require(:certification).permit(:user_id, :state)
   end
 end
