@@ -44,6 +44,10 @@ $(document).on "page:change", ->
         value       = label.find("input[type=radio]").val()
         form        = $(label).get(0).form
 
+        if $(form).hasClass("edit_answer")
+          $(form).trigger('submit.rails')
+          return
+
         # ensuring selection if label is clicked instead of input
         label.find("input[type=radio]").prop("checked", true)
 

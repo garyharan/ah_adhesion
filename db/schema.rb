@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521175734) do
+ActiveRecord::Schema.define(version: 20140528153223) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140521175734) do
     t.boolean  "value",            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "validated",        default: false
   end
 
   create_table "attachments", force: true do |t|
@@ -140,7 +141,7 @@ ActiveRecord::Schema.define(version: 20140521175734) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "last_visited_section_id"
+    t.integer  "last_visited_section_id", default: 1
     t.boolean  "admin",                   default: false
   end
 
