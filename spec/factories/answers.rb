@@ -6,8 +6,13 @@ FactoryGirl.define do
     question_id 1
     value false
 
-    trait :adding_to_score do
+    trait :unvalidated do
       value true
+    end
+
+    trait :validated do
+      value true
+      validated true
     end
   end
 end

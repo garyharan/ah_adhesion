@@ -36,4 +36,8 @@ class Certification < ActiveRecord::Base
   def score
     answers.where(value: true).count
   end
+
+  def validated_score
+    answers.where(value: true, validated: true).count
+  end
 end
