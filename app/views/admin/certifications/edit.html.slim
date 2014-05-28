@@ -1,5 +1,15 @@
 h1 = "Certification ##{@certification.id}"
 
+.row
+  .col-md-6
+    = link_to "Réponses", certification_path(@certification), target: "_blank"
+  .col-md-6
+    = form_for @certification, url: admin_certification_path(@certification), method: :put do |f|
+      = f.select :state, Certification::POSSIBLE_STATES
+      = f.submit "Sauvegarder"
+
+br
+
 table
   tr
     th Email
@@ -53,7 +63,3 @@ table
   table
     tr
       th Aucun profile
-
-= form_for @certification, url: admin_certification_path(@certification), method: :put do |f|
-  = f.select :state, Certification::POSSIBLE_STATES
-  = f.submit "Sauvegarder"
