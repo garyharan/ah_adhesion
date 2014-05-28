@@ -1,14 +1,19 @@
 h1 = "Certification ##{@certification.id}"
 
-.row
-  .col-md-6
-    = link_to "Réponses", certification_path(@certification), target: "_blank"
-  .col-md-6
-    = form_for @certification, url: admin_certification_path(@certification), method: :put do |f|
-      = f.select :state, Certification::POSSIBLE_STATES
-      = f.submit "Sauvegarder"
-
-br
+table
+  tr
+    th Ouis
+    th Score
+    th Statut
+    th
+  tr
+    td = @certification.score
+    td = @certification.validated_score
+    td = link_to "Visualiser les réponses", certification_path(@certification), target: "_blank"
+    td style="text-align: right"
+      = form_for @certification, url: admin_certification_path(@certification), method: :put do |f|
+        = f.select :state, Certification::POSSIBLE_STATES
+        = f.submit "Sauvegarder"
 
 table
   tr
