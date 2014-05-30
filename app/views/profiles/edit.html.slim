@@ -56,28 +56,8 @@
           hr
 
           .form-group
-            h3 Dirigeant de l'établissement
-
-          .form-group
-            = f.label :director_name, "Nom"
-            = f.text_field :director_name, :class => "form-control"
-
-          .form-group
-            = f.label :director_title, "Titre"
-            = f.text_field :director_title, :class => "form-control"
-
-          .form-group
-            = f.label :director_phone, "Téléphone"
-            = f.text_field :director_phone, :class => "form-control"
-
-          .form-group
-            = f.label :director_email, "Courriel"
-            = f.text_field :director_email, :class => "form-control"
-
-          hr
-
-          .form-group
             h3 Responsable de la mise en candidature
+
             = f.label :manager_name, "Nom"
             = f.text_field :manager_name, :class => "form-control"
 
@@ -92,6 +72,31 @@
           .form-group
             = f.label :manager_email, "Courriel"
             = f.text_field :manager_email, :class => "form-control"
+
+          hr
+
+          .form-group
+            h3 Dirigeant de l'établissement
+            = label_tag do
+              = check_box_tag "copy_manager_fields"
+              '  Le responsable de mise en candidature est aussi le dirigeant de l'établissement
+
+          #director_group
+            .form-group
+              = f.label :director_name, "Nom"
+              = f.text_field :director_name, :class => "form-control"
+
+            .form-group
+              = f.label :director_title, "Titre"
+              = f.text_field :director_title, :class => "form-control"
+
+            .form-group
+              = f.label :director_phone, "Téléphone"
+              = f.text_field :director_phone, :class => "form-control"
+
+            .form-group
+              = f.label :director_email, "Courriel"
+              = f.text_field :director_email, :class => "form-control"
 
           .form-group
           = f.submit "Sauvegarder", :class => "btn btn-primary"
