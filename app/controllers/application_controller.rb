@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
   def after_sign_in_path_for(resource)
+    return edit_profil_path if profile_incomplete?
     return certification_path(@active_certification) if @active_certification
     certifications_path
   end
@@ -31,5 +32,9 @@ class ApplicationController < ActionController::Base
     accept = request.env['HTTP_ACCEPT_LANGUAGE']
     return nil if accept.nil?
     accept.scan(/^[a-z]{2}/).first
+  end
+
+  def profile_incomplete?
+    current_user.profile.blank? || !current_user.profile.complete?
   end
 end

@@ -7,13 +7,23 @@ describe ApplicationController do
     it "redirects to certification#show" do
       sign_in user
       certification = user.certifications.create!
+      @controller.stub(:profile_incomplete?) { false }
       @controller.set_active_certification # mimic the before_action
       @controller.after_sign_in_path_for(user).should == certification_path(certification)
     end
   end
 
+  context "without a profile filled out" do
+    it "redirects to profile path" do
+      sign_in user
+      @controller.after_sign_in_path_for(user).should == edit_profil_path
+    end
+  end
+
   context "without an active certification" do
     it "redirects to certification#index" do
+      sign_in user
+    @controller.stub(:profile_incomplete?) { false }
       @controller.after_sign_in_path_for(user).should == certifications_path
     end
   end
@@ -31,6 +41,7 @@ describe ApplicationController do
 
   it "sets the active certification" do
     sign_in user
+    @controller.stub(:profile_incomplete?) { false }
     user.certifications.create FactoryGirl.attributes_for(:certification, state: 'draft')
     @controller.set_active_certification.should_not be_nil
     @controller.instance_variable_get(:@active_certification).should == user.certifications.first

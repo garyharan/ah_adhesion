@@ -99,6 +99,9 @@ fr:
 
   activerecord:
     errors:
+      messages:
+        record_invalid:
+          "Il manque des champs"
       models:
         certification:
           attributes:
