@@ -28,6 +28,6 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:question_id, :certification_id, :value, :validated)
+    params.require(:answer).permit(:question_id, :certification_id, :value, :validated, :note)
   end
 end

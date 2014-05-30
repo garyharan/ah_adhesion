@@ -44,9 +44,7 @@ $(document).on "page:change", ->
         value       = label.find("input[type=radio]").val()
         form        = $(label).get(0).form
 
-        if $(form).hasClass("edit_answer")
-          $(form).trigger('submit.rails')
-          return
+        return if $(form).hasClass("edit_answer") # admin section
 
         # ensuring selection if label is clicked instead of input
         label.find("input[type=radio]").prop("checked", true)
@@ -81,4 +79,21 @@ $(document).on "page:change", ->
   $("tr.question").each (index) ->
     new Question(this)
 
+  class AdminQuestion
+    constructor: (form) ->
+      @form = form
+
+      $(@form).find("textarea").on "keyup", (e) =>
+        @saveForm()
+      $(@form).find("input:checkbox").on "change", (e) =>
+        @saveForm()
+
+    saveForm: =>
+      $(@form).trigger("submit.rails")
+
+
+
+
+  $("form.edit_answer").each (index) ->
+    new AdminQuestion(this)
 

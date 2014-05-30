@@ -9,12 +9,3 @@
       = f.label "value_true_#{answer.id}", :class => "radio-inline" do
         = radio_button_tag("answer[value]", true, answer.value, id: "value_true_#{answer.id}")
         | Oui
-  - if current_user.admin?
-    .col-md-4
-      = form_for answer, remote: true, 'data-no-turbolink' => true do |f|
-        = f.hidden_field :certification_id, value: answer.certification_id
-        = f.hidden_field :question_id, value: answer.question_id
-        = f.label "validation_#{answer.id}", class: "radio-inline" do
-          ' Je valide
-          = f.check_box :validated, id: "validation_#{answer.id}"
-

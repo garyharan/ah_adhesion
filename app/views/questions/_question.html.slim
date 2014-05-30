@@ -24,3 +24,15 @@ tr.question data-require-proof="#{question.send('proof_fr').present?}"
       ul class="addition"
         = render answer.attachments
       = render template: "attachments/new.html.slim", locals: { answer: answer }
+
+- if current_user.admin?
+  tr.question
+    td colspan=2
+      = form_for answer, remote: true, 'data-no-turbolink' => true do |f|
+        = f.hidden_field :certification_id, value: answer.certification_id
+        = f.hidden_field :question_id, value: answer.question_id
+        = f.label "validation_#{answer.id}", class: "radio-inline" do
+          ' Je valide
+          = f.check_box :validated, id: "validation_#{answer.id}"
+        br
+        = f.text_area :note, rows: 5, cols: 50
