@@ -70,3 +70,7 @@ table
   table
     tr
       th Aucun profile
+
+hr
+= form_for @certification, remote: true, 'data-no-turbolink' => true do |f|
+  = f.text_area :note, rows: 5, cols: 50

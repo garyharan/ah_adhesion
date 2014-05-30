@@ -91,9 +91,5 @@ $(document).on "page:change", ->
     saveForm: =>
       $(@form).trigger("submit.rails")
 
-
-
-
   $("form.edit_answer").each (index) ->
     new AdminQuestion(this)
-

@@ -49,6 +49,6 @@ class CertificationsController < ApplicationController
     end
 
     def certification_params
-      params.require(:certification).permit(:user_id, :approval_date, :expected_payment_method)
+      params.require(:certification).permit(:user_id, :approval_date, :expected_payment_method, :note)
     end
 end
