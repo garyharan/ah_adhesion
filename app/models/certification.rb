@@ -2,7 +2,13 @@ class Certification < ActiveRecord::Base
   belongs_to :user
   has_many :answers
 
-  POSSIBLE_STATES = %w(draft pending_payment under_review approved rejected)
+  POSSIBLE_STATES = {
+    draft: "Brouillon",
+    pending_payment: "En revue",
+    approved: "Approuvé",
+    rejected: "rejected",
+  }
+  # %w(draft pending_payment under_review approved rejected)
 
   default_scope           -> { order("id ASC") }
   scope :draft,           -> { where(state: :draft) }

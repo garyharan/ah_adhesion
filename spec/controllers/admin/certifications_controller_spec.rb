@@ -19,7 +19,7 @@ describe Admin::CertificationsController do
     before do
       sign_in admin
 
-      Certification::POSSIBLE_STATES.each do |state|
+      Certification::POSSIBLE_STATES.keys.each do |state|
         FactoryGirl.create :certification, state.to_sym
       end
     end
@@ -36,7 +36,7 @@ describe Admin::CertificationsController do
       end
 
       it "only assigns certifications of a given state" do
-        Certification::POSSIBLE_STATES.each do |state|
+        Certification::POSSIBLE_STATES.keys.each do |state|
           get :index, state: state
           assigns(:certifications).should eq Certification.send(state)
         end

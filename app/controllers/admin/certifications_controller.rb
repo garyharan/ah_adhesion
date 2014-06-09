@@ -26,7 +26,7 @@ class Admin::CertificationsController < Admin::BaseController
     @certifications = case params[:state]
                       when nil
                         Certification.all
-                      when *Certification::POSSIBLE_STATES
+                      when *Certification::POSSIBLE_STATES.keys.map(&:to_s)
                         Certification.send(params[:state])
                       else
                         raise "No such param"
