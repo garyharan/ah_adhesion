@@ -19,7 +19,11 @@ class QuestionsController < ApplicationController
   end
 
   def find_certification
-    @certification = current_user.certifications.where(id: params[:certification_id]).first
+    @certification = if current_user.admin?
+      Certification.find(params[:certification_id])
+    else
+      current_user.certifications.where(id: params[:certification_id]).first
+    end
   end
 
   def set_last_visited_section
