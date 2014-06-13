@@ -29,13 +29,11 @@ table
   h3 Info Générale
   table
     tr
-      th Score avant validation
       th Name
       th Adresse
       th Téléphone
       th Fax
     tr
-      td = @certification.score
       td = @certification.user.profile.name
       td = @certification.user.profile.address
       td = @certification.user.profile.telephone
