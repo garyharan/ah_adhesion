@@ -4,11 +4,11 @@ class Certification < ActiveRecord::Base
 
   POSSIBLE_STATES = {
     draft: "Brouillon",
-    pending_payment: "En revue",
+    pending_payment: "Attente de paiement",
+    under_review:  "En revue",
     approved: "Approuvé",
     rejected: "rejected",
   }
-  # %w(draft pending_payment under_review approved rejected)
 
   default_scope           -> { order("id ASC") }
   scope :draft,           -> { where(state: :draft) }
