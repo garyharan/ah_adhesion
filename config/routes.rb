@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :attachments, only: [:new, :create, :destroy]
 
-  resources :certifications, only: [:index, :show, :edit, :update, :create] do
+  resources :dossiers, only: [:index, :show, :edit, :update, :create] do
     post :submit
     get :payment
     resources :questions, only: :index
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admin do
-    root to: "certifications#index"
-    resources :certifications
+    root to: "dossiers#index"
+    resources :dossiers
   end
 end

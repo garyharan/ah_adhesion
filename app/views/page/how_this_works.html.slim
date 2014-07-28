@@ -71,7 +71,7 @@
 .row
   .col-md-8.col-md-offset-2
     .pull-right
-      - if @active_certification.present?
-        = button_to "Continuez vers le questionnaire", certification_questions_path(@active_certification), method: :get
+      - if @active_dossier.present?
+        = button_to "Continuez vers le questionnaire", dossier_questions_path(@active_dossier), method: :get
       - else
-        = button_to "Commencer le questionnaire", certifications_path, method: :post
+        = button_to "Commencer le questionnaire", dossiers_path, method: :post

@@ -1,4 +1,4 @@
-class Certification < ActiveRecord::Base
+class Dossier < ActiveRecord::Base
   belongs_to :user
   has_many :answers
 
