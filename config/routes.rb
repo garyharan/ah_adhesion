@@ -24,4 +24,7 @@ Rails.application.routes.draw do
     root to: "dossiers#index"
     resources :dossiers
   end
+  #redirectnig the certifications questions url to dossier questions url
+  get '/certifications/:dossier_id/questions', to: redirect('/dossiers/%{dossier_id}/questions') 
 end
+
