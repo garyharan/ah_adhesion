@@ -1,5 +1,5 @@
 class Answer < ActiveRecord::Base
-  belongs_to :certification
+  belongs_to :dossier
   belongs_to :question
   has_many :attachments
 

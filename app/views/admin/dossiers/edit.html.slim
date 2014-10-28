@@ -1,0 +1,74 @@
+= link_to "<< liste des dossiers", admin_dossiers_path
+
+h1 = "Dossier ##{@dossier.id}"
+
+table
+  tr
+    th Ouis
+    th Score
+    th Statut
+    th
+  tr
+    td = @dossier.score
+    td = @dossier.validated_score
+    td = link_to "Visualiser les réponses", dossier_path(@dossier), target: "_blank"
+    td style="text-align: right"
+      = form_for @dossier, url: admin_dossier_path(@dossier), method: :put do |f|
+        = f.select :state, Dossier::POSSIBLE_STATES.invert
+        = f.submit "Sauvegarder"
+
+table
+  tr
+    th Email
+    th Dernier Login
+  tr
+    td = mail_to @dossier.user.email
+    td = timeago_tag @dossier.user.last_sign_in_at, lang: :fr, title: @dossier.user.last_sign_in_at
+
+- if @dossier.user.profile.present?
+  h3 Info Générale
+  table
+    tr
+      th Name
+      th Adresse
+      th Téléphone
+      th Fax
+    tr
+      td = @dossier.user.profile.name
+      td = @dossier.user.profile.address
+      td = @dossier.user.profile.telephone
+      td = @dossier.user.profile.fax
+
+  h3 Directeur
+  table
+    tr
+      th Nom
+      th Titre
+      th Téléphone
+      th Email
+    tr
+      td = @dossier.user.profile.director_name
+      td = @dossier.user.profile.director_title
+      td = @dossier.user.profile.director_phone
+      td = mail_to @dossier.user.profile.director_email
+
+  h3 Gérant
+  table
+    tr
+      th Nom
+      th Titre
+      th Téléphone
+      th Email
+    tr
+      td = @dossier.user.profile.manager_name
+      td = @dossier.user.profile.manager_title
+      td = @dossier.user.profile.manager_phone
+      td = mail_to @dossier.user.profile.manager_email
+- else
+  table
+    tr
+      th Aucun profile
+
+hr
+= form_for @dossier, remote: true, 'data-no-turbolink' => true do |f|
+  = f.text_area :note, rows: 5, cols: 50

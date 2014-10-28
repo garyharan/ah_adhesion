@@ -1,12 +1,12 @@
 ul.pagination
   - if @section.section_id - 1 > 0
-    li = link_to t("sections.previous"), certification_questions_path(section: @section.section_id - 1), class: 'btn'
+    li = link_to t("sections.previous"), dossier_questions_path(section: @section.section_id - 1), class: 'btn'
 
   -@top_sections.each do |top_section|
     - if top_section == @section
       li class="active" = link_to top_section.section_id, "#"
     - else
-      li= link_to top_section.section_id, certification_questions_path(section: top_section.section_id), role: "button"
+      li= link_to top_section.section_id, dossier_questions_path(section: top_section.section_id), role: "button"
 
   - if @section.section_id < @top_sections.count
-    li = link_to t("sections.next"), certification_questions_path(section: @section.section_id + 1)
+    li = link_to t("sections.next"), dossier_questions_path(section: @section.section_id + 1)

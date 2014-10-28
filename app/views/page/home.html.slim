@@ -2,10 +2,10 @@
   h1 Bienvenue!
   - if user_signed_in?
     p Vous êtes connecté en tant que #{current_user.email}.
-    - if @active_certification.blank?
-      = link_to "Commencer ma certification".html_safe, certifications_path, method: :post, :class => "btn btn-success btn-lg"
+    - if @active_dossier.blank?
+      = link_to "Commencer ma dossier".html_safe, dossiers_path, method: :post, :class => "btn btn-success btn-lg"
     - else
-      = link_to "Continuer le questionnaire".html_safe, certification_questions_path(@active_certification), :class => "btn btn-success btn-lg"
+      = link_to "Continuer le questionnaire".html_safe, dossier_questions_path(@active_dossier), :class => "btn btn-success btn-lg"
   - else
     p Pour accéder au site veuillez choisir l'une des options suivantes:
     p

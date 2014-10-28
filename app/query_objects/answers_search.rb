@@ -1,16 +1,16 @@
 class AnswersSearch
-  def initialize(answers_hash, certification)
+  def initialize(answers_hash, dossier)
     @answers_hash  = answers_hash
-    @certification = certification
+    @dossier = dossier
   end
 
-  def self.for_questions_and_certification(questions, certification)
-    answers = Answer.where(question_id: questions.collect(&:id), certification_id: certification.id)
+  def self.for_questions_and_dossier(questions, dossier)
+    answers = Answer.where(question_id: questions.collect(&:id), dossier_id: dossier.id)
     answers_hash = Hash[answers.collect {|a| [a.question_id, a]}]
-    AnswersSearch.new(answers_hash, certification)
+    AnswersSearch.new(answers_hash, dossier)
   end
 
   def answer_for(question)
-    @answers_hash[question.id] || Answer.create(certification_id: @certification.id, question_id: question.id)
+    @answers_hash[question.id] || Answer.create(dossier_id: @dossier.id, question_id: question.id)
   end
 end

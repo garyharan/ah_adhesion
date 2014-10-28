@@ -1,0 +1,7 @@
+tr
+  td class="text-center" = dossier.id
+  td class="text-center" = t("dossiers.#{dossier.state}")
+  - if dossier.draft?
+    td class="text-center" = link_to t("forms.continue"), dossier
+  - elsif dossier
+    td class="text-center" = link_to t("forms.view"), dossier

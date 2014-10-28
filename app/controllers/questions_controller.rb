@@ -1,12 +1,12 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_default_section
-  before_filter :find_certification
+  before_filter :find_dossier
   after_action  :set_last_visited_section
 
   def index
     @questions    = Question.where(section_id: @section.section_id).order("subsection_id, patch_version")
-    @answers      = AnswersSearch.for_questions_and_certification(@questions, @certification)
+    @answers      = AnswersSearch.for_questions_and_dossier(@questions, @dossier)
     @subsections  = @section.subsections
     @top_sections = Section.top_level
   end
@@ -18,11 +18,11 @@ class QuestionsController < ApplicationController
     @section = Section.top_level.find_by_section_id(section_id)
   end
 
-  def find_certification
-    @certification = if current_user.admin?
-      Certification.find(params[:certification_id])
+  def find_dossier
+    @dossier = if current_user.admin?
+      Dossier.find(params[:dossier_id])
     else
-      current_user.certifications.where(id: params[:certification_id]).first
+      current_user.dossiers.where(id: params[:dossier_id]).first
     end
   end
 
