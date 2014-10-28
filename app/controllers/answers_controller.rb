@@ -24,10 +24,10 @@ class AnswersController < ApplicationController
   end
 
   def find_or_create_answer
-    Answer.find_by_question_id_and_certification_id(answer_params[:question_id], answer_params[:certification_id]) || Answer.new(answer_params)
+    Answer.find_by_question_id_and_dossier_id(answer_params[:question_id], answer_params[:dossier_id]) || Answer.new(answer_params)
   end
 
   def answer_params
-    params.require(:answer).permit(:question_id, :certification_id, :value, :validated, :note)
+    params.require(:answer).permit(:question_id, :dossier_id, :value, :validated, :note)
   end
 end

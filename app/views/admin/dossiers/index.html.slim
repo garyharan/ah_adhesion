@@ -1,10 +1,10 @@
 h1
-  ' Certifications
+  ' Dossiers
   = link_to "Tous", admin_root_path, class: (params[:state].nil? ? 'active' : 'inactive')
-  - Certification::POSSIBLE_STATES.each do |k, v|
+  - Dossier::POSSIBLE_STATES.each do |k, v|
     = link_to v.titleize, admin_root_path(state: k), class: (params[:state].to_s == k.to_s ? 'active' : 'inactive')
 
-table#certifications
+table#dossiers
   tr
     th #
     th Email
@@ -13,4 +13,4 @@ table#certifications
     th Approbation
     th Acceptation du contrat
     th
-  = render @certifications
+  = render @dossiers

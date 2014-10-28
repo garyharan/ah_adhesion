@@ -18,6 +18,6 @@ class PageController < ApplicationController
   private
 
   def set_payment_method
-    current_user.latest_certification.update_attribute :expected_payment_method, 'paypal'
+    current_user.latest_dossier.update_attribute :expected_payment_method, 'paypal'
   end
 end

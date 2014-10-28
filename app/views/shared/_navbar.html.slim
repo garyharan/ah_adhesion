@@ -5,7 +5,7 @@ nav.navbar.navbar-default.navbar-static-top role="navigation"
         = image_tag "logo.jpg"
     ul.nav.navbar-nav.navbar-right
       li= link_to t("nav.how_this_works"), comment_ca_fonctionne_path
-      li= link_to t("nav.active_certification"), certification_questions_path(@active_certification) unless @active_certification.blank?
+      li= link_to t("nav.active_dossier"), dossier_questions_path(@active_dossier) unless @active_dossier.blank?
       li= link_to t("nav.my_profile"), edit_profil_path if user_signed_in?
       - unless user_signed_in?
         li = link_to t("authentication.sign_up"), new_user_registration_path

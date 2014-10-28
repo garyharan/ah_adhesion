@@ -4,18 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
-  before_action :set_active_certification
+  before_action :set_active_dossier
 
   # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-on-successful-sign-in
   def after_sign_in_path_for(resource)
     return edit_profil_path if profile_incomplete?
-    return certification_path(@active_certification) if @active_certification
-    certifications_path
+    return dossier_path(@active_dossier) if @active_dossier
+    dossiers_path
   end
 
-  def set_active_certification
+  def set_active_dossier
     return nil unless user_signed_in?
-    @active_certification = current_user.certifications.first # this won't be true as for next year
+    @active_dossier = current_user.dossiers.first # this won't be true as for next year
   end
 
   def set_locale

@@ -1,0 +1,9 @@
+- if @dossiers.any?
+  table class="table"
+    tr
+      th class="text-center" = t("dossiers.number")
+      th class="text-center" = t("dossiers.status")
+      th class="text-center" = t("dossiers.action")
+    = render @dossiers
+- else
+  = link_to "Commencer ma dossier", dossiers_path, method: :post
