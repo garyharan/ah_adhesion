@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 20140728182314) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "last_visited_section_id", default: 1
+    t.integer  "last_visited_section_id"
     t.boolean  "admin",                   default: false
   end
 
