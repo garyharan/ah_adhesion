@@ -1,6 +1,9 @@
 class DossiersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_dossier, only: [:show, :edit, :update, :submit]
+  protect_from_forgery expect: :widget
+  skip_before_action :verify_authenticity_token, only: :widget
+
+  before_action :authenticate_user!, except: [:widget]
+  before_action :set_dossier, only: [:show, :edit, :update, :submit, :widget]
 
   def index
     @dossiers = current_user.dossiers
@@ -41,6 +44,9 @@ class DossiersController < ApplicationController
 
   def payment
 
+  end
+
+  def widget
   end
 
   private

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :dossiers, only: [:index, :show, :edit, :update, :create] do
     post :submit
     get :payment
+    get :widget
     resources :questions, only: :index
   end
 
@@ -24,7 +25,8 @@ Rails.application.routes.draw do
     root to: "dossiers#index"
     resources :dossiers
   end
+
   #redirectnig the certifications questions url to dossier questions url
-  get '/certifications/:dossier_id/questions', to: redirect('/dossiers/%{dossier_id}/questions') 
+  get '/certifications/:dossier_id/questions', to: redirect('/dossiers/%{dossier_id}/questions')
 end
 

@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :answer do
-    certification_id 1
+    dossier_id 1
     question_id 1
     value false
 

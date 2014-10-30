@@ -6,5 +6,11 @@ FactoryGirl.define do
     trait :with_admin_rights do
       admin true
     end
+
+    trait :with_profile do
+      after(:create) do |instance|
+        create :profile, user_id: instance.id
+      end
+    end
   end
 end

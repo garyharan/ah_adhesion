@@ -1,5 +1,6 @@
 class Dossier < ActiveRecord::Base
   belongs_to :user
+  has_one :profile, through: :user
   has_many :answers
 
   POSSIBLE_STATES = {
