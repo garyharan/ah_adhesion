@@ -1,0 +1,115 @@
+$title-height: 64px;
+$header-height: 40px;
+$content-height: 300px;
+$footer-height: 40px;
+
+$closed-height: $title-height;
+$opened-height: $title-height + $header-height + $content-height + $footer-height;
+
+$width: 250px;
+$right-position: $width + 100px;
+$background-color: #fffaee;
+$highlight: #97bf0d;
+
+#reservert_container {
+  position: fixed;
+  right: $right-position;
+  width: $width;
+  margin: 0px;
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 400;
+
+  #reservert_title {
+    height: $title-height;
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+    padding: 11px;
+    cursor: pointer;
+
+    h1 {
+      margin: 0 0 5px;
+    }
+
+    p {
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0;
+
+      span {
+        color: $highlight;
+      }
+    }
+  }
+
+  #reservert_iframe {
+    height: $header-height + $content-height + $footer-height;
+    width:  $width - 2px;
+    border: none;
+  }
+
+  #reservert_header {
+    height: $header-height;
+  }
+
+  #reservert_content {
+    background-color: #fffaef;
+    border: 1px solid black;
+    height: $content-height;
+
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &.inactive {
+    bottom: 0px;
+    height: $closed-height;
+
+    .display_when_active { display: block; }
+    .display_when_inactive { display: none; }
+  }
+
+  &.active {
+    bottom: 0px;
+    height: $opened-height;
+    width: $width;
+
+    #reservert_title { /* hack */
+      height: $closed-height - 20px;
+    }
+
+    .display_when_active { display: none; }
+    .display_when_inactive { display: block; }
+  }
+}
+
+body#dossiers.widget_voting_system {
+  background-color: $background-color;
+
+  #reservert_header {
+    width: 240px;
+    padding: 10px 3px;
+  }
+
+  #reservert_content {
+    width: 240px;
+    padding: 10px 3px;
+    div.concrete_action {
+      font-size: 10px;
+      padding: 5px;
+      height: 65px;
+      overflow: auto;
+    }
+  }
+
+  #reservert_footer {
+    width: 240px;
+    padding: 10px 3px;
+  }
+}

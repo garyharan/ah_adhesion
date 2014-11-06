@@ -73,8 +73,8 @@ fr:
     continue: "Continuer"
     view: "Visualiser"
 
-  certifications:
-    number: "Numéro de certification"
+  dossiers:
+    number: "Numéro de dossier"
     status: "Statut"
     action: "Action"
 
@@ -83,6 +83,9 @@ fr:
     approved: "Approuvé"
     rejected: "Rejeté"
     expired: "Expiré"
+
+  widget:
+    concrete_actions: "%{score} actions concrètes"
 
   footer:
     contact_us: "Contactez-nous"

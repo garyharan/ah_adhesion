@@ -1,9 +1,11 @@
 class DossiersController < ApplicationController
-  protect_from_forgery expect: :widget
+  protect_from_forgery expect: [:widget, :widget_voting_system]
   skip_before_action :verify_authenticity_token, only: :widget
 
-  before_action :authenticate_user!, except: [:widget]
-  before_action :set_dossier, only: [:show, :edit, :update, :submit, :widget]
+  before_action :authenticate_user!, except: [:widget, :widget_voting_system]
+  before_action :set_dossier, only: [:show, :edit, :update, :submit, :widget, :widget_voting_system]
+
+  layout "widget", only: :widget_voting_system
 
   def index
     @dossiers = current_user.dossiers
@@ -43,10 +45,14 @@ class DossiersController < ApplicationController
   end
 
   def payment
-
   end
 
   def widget
+  end
+
+  def widget_voting_system
+    response.headers["X-Frame-Options"] = "ALLOWALL"
+    @concrete_actions = @dossier.answers.where(value: true).order("RANDOM()").limit(3)
   end
 
   private

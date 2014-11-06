@@ -9,4 +9,10 @@ describe Question do
 
     q1.section.should == s1
   end
+
+  it "should show question locale" do
+    question = create(:question, widget_fr: "Francais", widget_en: "English")
+    question.widget_text(:en).should eq "English"
+    question.widget_text(:fr).should eq "Francais"
+  end
 end

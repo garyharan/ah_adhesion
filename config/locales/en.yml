@@ -13,8 +13,8 @@ en:
     continue: "Continue"
     view: "View"
 
-  certifications:
-    number: "Certification Number"
+  dossiers:
+    number: "Dossier Number"
     status: "Status"
     action: "Action"
     draft: "Draft"
@@ -22,6 +22,9 @@ en:
     approved: "Approved"
     rejected: "Rejected"
     expired: "Expired"
+
+  widget:
+    concrete_actions: "%{score} concrete actions"
 
   footer:
     contact_us: "Contact us"

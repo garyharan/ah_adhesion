@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     post :submit
     get :payment
     get :widget
+    get :widget_voting_system
     resources :questions, only: :index
   end
 

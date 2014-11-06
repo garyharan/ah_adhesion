@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Reservert Widget
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body id="#{controller_name}" class="#{action_name}"
+
+    = yield

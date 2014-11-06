@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Admin::CertificationsController do
+describe Admin::DossiersController do
   let(:admin) { FactoryGirl.create :user, :with_admin_rights }
   let(:user)  { FactoryGirl.create :user }
 
@@ -19,8 +19,8 @@ describe Admin::CertificationsController do
     before do
       sign_in admin
 
-      Certification::POSSIBLE_STATES.keys.each do |state|
-        FactoryGirl.create :certification, state.to_sym
+      Dossier::POSSIBLE_STATES.keys.each do |state|
+        FactoryGirl.create :dossier, state.to_sym
       end
     end
 
@@ -30,32 +30,32 @@ describe Admin::CertificationsController do
         response.status.should eq 200
       end
 
-      it "assigns certifications" do
+      it "assigns dossiers" do
         get :index
-        assigns(:certifications).should eq Certification.all
+        assigns(:dossiers).should eq Dossier.all
       end
 
-      it "only assigns certifications of a given state" do
-        Certification::POSSIBLE_STATES.keys.each do |state|
+      it "only assigns dossiers of a given state" do
+        Dossier::POSSIBLE_STATES.keys.each do |state|
           get :index, state: state
-          assigns(:certifications).should eq Certification.send(state)
+          assigns(:dossiers).should eq Dossier.send(state)
         end
       end
     end
 
     context "#edit" do
       it "displays editing page" do
-        get :edit, id: Certification.first.id
+        get :edit, id: Dossier.first.id
         response.should be_success
       end
     end
 
     context "#update" do
-      let (:certification) { create :certification, :under_review }
+      let (:dossier) { create :dossier, :under_review }
 
       before do
-        request.env["HTTP_REFERER"] = admin_certification_path(certification)
-        post :update, id: certification.id, certification: { state: 'approved' }
+        request.env["HTTP_REFERER"] = admin_dossier_path(dossier)
+        post :update, id: dossier.id, dossier: { state: 'approved' }
       end
 
       it "sends back to show" do
@@ -63,11 +63,11 @@ describe Admin::CertificationsController do
       end
 
       it "sets flash" do
-        flash[:error] = "unable to save certification details"
+        flash[:error] = "unable to save dossier details"
       end
 
-      it "changes the certification state" do
-        assigns(:certification).reload.state.should eq 'approved'
+      it "changes the dossier state" do
+        assigns(:dossier).reload.state.should eq 'approved'
       end
     end
   end

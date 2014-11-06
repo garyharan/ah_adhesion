@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :answer do
     dossier_id 1
-    question_id 1
+    association :question, factory: :question
     value false
 
     trait :unvalidated do

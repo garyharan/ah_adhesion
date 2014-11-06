@@ -1,0 +1,19 @@
+#reservert_header
+  .container
+    .col-xs-6
+      = link_to "share"
+    .col-xs-6
+      = link_to "ENGLISH"
+      = link_to "R"
+      = link_to "X"
+  .container
+    .col-xs-12
+      = t(:concrete_actions, score: @dossier.score, scope: :widget)
+      = link_to "R"
+
+#reservert_content
+  = render partial: "concrete_action", collection: @concrete_actions
+
+#reservert_footer
+  .col-xs-8
+    p Know more on the certification
