@@ -13,7 +13,7 @@ describe User do
     end
 
     it "can get the latest certifications" do
-      user.latest_certification.should be_a Certification
+      user.latest_certification.should be_a Dossier
     end
 
   end

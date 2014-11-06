@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe CertificationsHelper do
+describe DossiersHelper do
   it "creates an image tag" do
     file_icon_image_path("image.png").should == 'file_icons/doc.png'
   end
