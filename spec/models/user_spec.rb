@@ -5,15 +5,15 @@ describe User do
     FactoryGirl.create(:user).valid?.should be_true
   end
 
-  describe "#latest_certification" do
+  describe "#latest_dossier" do
     let(:user) { FactoryGirl.create(:user) }
 
     before do
-      user.certifications.create
+      user.dossiers.create
     end
 
-    it "can get the latest certifications" do
-      user.latest_certification.should be_a Dossier
+    it "can get the latest dossiers" do
+      user.latest_dossier.should be_a Dossier
     end
 
   end
