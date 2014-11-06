@@ -3,13 +3,13 @@ require 'spec_helper'
 describe ApplicationController do
   let(:user) { FactoryGirl.create(:user) }
 
-  context "with an active certification" do
-    it "redirects to certification#show" do
+  context "with an active dossier" do
+    it "redirects to dossier#show" do
       sign_in user
-      certification = user.certifications.create!
+      dossier = user.dossiers.create!
       @controller.stub(:profile_incomplete?) { false }
-      @controller.set_active_certification # mimic the before_action
-      @controller.after_sign_in_path_for(user).should == certification_path(certification)
+      @controller.set_active_dossier # mimic the before_action
+      @controller.after_sign_in_path_for(user).should == dossier_path(dossier)
     end
   end
 
@@ -20,11 +20,11 @@ describe ApplicationController do
     end
   end
 
-  context "without an active certification" do
-    it "redirects to certification#index" do
+  context "without an active dossier" do
+    it "redirects to dossier#index" do
       sign_in user
     @controller.stub(:profile_incomplete?) { false }
-      @controller.after_sign_in_path_for(user).should == certifications_path
+      @controller.after_sign_in_path_for(user).should == dossiers_path
     end
   end
 
@@ -39,11 +39,11 @@ describe ApplicationController do
     end
   end
 
-  it "sets the active certification" do
+  it "sets the active dossier" do
     sign_in user
     @controller.stub(:profile_incomplete?) { false }
-    user.certifications.create FactoryGirl.attributes_for(:certification, state: 'draft')
-    @controller.set_active_certification.should_not be_nil
-    @controller.instance_variable_get(:@active_certification).should == user.certifications.first
+    user.dossiers.create FactoryGirl.attributes_for(:dossier, state: 'draft')
+    @controller.set_active_dossier.should_not be_nil
+    @controller.instance_variable_get(:@active_dossier).should == user.dossiers.first
   end
 end

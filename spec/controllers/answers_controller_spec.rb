@@ -4,11 +4,11 @@ describe AnswersController do
 
   describe "POST 'create'" do
     let(:question)      { FactoryGirl.create(:question) }
-    let(:certification) { FactoryGirl.create(:certification) }
+    let(:dossier) { FactoryGirl.create(:dossier) }
 
     it "returns http success" do
       expect {
-        post 'create', answer: { question_id: question.id, certification_id: certification.id, value: true }
+        post 'create', answer: { question_id: question.id, dossier_id: dossier.id, value: true }
         response.should be_success
       }.to change { Answer.count }.by(1)
 
@@ -17,10 +17,10 @@ describe AnswersController do
     end
 
     it "can change the value for an existing answer" do
-      answer = Answer.create(question_id: question.id, certification_id: certification.id, value: true)
+      answer = Answer.create(question_id: question.id, dossier_id: dossier.id, value: true)
 
       expect {
-        post 'create', answer: { question_id: question.id, certification_id: certification.id, value: false }
+        post 'create', answer: { question_id: question.id, dossier_id: dossier.id, value: false }
         response.should be_success
       }.to change { Answer.count }.by(0)
 

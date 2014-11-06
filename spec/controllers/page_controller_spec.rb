@@ -5,7 +5,7 @@ describe PageController do
   let(:user) { FactoryGirl.create :user }
 
   before do
-    user.certifications.create
+    user.dossiers.create
     sign_in user
   end
 
@@ -22,9 +22,9 @@ describe PageController do
       response.should redirect_to(merci_path)
     end
 
-    it "sets latest certification payment method" do
+    it "sets latest dossier payment method" do
       get 'paypal_success'
-      user.latest_certification.expected_payment_method.should == "paypal"
+      user.latest_dossier.expected_payment_method.should == "paypal"
     end
   end
 
