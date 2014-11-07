@@ -18,7 +18,12 @@ Rails.application.routes.draw do
     resources :questions, only: :index
   end
 
-  resources :answers
+  resources :answers do
+    member do
+      put :vote
+      put :flag
+    end
+  end
 
   devise_for :users
 

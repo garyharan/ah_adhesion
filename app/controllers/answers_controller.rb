@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
-  skip_before_filter :verify_authenticity_token, only: :create
+  protect_from_forgery expect: [:vote, :flag]
+  skip_before_filter :verify_authenticity_token, only: [:create, :vote, :flag]
 
   def create
     @answer = find_or_create_answer
@@ -11,6 +12,15 @@ class AnswersController < ApplicationController
 
   def update
     create
+  end
+
+  def vote
+    @answer = Answer.find(params[:id])
+    @answer.update_attribute :votes, @answer.votes.to_i + 1
+    render plain: "NEW VOTES COUNT: #{@answer.votes}",  status: 202 # accepted
+  end
+
+  def flag
   end
 
   private

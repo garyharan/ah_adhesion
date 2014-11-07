@@ -2,4 +2,7 @@ div.concrete_action
   .col-xs-10
     = concrete_action.question.widget_text(locale)
   .col-xs-2
-    p Yes
+    = link_to vote_answer_url(concrete_action), remote: true, method: :put, class: "vote" do
+      p C'est vrai
+      span.count = concrete_action.votes
+

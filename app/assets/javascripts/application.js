@@ -6,3 +6,4 @@
 //= require attachments
 //= require s3_direct_upload
 //= require contract
+//= require widget

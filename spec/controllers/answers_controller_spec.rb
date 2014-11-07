@@ -1,11 +1,10 @@
 require 'spec_helper'
 
 describe AnswersController do
+  let(:question)      { FactoryGirl.create(:question) }
+  let(:dossier) { FactoryGirl.create(:dossier) }
 
   describe "POST 'create'" do
-    let(:question)      { FactoryGirl.create(:question) }
-    let(:dossier) { FactoryGirl.create(:dossier) }
-
     it "returns http success" do
       expect {
         post 'create', answer: { question_id: question.id, dossier_id: dossier.id, value: true }
@@ -26,6 +25,16 @@ describe AnswersController do
 
       assigns(:answer).value.should be_false
       assigns(:answer).should be_persisted
+    end
+  end
+
+  describe "PUT vote" do
+    let(:answer) { create :answer }
+
+    it "returns http accepted" do
+      put 'vote', id: answer.id
+      assigns(:answer).votes.should eq 1
+      response.status.should eq 202
     end
   end
 
