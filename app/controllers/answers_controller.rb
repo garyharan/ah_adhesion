@@ -16,7 +16,10 @@ class AnswersController < ApplicationController
 
   def vote
     @answer = Answer.find(params[:id])
-    @answer.update_attribute :votes, @answer.votes.to_i + 1
+    unless cookies[:voted]
+      @answer.update_attribute :votes, @answer.votes.to_i + 1
+      cookies[:voted] = { value: 'voted', expires: 12.year.from_now }
+    end
     render plain: "NEW VOTES COUNT: #{@answer.votes}",  status: 202 # accepted
   end
 

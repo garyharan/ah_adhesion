@@ -36,6 +36,12 @@ describe AnswersController do
       assigns(:answer).votes.should eq 1
       response.status.should eq 202
     end
-  end
 
+    it "does not allow someone to vote again if they have a cookie set" do
+      put 'vote', id: answer.id
+      assigns(:answer).votes.should eq 1
+      put 'vote', id: answer.id
+      assigns(:answer).votes.should eq 1
+    end
+  end
 end
