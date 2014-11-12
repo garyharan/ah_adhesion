@@ -3,9 +3,6 @@ class ReservertWidget
     @initializeContainer()
     @initializeCSS()
     @initializeTitle()
-    @initializeContent()
-
-    @toggle() # to be removed later
 
   initializeContainer: =>
     @container = container = document.createElement "div"
@@ -17,11 +14,6 @@ class ReservertWidget
   initializeTitle: =>
     @title = document.getElementById('reservert_title')
     @title.addEventListener "click", (e) =>
-      @toggle(e)
-
-  initializeContent: =>
-    @content = document.getElementById('reservert_content')
-    @content.addEventListener "click", (e) =>
       @toggle(e)
 
   initializeCSS: =>
