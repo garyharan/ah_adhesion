@@ -21,7 +21,12 @@ Rails.application.routes.draw do
   resources :answers do
     member do
       put :vote
-      put :flag
+      get :flag
+    end
+    resources :reports do
+      member do
+        get :thank_you
+      end
     end
   end
 

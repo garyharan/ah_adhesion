@@ -24,6 +24,11 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def allow_iframe
+    logger.debug "Allowing iFrames access in #{controller_name}##{action_name}"
+    response.headers.except! 'X-Frame-Options'
+  end
+
   def extract_locale_from_cookie
     cookies[:chosen_language]
   end

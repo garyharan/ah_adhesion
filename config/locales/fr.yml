@@ -1,4 +1,13 @@
 fr:
+  name: Nom
+  email: Courriel
+  body: Message
+  no_respect: Vous avez raison de penser que cet établissement ne respecte pas ses engagements?
+  nothing_like_vigilance: Rien ne vaut la vigilance des clients au quotidien pour assurer la qualité d'une certification.
+  send: Envoyer
+  thank_you_filling_report: Merci de nous avoir contacté.
+  back: Retour
+
   date:
     abbr_day_names:
     - dim
@@ -100,12 +109,27 @@ fr:
     previous: "Précédent"
     next: "Suivant"
 
+
   activerecord:
+    attributes:
+      report:
+        name: Nom
+        email: Courriel
+        body: Message
+
     errors:
       messages:
         record_invalid:
           "Il manque des champs"
       models:
+        report:
+          attributes:
+            name:
+              blank: "est un champ obligatoire"
+            email:
+              blank: "est un champ obligatoire"
+            body:
+              blank: "est un champ obligatoire"
         certification:
           attributes:
             state:

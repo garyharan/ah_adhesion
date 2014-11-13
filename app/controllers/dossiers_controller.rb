@@ -1,6 +1,7 @@
 class DossiersController < ApplicationController
   protect_from_forgery expect: [:widget, :widget_voting_system]
   skip_before_action :verify_authenticity_token, only: :widget
+  before_action :allow_iframe, only: :widget_voting_system
 
   before_action :authenticate_user!, except: [:widget, :widget_voting_system]
   before_action :set_dossier, only: [:show, :edit, :update, :submit, :widget, :widget_voting_system]
@@ -51,7 +52,6 @@ class DossiersController < ApplicationController
   end
 
   def widget_voting_system
-    response.headers["X-Frame-Options"] = "ALLOWALL"
     @concrete_actions = @dossier.answers.where(value: true).order("RANDOM()").limit(3)
   end
 

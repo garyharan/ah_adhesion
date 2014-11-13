@@ -1,4 +1,13 @@
 en:
+  name: Name
+  email: Email
+  message: Message
+  no_respect: Do you have reason to believe this establishment does not hold its promise?
+  nothing_like_vigilance: As a client you can help us insure the quality of of our certification by alerting us of any infractions.
+  send: Send
+  thank_you_filling_report: Thank you for filling this report.
+  back: Go back
+
   authentication:
     sign_in: "Sign in"
     sign_up: "Sign up"
@@ -42,6 +51,10 @@ en:
   activerecord:
     errors:
       models:
+        report:
+          attributes:
+            name:
+              blank: "can't be blank"
         profile:
           attributes:
             name:
@@ -57,3 +70,4 @@ en:
             email:
               blank: "Please enter your email"
 
+                #attributes:
