@@ -1,0 +1,25 @@
+.container
+  .col-xs-12
+    h1 = t(:no_respect)
+
+    p = t(:nothing_like_vigilance)
+
+  .col-xs-12
+    = form_for [@answer, Report.new] do |f|
+
+      - if @report.errors.any?
+        ul
+          - @report.errors.full_messages.each do |msg|
+            li = msg
+
+      .col-xs-12
+        = f.text_field :name, placeholder: t(:name)
+      .col-xs-12
+        = f.text_field :email, placeholder: t(:email)
+      .col-xs-12
+        = f.text_area :body, placeholder: t(:body)
+
+      .col-xs-6
+        = link_to t(:cancel), dossier_widget_voting_system_url(@answer.dossier), class: "cancel"
+      .col-xs-6.text-right
+        = submit_tag t(:send)
