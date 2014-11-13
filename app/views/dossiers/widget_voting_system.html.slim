@@ -3,9 +3,9 @@
     .col-xs-6
       = render partial: 'facebook_share'
     .col-xs-6
-      = link_to "ENGLISH"
-      = link_to "R"
-      = link_to "X"
+      = link_to_switch_language
+      = link_to "HELP
+      = link_to "EXPAND"
   .container
     .col-xs-12
       = t(:concrete_actions, score: @dossier.score, scope: :widget)
