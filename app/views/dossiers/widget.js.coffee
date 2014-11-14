@@ -4,8 +4,6 @@ class ReservertWidget
     @initializeCSS()
     @initializeTitle()
 
-    @toggle()
-
   initializeContainer: =>
     @container = container = document.createElement "div"
     @container.id = "reservert_container"

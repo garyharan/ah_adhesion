@@ -56,7 +56,7 @@
 }
 
 #reservert_iframe {
-  height: $header-height + $content-height + $footer-height;
+  height: $opened-height - $title-height;
   width:  $width - 2px;
   border: none;
 }
@@ -65,7 +65,8 @@ nav#reservert_header {
   height: $header-height;
   padding: 10px;
   span.utilities {
-    position: fixed;
+    float: right;
+    position: absolute;
     right: 10px;
     top: 10px;
   }
@@ -79,14 +80,17 @@ nav#reservert_header {
 }
 
 #reservert_content {
-  background-color: #fffaef;
-  border: 1px solid black;
+  margin: 0 10px;
+  padding: 0;
   height: $content-height;
+}
 
-  .container {
-    margin: 0;
-    padding: 0;
-  }
+#reservert_footer {
+  height: $footer-height;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-weight: 18px;
 }
 
 body#dossiers {
