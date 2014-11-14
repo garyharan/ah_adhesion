@@ -3,17 +3,43 @@
     .col-xs-6
       = render partial: 'facebook_share'
     .col-xs-6
-      = link_to_switch_language
-      = link_to "HELP
-      = link_to "EXPAND"
-  .container
-    .col-xs-12
+      span
+        = link_to_switch_language
+        = link_to "", id: "toggle_help" do
+          i class="icon-help"
+            span class="notification" = t(:need_help)
+        = link_to "EXPAND"
+
+
+  #concrete_actions.container
+    p class="status"
       = t(:concrete_actions, score: @dossier.score, scope: :widget)
-      = link_to "R"
+      a href=""
+        i class="icon-arrows-ccw"
+        span class="notification" = t(:more_actions)
 
 #reservert_content
   = render partial: "concrete_action", collection: @concrete_actions
 
+#help_section.container
+  p = t(:welcome_help)
+  p
+    button
+      = t(:it_is)
+      br
+      span = t(:real)
+    = t(:we_invite_you_to_tattle)
+  p
+    i class="icon-resize-full"
+    = t(:to_resize_instructions)
+  p
+    i class="icon-flag"
+    = t(:tattle_instructions)
+  p style="font-style: italic;"
+    = t(:thank_you_for_visit)
+
+  button = t(:back)
+
 #reservert_footer
   .col-xs-8
-    p Know more on the certification
+    = link_to t(:know_more_reservert), "http://www.hotelleriequebec.com/innover/reservert/choisir-reservert/", target: "_blank"

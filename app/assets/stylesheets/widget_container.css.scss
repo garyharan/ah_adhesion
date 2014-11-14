@@ -75,3 +75,9 @@
     .display_when_inactive { display: block; }
   }
 }
+
+body#dossiers {
+  #help_section {
+    display: none;
+  }
+}

@@ -8,6 +8,17 @@ fr:
   thank_you_filling_report: Merci de nous avoir contacté.
   back: Retour
 
+  more_actions: D’autres actions
+  know_more_reservert: En savoir plus sur la certification
+  need_help: Besoin d'aide?
+  it_is: C'est
+  real: Vrai
+  welcome_help: Bienvenue sur le widget Réservert, le programme de développement durable indépendant auquel nous adhérons.
+  we_invite_you_to_tattle: Nous vous invitons à témoigner de nos efforts en confirmant les actions énumérées dans la page précédente.
+  to_resize_instructions: Pour obtenir la liste complète de nos actions, cliquez sur le bouton ‘’élargir’’ pour obtenir une page plein écran.
+  tattle_instructions: Si vous avez des raisons de douter de l’un ou l’autre des engagements, signalez-le.
+  thank_you_for_visit: Merci pour votre visite à notre établissement!
+
   date:
     abbr_day_names:
     - dim

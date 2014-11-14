@@ -11,6 +11,9 @@ $right-position: $width + 100px;
 $background-color: #fffaee;
 $highlight: #97bf0d;
 
+@import "widget_standard";
+@import "widget_fontello";
+
 @import "widget_container";
 @import "widget_voting_system";
 @import "widget_reporting";
