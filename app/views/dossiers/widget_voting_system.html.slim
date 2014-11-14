@@ -1,25 +1,24 @@
-#reservert_header
-  .container
-    .col-xs-6
-      = render partial: 'facebook_share'
-    .col-xs-6
-      span
-        = link_to_switch_language
-        = link_to "", id: "toggle_help" do
-          i class="icon-help"
-            span class="notification" = t(:need_help)
-        = link_to "EXPAND"
+nav#reservert_header
+  = render partial: 'facebook_share'
+  span.utilities
+    = link_to_switch_language
+    = link_to "", id: "toggle_help" do
+      i class="icon-help"
+        span class="notification" = t(:need_help)
+    = link_to "", id: "expand" do
+      i class="icon-resize-full"
+        span class="notification" = t(:see_all)
 
-
-  #concrete_actions.container
-    p class="status"
-      = t(:concrete_actions, score: @dossier.score, scope: :widget)
-      a href=""
-        i class="icon-arrows-ccw"
-        span class="notification" = t(:more_actions)
+#concrete_actions
+  p class="status"
+    = t(:concrete_actions, score: @dossier.score, scope: :widget)
+    a href=""
+      i class="icon-arrows-ccw"
+      span class="notification" = t(:more_actions)
 
 #reservert_content
-  = render partial: "concrete_action", collection: @concrete_actions
+  section.actions
+    = render partial: "concrete_action", collection: @concrete_actions
 
 #help_section.container
   p = t(:welcome_help)

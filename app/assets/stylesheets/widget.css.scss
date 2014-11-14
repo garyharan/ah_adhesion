@@ -1,10 +1,11 @@
 $title-height: 64px;
-$header-height: 40px;
+$header-height: 30px;
+$action-height: 30px;
 $content-height: 300px;
 $footer-height: 40px;
 
 $closed-height: $title-height;
-$opened-height: $title-height + $header-height + $content-height + $footer-height;
+$opened-height: $title-height + $header-height + $action-height + $content-height + $footer-height;
 
 $width: 250px;
 $right-position: $width + 100px;

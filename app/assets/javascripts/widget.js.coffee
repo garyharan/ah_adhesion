@@ -32,3 +32,5 @@ $ ->
 
 
   window.WidgetPage = new WidgetPage()
+
+
