@@ -64,10 +64,12 @@
 nav#reservert_header {
   height: $header-height;
   padding: 10px;
+  position: relative;
+
   span.utilities {
     float: right;
     position: absolute;
-    right: 10px;
+    right: 0px;
     top: 10px;
   }
 }

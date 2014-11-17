@@ -123,12 +123,16 @@ describe DossiersController do
       create_list(:answer, 6, :validated, dossier_id: dossier.id)
     end
 
-
     context "widget_voting_system" do
       it "shows 3 random questions answered true" do
         get :widget_voting_system, dossier_id: dossier.id
         assigns(:concrete_actions).count.should eq 3
         assigns(:concrete_actions).first.should be_a Answer
+      end
+
+      it "should allow us to display all" do
+        get :widget_voting_system, dossier_id: dossier.id, display: 'all'
+        assigns(:concrete_actions).count.should eq 6
       end
     end
   end

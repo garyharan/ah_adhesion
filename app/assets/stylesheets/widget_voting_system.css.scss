@@ -4,15 +4,27 @@ body#dossiers.widget_voting_system {
 }
 
 @media all and (max-width: $width){
-  #reservert_header, #reservert_content, #reservert_footer {
+  #reservert_header, #concrete_actions, #reservert_content, #reservert_footer {
     width: 230px;
     padding: 0px 10px;
   }
 }
 
 @media all and (min-width: $width){ /* applied only if over 500px width */
-  #reservert_header, #reservert_content, #reservert_footer {
+  #reservert_header, #concrete_actions, #reservert_content, #reservert_footer {
     width: 800px;
+    margin: 30px auto;
+    height: auto;
+  }
+
+  a#expand {
+    display: none;
+  }
+
+  section.actions {
+    p {
+      font-size: 1.8em;
+    }
   }
 }
 

@@ -52,7 +52,11 @@ class DossiersController < ApplicationController
   end
 
   def widget_voting_system
-    @concrete_actions = @dossier.answers.where(value: true).order("RANDOM()").limit(3)
+    @concrete_actions = if params[:display] == 'all'
+      @dossier.answers.where(value: true)
+    else
+      @dossier.answers.where(value: true).order("RANDOM()").limit(3)
+    end
   end
 
   private

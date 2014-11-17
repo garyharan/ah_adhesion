@@ -5,7 +5,7 @@ nav#reservert_header
     = link_to "", id: "toggle_help" do
       i class="icon-help"
         span class="notification" = t(:need_help)
-    = link_to "", id: "expand" do
+    = link_to "?display=all", id: "expand", target: "_blank" do
       i class="icon-resize-full"
         span class="notification" = t(:see_all)
 
