@@ -16,17 +16,32 @@ class AnswersController < ApplicationController
 
   def vote
     @answer = Answer.find(params[:id])
-    unless cookies[:voted]
-      @answer.update_attribute :votes, @answer.votes.to_i + 1
-      cookies[:voted] = { value: 'voted', expires: 12.year.from_now }
-    end
-    render plain: "NEW VOTES COUNT: #{@answer.votes}",  status: 202 # accepted
+    vote_for(@answer)
+    render plain: "NEW VOTES COUNT: #{@answer.votes}", status: 202 # accepted
   end
 
   def flag
   end
 
   private
+
+  def vote_for(answer)
+    return if voted_for?(answer)
+
+    answer.update_attribute :votes, answer.votes.to_i + 1
+
+    cookies[:voted_for] = {
+      value: votes.concat([answer.id]).join(','), expires: 12.year.from_now
+    }
+  end
+
+  def voted_for?(answer)
+    votes.include?(answer.id.to_s)
+  end
+
+  def votes
+    (cookies[:voted_for] || "").split(",")
+  end
 
   def save_answer
     if @answer.persisted?
