@@ -11,7 +11,7 @@ body#dossiers.widget_voting_system {
 }
 
 @media all and (min-width: $width){ /* applied only if over 500px width */
-  #reservert_header, #concrete_actions, #reservert_content, #reservert_footer {
+  #reservert_header, #concrete_actions, #reservert_content, #reservert_footer, #help_section {
     width: 800px;
     margin: 30px auto;
     height: auto;
@@ -21,9 +21,13 @@ body#dossiers.widget_voting_system {
     display: none;
   }
 
-  section.actions {
+  section.actions, #help_section {
     p {
       font-size: 1.8em;
+      line-height: 1.8em;
+      button {
+        font-size: 10px;
+      }
     }
   }
 }
