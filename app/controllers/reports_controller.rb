@@ -12,6 +12,7 @@ class ReportsController < ApplicationController
     @report = Report.new report_params
 
     if @report.save
+      ReportMailer.report_email(@report).deliver
       render 'thank_you'
     else
       render 'new'

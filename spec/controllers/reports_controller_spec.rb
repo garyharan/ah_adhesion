@@ -19,6 +19,11 @@ describe ReportsController do
     response.should render_template("thank_you")
   end
 
+  it "sends an email" do
+    ReportMailer.should_receive(:report_email).and_return( double("Mailer", :deliver => true) )
+    post :create, report: { name: "John Complainer", email: "valid@email.org", body: "Yeah their soap is not green", answer_id: answer.id }, answer_id: answer.id
+  end
+
   it "allows us to say thank you" do
     get :thank_you, answer_id: answer.id, id: 1
     response.should be_success
