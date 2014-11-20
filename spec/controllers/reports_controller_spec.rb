@@ -13,7 +13,7 @@ describe ReportsController do
 
   it "allows creation of a report" do
     expect {
-      post :create, report: { name: "John Complainer", email: "valid@email.org", body: "Yeah their soap is not green" }, answer_id: answer.id
+      post :create, report: { name: "John Complainer", email: "valid@email.org", body: "Yeah their soap is not green", answer_id: answer.id }, answer_id: answer.id
     }.to change(Report, :count).by 1
     response.should be_success
     response.should render_template("thank_you")
