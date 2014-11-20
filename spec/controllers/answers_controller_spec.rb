@@ -44,9 +44,4 @@ describe AnswersController do
       assigns(:answer).votes.should eq 1
     end
   end
-
-  describe "GET flag" do
-    let(:answer) { create :answer }
-
-  end
 end

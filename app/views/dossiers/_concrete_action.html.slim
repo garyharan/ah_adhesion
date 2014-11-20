@@ -5,4 +5,7 @@ article
     span = t(:real)
     br
     span.count = concrete_action.votes
-  p = concrete_action.question.widget_text(locale)
+  p
+    = concrete_action.question.widget_text(locale)
+    = link_to new_answer_report_url(concrete_action) do
+      i class="icon-flag"

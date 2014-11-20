@@ -20,9 +20,6 @@ class AnswersController < ApplicationController
     render plain: "NEW VOTES COUNT: #{@answer.votes}", status: 202 # accepted
   end
 
-  def flag
-  end
-
   private
 
   def vote_for(answer)
