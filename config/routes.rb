@@ -34,7 +34,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: "dossiers#index"
-    resources :dossiers
+    resources :dossiers do
+      resources :reports
+    end
   end
 
   #redirectnig the certifications questions url to dossier questions url

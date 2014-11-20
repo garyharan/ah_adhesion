@@ -2,6 +2,7 @@ tr
   td = dossier.id
   td = dossier.user.email
   td = dossier.state
+  td = dossier.reports.size
   td = dossier.expected_payment_method
   td = timeago_tag dossier.approval_date, lang: :fr, title: dossier.approval_date
   td = timeago_tag dossier.accepted_contract_at, lang: :fr, title: dossier.accepted_contract_at

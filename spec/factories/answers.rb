@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :answer do
-    dossier_id 1
+    dossier
     association :question, factory: :question
     value false
 

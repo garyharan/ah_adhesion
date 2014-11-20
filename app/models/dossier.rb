@@ -2,6 +2,9 @@ class Dossier < ActiveRecord::Base
   belongs_to :user
   has_one :profile, through: :user
   has_many :answers
+  has_many :reports
+
+  attr_readonly :reports_count
 
   POSSIBLE_STATES = {
     draft: "Brouillon",

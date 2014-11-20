@@ -1,10 +1,11 @@
 class ReportMailer < ActionMailer::Base
-  default to: ["gary.haran@gmail.com", "lopez@ma14.com"]
+  default   to: ["gary.haran@gmail.com", "lopez@ma14.com"],
+          from: "reservert@hotelleriequebec.com"
 
   def report_email(report)
     @report = report
-    @url  = "https://adhesion.reservert.com/admin/reports/whatever/#{@report.answer.id}"
+    @url  = admin_dossier_report_url(@report.answer.dossier, @report)
 
-    mail(to: 'gary.haran+recipient@gmail.com', subject: 'A flagged action was reported')
+    mail(subject: 'A flagged action was reported')
   end
 end
