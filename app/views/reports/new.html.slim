@@ -7,6 +7,8 @@
   .col-xs-12
     = form_for [@answer, Report.new] do |f|
 
+      = hidden_field_tag "report[answer_id]", @answer.id
+
       - if @report.errors.any?
         ul
           - @report.errors.full_messages.each do |msg|
