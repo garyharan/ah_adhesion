@@ -5,6 +5,10 @@ class Admin::ReportsController < Admin::BaseController
     @reports = @dossier.reports
   end
 
+  def show
+    @report = @dossier.reports.find params[:id]
+  end
+
   private
 
   def find_dossier

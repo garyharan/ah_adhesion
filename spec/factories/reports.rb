@@ -7,5 +7,6 @@ FactoryGirl.define do
     body "I don't think they display their policy."
 
     association :answer, factory: :answer
+    association :dossier, factory: :dossier
   end
 end

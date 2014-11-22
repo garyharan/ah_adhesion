@@ -1,5 +1,5 @@
 tr
-  td = report.created_at
+  td = link_to report.created_at, admin_dossier_report_url(@dossier, report)
   td = report.name
   td = report.email
   td = report.body
