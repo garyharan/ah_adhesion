@@ -3,6 +3,10 @@ body#dossiers.widget_voting_system {
   background-color: $background-color;
 }
 
+button.vote {
+  z-index: 1;
+}
+
 @media all and (max-width: $width){
   #reservert_header, #concrete_actions, #reservert_content, #reservert_footer {
     width: 230px;
