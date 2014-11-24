@@ -1,0 +1,741 @@
+@charset "UTF-8";
+/* line 1, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.clearfix {
+  zoom: 1;
+}
+
+/* line 5, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+/* line 9, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 12, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 400;
+}
+
+/* line 18, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.widget {
+  width: 233px;
+  position: absolute;
+  right: 16.47727273%;
+  background-color: #fffaee;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  top: calc(100% - 63px);
+  height: 63px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-animation: animationFrames linear 6s;
+  animation: animationFrames linear 6s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/* line 34, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.widget:hover {
+  top: calc(100% - 140px);
+  height: 140px;
+}
+
+/* line 38, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.widget.opened {
+  height: auto !important;
+  bottom: 0;
+  top: auto !important;
+  cursor: default;
+  overflow: visible;
+}
+
+/* line 45, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.full {
+  width: 80%;
+  margin: 20px auto;
+  position: relative;
+  background-color: #fffaee;
+  font-size: 14px;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+/* line 54, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.full button {
+  height: 90px;
+  width: 90px;
+}
+
+/* line 58, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.full nav .icon-resize-full {
+  display: none;
+}
+
+/* line 61, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.full article {
+  min-height: 100px !important;
+}
+
+/* line 64, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+.full section.help button {
+  width: 55px;
+  height: 55px;
+  font-size: 10px;
+  margin-right: 12px;
+}
+
+@-webkit-keyframes animationFrames {
+  /* line 71, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  0% {
+    top: 100%;
+    height: 0px;
+  }
+
+  /* line 75, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  30% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+
+  /* line 79, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  60% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+
+  /* line 83, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  70% {
+    top: calc(100% - 140px);
+    height: 140px;
+  }
+
+  /* line 87, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  80% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+
+  /* line 91, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  90% {
+    top: calc(100% - 140px);
+    height: 140px;
+  }
+
+  /* line 95, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  100% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+}
+
+@keyframes animationFrames {
+  /* line 101, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  0% {
+    top: 100%;
+    height: 0px;
+  }
+
+  /* line 105, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  30% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+
+  /* line 109, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  60% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+
+  /* line 113, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  70% {
+    top: calc(100% - 140px);
+    height: 140px;
+  }
+
+  /* line 117, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  80% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+
+  /* line 121, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  90% {
+    top: calc(100% - 140px);
+    height: 140px;
+  }
+
+  /* line 125, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+  100% {
+    top: calc(100% - 63px);
+    height: 63px;
+  }
+}
+
+/* line 130, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+h1 {
+  margin: 0 0 5px;
+}
+
+/* line 133, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+p {
+  margin: 5px 0;
+}
+
+/* line 136, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+a {
+  color: #97bf0d;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  position: relative;
+}
+
+/* line 144, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+a span.notification {
+  position: absolute;
+  background-color: #fffaee;
+  border: .5px solid black;
+  padding: 3px;
+  top: 120%;
+  left: 0;
+  color: #000;
+  z-index: 9999;
+  font-size: 11px;
+  width: auto !important;
+  display: none;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+/* line 159, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+a:hover {
+  color: #bdef10;
+}
+
+/* line 162, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+a:hover span.notification {
+  display: block;
+}
+
+/* line 165, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+i {
+  font-size: 1.5em;
+}
+
+/* line 168, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+button {
+  width: 45px;
+  height: 45px;
+  background-color: #97bf0d;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: 'Oswald', sans-serif;
+  line-height: 1em;
+  font-size: 0.80em;
+}
+
+/* line 183, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+button span {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+
+/* line 187, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+button span span {
+  line-height: 1.5em;
+  color: #fff;
+  font-size: 1em;
+}
+
+/* line 192, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+i.icon-arrows-ccw {
+  display: inline-block;
+}
+
+/* line 195, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+i.icon-arrows-ccw:hover {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+/* line 202, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+i.icon-flag {
+  color: tomato;
+}
+
+/* line 205, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+header.header {
+  background-color: #000;
+  padding: 11px;
+  text-align: center;
+}
+
+/* line 210, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+header.header p {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+
+/* line 216, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+header.header p span {
+  color: #97bf0d;
+}
+
+/* line 219, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+main {
+  padding: 11px;
+}
+
+/* line 222, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+nav {
+  font-size: 1.11em;
+  padding-bottom: 11px;
+}
+
+/* line 226, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+nav span {
+  float: right;
+}
+
+/* line 229, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section {
+  padding-bottom: none;
+}
+
+/* line 232, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions .status {
+  font-size: 1.55em;
+  margin-bottom: 22px;
+}
+
+/* line 236, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article {
+  border-bottom: 1px solid #bbb;
+  padding: 7px 0;
+  position: relative;
+  display: block;
+  min-height: 70px;
+}
+
+/* line 243, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article p {
+  padding-right: 58px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+/* line 252, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article p a {
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+  color: tomato;
+}
+
+/* line 257, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article p a:hover {
+  color: #ff8e7a;
+}
+
+/* line 260, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article p a i {
+  vertical-align: text-bottom;
+}
+
+/* line 263, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+/* line 273, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article button:hover {
+  background-color: #aad70f !important;
+}
+
+/* line 276, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article:nth-child(2n+1) button {
+  background-color: #84a70b;
+}
+
+/* line 279, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.actions article:last-child {
+  border: none;
+  padding-bottom: 0;
+}
+
+/* line 283, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.help {
+  display: none;
+  font-size: 1.11em;
+  line-height: 1.33em;
+}
+
+/* line 288, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.help p:first-child {
+  font-weight: 700;
+}
+
+/* line 291, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.help p {
+  zoom: 1;
+}
+
+/* line 295, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.help p:before,
+section.help p:after {
+  content: "";
+  display: table;
+}
+
+/* line 299, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.help p:after {
+  clear: both;
+}
+
+/* line 302, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.help button {
+  float: left;
+  cursor: default;
+  margin-right: 4px;
+}
+
+/* line 307, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.help i {
+  float: left;
+  font-size: 3.1em;
+}
+
+/* line 311, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.report {
+  display: none;
+  font-size: 1.11em;
+  line-height: 1.33em;
+}
+
+/* line 316, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.report p:first-child {
+  font-weight: 700;
+}
+
+/* line 319, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.report form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 325, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.report form input,
+section.report form textarea {
+  padding: 3px 11px;
+  width: calc(100% - 22px);
+  border: .5px solid #aaa;
+}
+
+/* line 330, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.report form textarea {
+  resize: vertical;
+}
+
+/* line 333, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.report form input[type="submit"] {
+  background-color: #97bf0d;
+  width: 50%;
+  cursor: pointer;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+/* line 340, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+section.report form input[type="submit"]:hover {
+  background-color: #aad70f;
+}
+
+/* line 343, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+footer.footer {
+  text-align: center;
+  padding: 11px 11px 22px;
+}
+
+/* line 347, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_standard.css.scss */
+footer.footer a {
+  font-size: 1.11em;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot?7258251");
+  src: url("../font/fontello.eot?7258251#iefix") format("embedded-opentype"), url("../font/fontello.woff?7258251") format("woff"), url("../font/fontello.ttf?7258251") format("truetype"), url("../font/fontello.svg?7258251#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?7258251#fontello') format('svg');
+  }
+}
+*/
+/* line 22, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_fontello.css.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* line 53, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_fontello.css.scss */
+.icon-arrows-ccw:before {
+  content: '\e800';
+}
+
+/* '' */
+/* line 54, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_fontello.css.scss */
+.icon-right-open:before {
+  content: '\e801';
+}
+
+/* '' */
+/* line 55, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_fontello.css.scss */
+.icon-help:before {
+  content: '\e802';
+}
+
+/* '' */
+/* line 56, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_fontello.css.scss */
+.icon-flag:before {
+  content: '\e803';
+}
+
+/* '' */
+/* line 57, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_fontello.css.scss */
+.icon-resize-full:before {
+  content: '\e804';
+}
+
+/* '' */
+/* line 1, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container {
+  position: fixed;
+  right: 350px;
+  width: 250px;
+  margin: 0px;
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 400;
+}
+/* line 12, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container #reservert_title {
+  height: 64px;
+  overflow: hidden;
+  background-color: black;
+  text-align: center;
+  padding: 11px;
+  cursor: pointer;
+}
+/* line 20, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container #reservert_title h1 {
+  margin: 0 0 5px;
+}
+/* line 24, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container #reservert_title p {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+/* line 30, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container #reservert_title p span {
+  color: #97bf0d;
+}
+/* line 36, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container.inactive {
+  bottom: 0px;
+  height: 64px;
+}
+/* line 40, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container.inactive .display_when_active {
+  display: block;
+}
+/* line 41, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container.inactive .display_when_inactive {
+  display: none;
+}
+/* line 44, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container.active {
+  bottom: 0px;
+  height: 384px;
+  width: 250px;
+}
+/* line 49, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container.active #reservert_title {
+  /* hack */
+  height: 44px;
+}
+/* line 53, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container.active .display_when_active {
+  display: none;
+}
+/* line 54, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_container.active .display_when_inactive {
+  display: block;
+}
+
+/* line 58, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_iframe {
+  height: 320px;
+  width: 248px;
+  border: none;
+}
+
+/* line 64, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+nav#reservert_header {
+  height: 30px;
+  padding: 10px;
+  position: relative;
+}
+/* line 69, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+nav#reservert_header span.utilities {
+  float: right;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
+
+/* line 77, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#concrete_actions {
+  height: 30px;
+  padding: 0px 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* line 84, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_content {
+  margin: 0 10px;
+  padding: 0;
+  height: 220px;
+}
+
+/* line 90, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+#reservert_footer {
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-weight: 18px;
+}
+
+/* line 99, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_container.css.scss */
+body#dossiers #help_section {
+  display: none;
+}
+
+/* line 2, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_voting_system.css.scss */
+body#dossiers.widget_voting_system {
+  background-color: #fffaee;
+}
+
+@media all and (max-width: 250px) {
+  /* line 7, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_voting_system.css.scss */
+  #reservert_header, #concrete_actions, #reservert_content, #reservert_footer {
+    width: 230px;
+    padding: 0px 10px;
+  }
+}
+@media all and (min-width: 250px) {
+  /* applied only if over 500px width */
+  /* line 14, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_voting_system.css.scss */
+  #reservert_header, #concrete_actions, #reservert_content, #reservert_footer, #help_section {
+    width: 800px;
+    margin: 30px auto;
+    height: auto;
+  }
+
+  /* line 20, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_voting_system.css.scss */
+  a#expand {
+    display: none;
+  }
+
+  /* line 25, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_voting_system.css.scss */
+  section.actions p, #help_section p {
+    font-size: 1.8em;
+    line-height: 1.8em;
+  }
+  /* line 28, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_voting_system.css.scss */
+  section.actions p button, #help_section p button {
+    font-size: 10px;
+  }
+}
+/* line 1, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_reporting.css.scss */
+body#reports, body#page {
+  background-color: #d0d0d0;
+  font-size: 12px;
+  padding: 5px;
+}
+/* line 6, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_reporting.css.scss */
+body#reports h1, body#page h1 {
+  text-transform: capitalize;
+  font-size: 16px;
+}
+/* line 12, /Users/garyharan/work/ah_adhesion/app/assets/stylesheets/widget_reporting.css.scss */
+body#reports form input, body#reports form textarea, body#page form input, body#page form textarea {
+  border: 1px solid #c6c6c6;
+  padding: 4px;
+  width: 100%;
+  margin-top: 5px;
+}

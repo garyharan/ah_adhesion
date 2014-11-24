@@ -18,7 +18,7 @@ class ReservertWidget
 
   initializeCSS: =>
     for href in [
-      "http://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,300",
+      "https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,300",
       "<%= URI.join(root_url, path_to_stylesheet('widget.css')).to_s %>"
     ]
       do (href) ->
