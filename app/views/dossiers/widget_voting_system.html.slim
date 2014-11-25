@@ -1,4 +1,7 @@
+= render partial: 'widget_title' if params[:display]
+
 nav#reservert_header
+
   = render partial: 'facebook_share'
   span.utilities
     = link_to_switch_language

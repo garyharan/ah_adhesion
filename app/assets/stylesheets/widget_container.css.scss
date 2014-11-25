@@ -1,3 +1,33 @@
+#reservert_title {
+  height: $title-height;
+  overflow: hidden;
+  background-color: black;
+  text-align: center;
+  padding: 11px;
+  cursor: pointer;
+
+  h1 {
+    margin: 0 0 5px;
+  }
+
+  p {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+
+    span {
+      color: $highlight;
+    }
+  }
+}
+
+#dossiers.widget_voting_system {
+  #reservert_title {
+    height: auto;
+  }
+}
+
 #reservert_container {
   position: fixed;
   right: $right-position;
@@ -8,30 +38,6 @@
   font-size: 10px;
   line-height: 13px;
   font-weight: 400;
-
-  #reservert_title {
-    height: $title-height;
-    overflow: hidden;
-    background-color: black;
-    text-align: center;
-    padding: 11px;
-    cursor: pointer;
-
-    h1 {
-      margin: 0 0 5px;
-    }
-
-    p {
-      font-weight: 600;
-      text-transform: uppercase;
-      color: #fff;
-      margin: 0;
-
-      span {
-        color: $highlight;
-      }
-    }
-  }
 
   &.initial {
     bottom: 0px;
