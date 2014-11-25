@@ -7,7 +7,7 @@ class ReservertWidget
   initializeContainer: =>
     @container = container = document.createElement "div"
     @container.id = "reservert_container"
-    @container.className = "inactive"
+    @container.className = "initial"
     @container.innerHTML = '<%= render partial: "widget", locals: { dossier: @dossier }  %>'
     document.body.appendChild @container
 
@@ -29,6 +29,6 @@ class ReservertWidget
         document.head.appendChild link
 
   toggle: (e) =>
-    @container.className = if @container.className == "inactive" then "active" else "inactive"
+    @container.className = if @container.className != "active" then "active" else "inactive"
 
 window.reservert_widget = new ReservertWidget
