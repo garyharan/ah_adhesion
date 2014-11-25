@@ -120,6 +120,9 @@ nav#reservert_header {
   text-align: center;
   padding: 10px;
   font-weight: 18px;
+  a {
+    white-space: nowrap;
+  }
 }
 
 body#dossiers {

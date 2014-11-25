@@ -40,4 +40,6 @@ nav#reservert_header
   button = t(:back)
 
 #reservert_footer
-  = link_to t(:know_more_reservert), "http://www.hotelleriequebec.com/innover/reservert/choisir-reservert/", target: "_blank"
+  = link_to "http://www.hotelleriequebec.com/innover/reservert/choisir-reservert/", target: "_blank" do
+    = t(:know_more_reservert)
+    i class="icon-right-open"
