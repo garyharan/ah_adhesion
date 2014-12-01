@@ -43,8 +43,8 @@
     bottom: 0px;
     height: $closed-height;
 
-    animation: nudge 0.5s;
-    -webkit-animation: nudge 0.5s;
+    animation: nudge 1s;
+    -webkit-animation: nudge 1s;
     -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
 
     .display_when_active { display: block; }
