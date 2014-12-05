@@ -7,3 +7,8 @@ tr
   td = timeago_tag dossier.approval_date, lang: :fr, title: dossier.approval_date
   td = timeago_tag dossier.accepted_contract_at, lang: :fr, title: dossier.accepted_contract_at
   td = link_to "Editer", edit_admin_dossier_path(dossier)
+  td = link_to "Afficher le code", "javascript:void($('#dossier_code_#{dossier.id}').toggle())"
+tr id="dossier_code_#{dossier.id}" style="display: none"
+  td colspan="9"
+    code
+      = raw "&lt;script src=\"https://adhesion.reservert.com/dossiers/#{dossier.id}/widget.js\"&gt;&lt;/script&gt;"
