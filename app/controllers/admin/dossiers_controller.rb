@@ -2,6 +2,13 @@ class Admin::DossiersController < Admin::BaseController
   before_action :find_dossiers, only: :index
 
   def index
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"dossiers.csv\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
   end
 
   def edit

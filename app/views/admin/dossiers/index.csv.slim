@@ -1,0 +1,3 @@
+= CSV.generate_line %w(user state approval_date created_at updated_at accepted_contract_at payment_method note reports_count)
+- @dossiers.each do |dossier|
+  = CSV.generate_line([dossier.user.email, dossier.state, dossier.approval_date, dossier.created_at, dossier.updated_at, dossier.accepted_contract_at, dossier.expected_payment_method, dossier.note, dossier.reports_count])

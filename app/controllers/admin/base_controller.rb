@@ -1,4 +1,6 @@
 class Admin::BaseController < ApplicationController
+  require 'csv'
+
   before_action :authenticate_user!
   before_action :ensure_administrator_rights!
 

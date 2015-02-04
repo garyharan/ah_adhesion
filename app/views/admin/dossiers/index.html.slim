@@ -17,3 +17,5 @@ table#dossiers
     th
   = render @dossiers
 
+#footer
+  = link_to "export CSV", admin_dossiers_path(format: 'csv')
