@@ -1,5 +1,6 @@
 #reservert_title {
   height: $title-height;
+  width: $width;
   overflow: hidden;
   background-color: black;
   text-align: center;
@@ -25,6 +26,7 @@
 #dossiers.widget_voting_system {
   #reservert_title {
     height: auto;
+    width: $width;
   }
 }
 
@@ -32,6 +34,7 @@
   position: fixed;
   right: $right-position;
   width: $width;
+  overflow: hidden;
   margin: 0px;
   background: transparent;
   font-family: 'Open Sans', sans-serif;
@@ -96,6 +99,7 @@
 
 nav#reservert_header {
   height: $header-height;
+  width: $width;
   padding: 10px;
   position: relative;
 
