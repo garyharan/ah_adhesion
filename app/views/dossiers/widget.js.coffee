@@ -19,7 +19,7 @@ class ReservertWidget
   initializeCSS: =>
     for href in [
       "https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,300",
-      "<%= URI.join(root_url, path_to_stylesheet('widget.css')).to_s %>"
+      "<%= URI.join(root_url, path_to_stylesheet('widget.css')).to_s %>" # + "?r=#{Math.random()}" # XXX used for testing bleedover
     ]
       do (href) ->
         link = document.createElement "link"
