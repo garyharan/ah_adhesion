@@ -115,6 +115,7 @@ fr:
   nav:
     how_this_works: "Procédures d’adhésion"
     my_profile: "Coordonnées"
+    active_dossier: "Dossier Actif"
     active_certification: "Questionnaire"
 
   sections:

@@ -54,6 +54,7 @@ en:
   nav:
     how_this_works: "How this works"
     my_profile: "My Profile"
+    active_dossier: "Active Questionnaire"
     active_certification: "Questionnaire"
 
   sections:
