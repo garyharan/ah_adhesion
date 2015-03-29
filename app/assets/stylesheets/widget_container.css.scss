@@ -104,6 +104,7 @@
   height: $opened-height - $title-height;
   width:  $width - 2px;
   border: none;
+  overflow: hidden;
 }
 
 nav#reservert_header {
