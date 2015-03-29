@@ -46,7 +46,7 @@
 
           .form-group
             = f.label :classification, "Classification"
-            - classifications = %w(★ ★★ ★★★ ★★★★ ★★★★★ ☼ ☼☼ ☼☼☼ ☼☼☼☼ ☼☼☼☼☼).zip(types)
+            - classifications = %w(★ ★★ ★★★ ★★★★ ★★★★★ ☼ ☼☼ ☼☼☼ ☼☼☼☼ ☼☼☼☼☼)
             = f.select :classification, classifications, {}, { :class => "form-control" }
 
           .form-group
