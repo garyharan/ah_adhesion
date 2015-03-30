@@ -20,10 +20,12 @@ table
 table
   tr
     th Email
+    th Acceptation du contrat
     th Dernier Login
   tr
     td = mail_to @dossier.user.email
-    td = timeago_tag @dossier.user.last_sign_in_at, lang: :fr, title: @dossier.user.last_sign_in_at
+    td = @dossier.accepted_contract_at
+    td = @dossier.user.last_sign_in_at
 
 - if @dossier.user.profile.present?
   h3 Info Générale
