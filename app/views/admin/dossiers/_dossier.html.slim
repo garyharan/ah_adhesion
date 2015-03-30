@@ -4,8 +4,8 @@ tr
   td = dossier.state
   td = link_to dossier.reports.size, admin_dossier_reports_url(dossier)
   td = dossier.expected_payment_method
-  td = timeago_tag dossier.approval_date, lang: :fr, title: dossier.approval_date
-  td = timeago_tag dossier.accepted_contract_at, lang: :fr, title: dossier.accepted_contract_at
+  td = dossier.approval_date
+  td = dossier.accepted_contract_at
   td = link_to "Editer", edit_admin_dossier_path(dossier)
   td = link_to "Afficher le code", "javascript:void($('#dossier_code_#{dossier.id}').toggle())"
 tr id="dossier_code_#{dossier.id}" style="display: none"
