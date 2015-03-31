@@ -21,5 +21,12 @@ describe Dossier do
       dossier.user = create(:user, :with_profile)
       dossier.profile.should_not be_nil
     end
+
+    it "should set the approval date when approving it" do
+      dossier.approval_date = nil
+      dossier.state = :approved
+      dossier.save
+      dossier.approval_date.should_not be_nil
+    end
   end
 end

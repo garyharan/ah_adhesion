@@ -4,6 +4,8 @@ class Dossier < ActiveRecord::Base
   has_many :answers
   has_many :reports
 
+  before_save :set_approval_date
+
   attr_readonly :reports_count
 
   POSSIBLE_STATES = {
@@ -49,5 +51,13 @@ class Dossier < ActiveRecord::Base
 
   def validated_score
     answers.where(value: true, validated: true).count
+  end
+
+  private
+
+  def set_approval_date
+    if state_changed? && self[:state] == :approved
+      self[:approval_date] = DateTime.now
+    end
   end
 end
