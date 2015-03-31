@@ -13,7 +13,8 @@ class Dossier < ActiveRecord::Base
     pending_payment: "Attente de paiement",
     under_review:  "En revue",
     approved: "Approuvé",
-    rejected: "rejected",
+    rejected: "Rejeté",
+    cancelled: "Annulé",
   }
 
   default_scope           -> { order("id ASC") }
@@ -22,6 +23,7 @@ class Dossier < ActiveRecord::Base
   scope :under_review,    -> { where(state: :under_review) }
   scope :approved,        -> { where(state: :approved) }
   scope :rejected,        -> { where(state: :rejected) }
+  scope :cancelled,       -> { where(state: :cancelled) }
 
   state_machine :state, :initial => :draft do
     event :submit do
@@ -42,6 +44,10 @@ class Dossier < ActiveRecord::Base
 
     event :expire do
       transition :approved => :expired
+    end
+
+    event :cancel do
+      transition any => :cancelled
     end
   end
 
