@@ -56,7 +56,7 @@ class Dossier < ActiveRecord::Base
   private
 
   def set_approval_date
-    if state_changed? && self[:state] == :approved
+    if state_changed? && self[:state].to_s == "approved"
       self[:approval_date] = DateTime.now
     end
   end
