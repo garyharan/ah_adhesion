@@ -19,7 +19,7 @@ class Admin::DossiersController < Admin::BaseController
     @dossier = Dossier.find params[:id]
 
     if @dossier.update_attributes dossier_params
-      flash[:success] = "Votre dossier a été créé avec succès."
+      flash[:success] = "Votre dossier a été sauvé avec succès."
       redirect_to edit_admin_dossier_path @dossier
     else
       flash[:error] = "unable to save dossier details"
